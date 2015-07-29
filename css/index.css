@@ -1,0 +1,608 @@
+body {
+	padding-top: 50px;
+	font-family: dinRegular;
+}
+
+@font-face {
+    font-family: dinRegular;
+    src: url("../fonts/DINRegular.ttf");
+}
+
+@font-face {
+    font-family: dinMedium;
+    src: url("../fonts/DINMedium.ttf");
+}
+
+@font-face {
+    font-family: dinLight;
+    src: url("../fonts/DINLight.ttf");
+}
+
+.font-dinMedium {
+	font-family: dinMedium;
+}
+
+.font-dinRegular {
+	font-family: dinRegular;
+}
+
+.font-dinLight {
+	font-family: dinLight;
+}
+
+.section-title {
+	font-size: 50px;
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+}
+.ew-intro {
+	/*background: url("../images/hiking.jpg");*/
+	background-position: center bottom;
+	background-size: cover;
+	color:#fff;
+
+	padding-top: 80px;
+}
+
+#intro-img {
+	position: fixed;
+	width: 100%;
+	height: auto;
+	z-index: -1;
+	top: 0;
+
+}
+
+.get-started-button {
+
+	text-align: center;
+}
+
+#adventure-img {
+	width: 100%;
+	margin-bottom: 30px;
+}
+
+#download-img {
+	margin-bottom: 15px;
+}
+
+.leckerli-font {
+	font-family: 'Leckerli One', cursive;
+}
+
+.choose-your-own {
+	font-size: 60px;
+	text-shadow: 2px 2px #000;
+}
+
+.font-size-80 {
+	font-size: 100px;
+}
+
+.download-headline {
+	font-size: 50px;
+	font-size: 3vw;
+
+}
+
+.ew-download-guide {
+	background: #0876ab;
+	color: #fff;
+	padding-top: 100px;
+	padding-bottom: 100px;
+}
+
+.text-blue {
+	color: #0876ab;
+	font-weight: bold;
+}
+
+.text-grey {
+	color: #38424c;
+	font-weight: bold;
+}
+
+
+.ew-step-1 {
+	background: url("../images/jungle.jpg");
+	background-size: cover;
+	color:#fff;
+}
+
+.ew-contact {
+	background: #5a6770;
+	color: #fff;
+}
+
+.ew-connect {
+	background: #343e48;
+	color: #fff;
+}
+
+.connect-icon {
+	width: 100%;
+}
+
+.ew-section {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.ew-section > div{
+	margin-top: 50px;
+	margin-bottom: 50px;
+
+}
+
+
+
+#contact-name, #contact-email, #contact-message {
+
+	border: solid 2px #fff;
+	border-radius: 5px;
+	padding: 5px;
+	color: rgba(255, 255, 255, 0.7);
+}
+#contact-message {
+	height: 200px;
+}
+
+
+
+.contact-field {
+/*	padding-left: 7.5px;
+	padding-right: 7.5px;
+*/
+	padding-top: 15px;
+
+}
+
+.text-shadow {
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+}
+
+.font-size-25 {
+	font-size: 25px;
+}
+
+.font-size-20 {
+	font-size: 20px;
+}
+
+.width-75 {
+	width: 75%;
+}
+
+.width-100 {
+	width: 100%;
+}
+
+
+.contact-more-info {
+	padding-left: 30px;
+	border-left: solid 1px #fff;
+	height: 300px;
+
+}
+
+.margin-bottom-15 {
+	margin-bottom: 15px;
+}
+
+.margin-top-15 {
+	margin-top: 15px;
+}
+
+
+.margin-bottom-50 {
+	margin-bottom: 50px;
+}
+
+.margin-bottom-25 {
+	margin-bottom: 25px;
+}
+
+.margin-bottom-10 {
+	margin-bottom: 10px;
+}
+
+.no-margin {
+	margin-left: 0px !important;
+	margin-right: 0px !important;
+}
+
+.no-padding {
+	padding: 0 !important;
+}
+
+
+/* BOOTSTRAP CHANGES*/
+
+.container-fluid.ew-content {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.btn-ew {
+    color: #fff;
+    background-color: rgba(0,0,0,0.3);
+    border-color: #fff;
+    text-transform: uppercase;
+    border-radius: 0px;
+    font-size: 20px;
+
+    box-shadow:2px 2px 10px rgba(0,0,0,0.5);
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+}
+
+.btn-ew:hover {
+	background-color: rgba(255,255,255,0.3);
+	color: #fff;
+}
+
+.navbar-ew {
+    background-color: #38424c;
+    border-color: #38424c;
+}
+
+.navbar-brand > img {
+	height: 100%;
+	width: auto;
+}
+
+.navbar-brand {
+	padding:8px;
+}
+
+.navbar > .container-fluid {
+	padding-left: 150px;
+	padding-right: 150px;
+}
+
+@media (min-width: 768px) {
+	.navbar-nav>li>a {
+	    padding-top: 5px;
+	    padding-bottom: 15px;
+	    color: #fff;
+		-webkit-transition: all 0.30s ease-in-out;
+		-moz-transition: all 0.30s ease-in-out;
+		-ms-transition: all 0.30s ease-in-out;
+		-o-transition: all 0.30s ease-in-out;
+	}
+
+	.navbar-nav>li {
+	        border-top: solid 10px #fff;
+	        margin-right: 5px;
+		-webkit-transition: all 0.30s ease-in-out;
+		-moz-transition: all 0.30s ease-in-out;
+		-ms-transition: all 0.30s ease-in-out;
+		-o-transition: all 0.30s ease-in-out;
+
+	}
+
+
+	.navbar-nav>li:hover, .navbar-nav>li>a:hover {
+		background: #fff;
+
+		color: #0876ab;
+
+	}
+
+
+	.navbar-nav>li.active-tab {
+	        border-top: solid 10px #0876ab;
+
+
+	}
+
+	.contact-field.contact-name {
+		padding-right: 7.5px;
+	}
+
+	.contact-field.contact-email {
+		padding-left: 7.5px;
+	}
+
+	.contact-more-info {
+		padding-left: 30px;
+		border-left: solid 1px #fff;
+		height: 300px;
+
+	}
+	#guidebook-img {
+		width: auto;
+	}
+
+}
+/*JUST LARGE*/
+@media (min-width: 992px) {
+	.get-started-button {
+	    padding-top: 100px;
+
+	}
+}
+
+
+/* Custom, iPhone Retina */
+@media (min-width : 320px){
+
+
+	.ew-download-guide > div{
+		margin-top: 0px;
+		margin-bottom: 0px;
+
+	}
+
+}
+
+/* Extra Small Devices, Phones */
+@media (min-width : 480px){
+
+	.ew-download-guide > div{
+		margin-top: 0px;
+		margin-bottom: 0px;
+
+	}
+
+}
+
+/* Small Devices, Tablets */
+@media (min-width : 768px){
+
+
+	.ew-download-guide > div{
+		margin-top: 30px;
+		margin-bottom: 30px;
+
+	}
+
+
+}
+
+/* Medium Devices, Desktops */
+@media (min-width : 992px){
+
+	#map-continent-name {
+		font-size: 30px;
+		line-height: 30px;
+	}
+
+	.ew-download-guide > div{
+		margin-top: 30px;
+		margin-bottom: 30px;
+
+	}
+
+}
+
+
+
+/* Large Devices, Wide Screens */
+@media (min-width : 1200px){
+
+	.get-started-button {
+	    padding-top: 100px;
+
+	}
+	#map-continent-name {
+		font-size: 40px;
+		line-height: 40px;
+	}
+
+}
+
+
+/*ALL BUT LARGE*/
+@media (max-width: 991px) {
+	#intro-img {
+	    position: fixed;
+	    width: auto;
+	    height: 500px;
+	    right: 0;
+	    z-index: -1;
+	    top: 0;
+	}
+}
+
+@media (max-width: 767px) {
+
+	.contact-more-info {
+		padding-left: 15px;
+		height: 300px;
+		/*border-top: solid 1px #fff;*/
+		border-left: none;
+		margin-top: 15px;
+		padding-top: 15px;
+		text-align: left;
+		
+	}
+	#guidebook-img {
+		width: 100%;
+	}
+	.section-title {
+		font-size: 40px;
+	}
+	.section-title.download-title {
+		font-size: 30px;
+		line-height: 35px;
+		margin-bottom: 10px;
+	}
+
+	.ew-download-guide {
+
+		padding-top: 25px !important;
+		/*padding-bottom: 25px !important;*/
+	}
+
+
+}
+
+.row {
+	max-width:100%;
+	    margin-left: 0;
+	    margin-right: 0;
+}
+
+.navbar-toggle .icon-bar {
+	    background-color: #cfcfcf;
+}
+
+.navbar-toggle  {
+	    border: solid 2px #cfcfcf;
+}
+
+.navbar-nav>li>a {
+    color:#fff;
+}
+
+.navbar-nav>li>a:hover {
+    color:#0876ab;
+}
+
+/*.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+	max-width: 1000px !important;
+	margin-left: auto;
+	margin-right: auto;
+}      */
+
+
+.max-width-1000 {
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.max-width-1300 {
+	max-width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+/*MAP STYLING*/
+
+#map {
+	/*width: 1000px;*/
+    /*height: 900px;*/
+}
+
+#map-container {
+	/*width: 1000px;*/
+    /*height: 900px;*/
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+#map-compass {
+	bottom: 0;
+	width: 100%;
+}
+
+#map-compass > img {
+
+	width: 100%;
+}
+
+.bottom-0 {
+	bottom: 0;
+}
+
+.position-absolute {
+	position: absolute;
+}
+
+.height-500 {
+	height: 500px;
+}
+
+.map-row {
+	background-color: #f4f1f0;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#map-continent-name {
+	/*font-size: 40px;*/
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+}
+
+#map-continent-description {
+	font-size: 1.2vw;
+	margin-bottom: 15px;
+}
+
+.country-outline {
+	fill: none;
+	stroke: #38424c;
+}
+
+.country-land {
+	fill:none;
+	stroke: #38424c;
+}
+
+
+.country-no-fill {
+	fill:none !important;
+}
+
+/*NORTH AMERICA*/
+.continent-northamerica {
+	fill: #06966f !important;
+	stroke:none !important;
+}
+
+.continent-northamerica:hover {
+	opacity: 0.5
+}
+
+/*SOUTH AMERICA*/
+.continent-southamerica {
+	fill: #e25929 !important;
+	stroke:none !important;
+}
+
+.continent-southamerica:hover {
+	opacity: 0.5
+}
+
+/*europe*/
+.continent-europe {
+	fill: #31b0c9 !important;
+	stroke:none !important;
+}
+
+.continent-europe:hover {
+	opacity: 0.5
+}
+
+
+/*africa*/
+.continent-africa {
+	fill: #dcb312 !important;
+	stroke:none !important;
+}
+
+.continent-africa:hover {
+	opacity: 0.5
+}
+
+
+/*asia*/
+.continent-asia {
+	fill: #1675a9 !important;
+	stroke:none !important;
+}
+
+.continent-asia:hover {
+	opacity: 0.5
+}
+
+.list-group {
+	margin-bottom: 0;
+	margin-top:15px;
+}
+
