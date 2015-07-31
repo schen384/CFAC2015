@@ -53,7 +53,7 @@ const INTRO_IMG_WIDTH = 1000;
 const CONNECT_ROW_ID = "connect-row";
 const EW_CONTENT_ID = "ew-content";
 
-const CONTINENT_PAGE = true;
+const CONTINENT_PAGE = false;
 
 const CURRENT_MAP = "../json/world.json";
 
@@ -71,6 +71,7 @@ function earthwatchObject() {
 
 
 		this.loadSections();
+		this.attachListeners();
 		//this.drawMap();
     	
     }
@@ -93,6 +94,8 @@ function earthwatchObject() {
     		$("#"+EW_CONTENT_ID).load("../html/continent.html", function() {
     			that.afterLoad();
     		});
+    	} else {
+    		this.afterLoad();
     	}
 
     }

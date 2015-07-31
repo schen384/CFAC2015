@@ -264,13 +264,20 @@ body {
 	line-height: 100px;
 }
 
+.margin-auto {
+	margin-right: auto !important;
+	margin-left: auto !important;
+}
+
 /* BOOTSTRAP CHANGES*/
 
 .row {
+	width: 100%;
 	max-width:100%;
 	    margin-left: 0 !important;
 	    margin-right: 0 !important;
 }
+
 
 
 .container-fluid.ew-content {
