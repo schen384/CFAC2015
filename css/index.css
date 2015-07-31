@@ -18,6 +18,12 @@ body {
     src: url("../fonts/DINLight.ttf");
 }
 
+
+@font-face {
+    font-family: missionScript;
+    src: url("../fonts/Mission-Script.otf");
+}
+
 .font-dinMedium {
 	font-family: dinMedium;
 }
@@ -30,31 +36,43 @@ body {
 	font-family: dinLight;
 }
 
+.font-mission {
+	font-family: missionScript;
+}
+
+
 .section-title {
 	font-size: 50px;
 	text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
 }
 .ew-intro {
-	/*background: url("../images/hiking.jpg");*/
+	background: url("../images/hiking.jpg");
 	background-position: center bottom;
-	background-size: cover;
+	background-size: auto 110%;
 	color:#fff;
-
+	height: 100vh;
 	padding-top: 80px;
 }
 
 #intro-img {
 	position: fixed;
-	width: 100%;
-	height: auto;
+	width: auto;
+	height: 100vh;
 	z-index: -1;
 	top: 0;
+	right: 0;
 
 }
 
-.get-started-button {
+.intro-content 
+{	margin-top: 25vh !important;
+    margin-bottom: 25vh !important;
+    height: 50vh;
+}
 
+.get-started-button {
 	text-align: center;
+
 }
 
 #adventure-img {
@@ -70,14 +88,29 @@ body {
 	font-family: 'Leckerli One', cursive;
 }
 
-.choose-your-own {
-	font-size: 60px;
-	text-shadow: 2px 2px #000;
-}
 
 .font-size-80 {
 	font-size: 100px;
 }
+
+.font-size-45 {
+	font-size: 45px;
+}
+
+
+.intro-text {
+	font-size: 60px;
+	line-height: 80px;
+	float: left;
+	text-align: center;
+	width: 100%;
+
+}
+
+.adventure-large {
+	font-size: 100px;
+}
+
 
 .download-headline {
 	font-size: 50px;
@@ -105,6 +138,12 @@ body {
 
 .ew-step-1 {
 	background: url("../images/jungle.jpg");
+	background-size: cover;
+	color:#fff;
+}
+
+.ew-step-2 {
+	background: #343e48;
 	background-size: cover;
 	color:#fff;
 }
@@ -177,6 +216,10 @@ body {
 	width: 100%;
 }
 
+.height-150-px {
+	height: 150px;
+}
+
 
 .contact-more-info {
 	padding-left: 30px;
@@ -216,7 +259,19 @@ body {
 }
 
 
+.choose-research-text {
+	font-size: 100px;
+	line-height: 100px;
+}
+
 /* BOOTSTRAP CHANGES*/
+
+.row {
+	max-width:100%;
+	    margin-left: 0 !important;
+	    margin-right: 0 !important;
+}
+
 
 .container-fluid.ew-content {
 	padding-left: 0;
@@ -261,6 +316,58 @@ body {
 	padding-left: 150px;
 	padding-right: 150px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*CONTINENT PAGE*/
+
+.ew-continent-intro {
+	height: auto;
+
+}
+
+.intro-content.continent {
+	margin-top: 150px !important;
+	margin-bottom: 100px !important;
+}
+
+.get-started-button.continent {
+	text-align: center;
+}
+
+
+.intro-text.continent {
+	text-align: center;
+
+}
+
+.map-row.continent {
+	background: none;
+}
+
+
+
+.country-land.continent {
+	fill:rgba(255, 255, 255, 0.2);
+filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%3E%3Cdefs%3E%3Cfilter%20id%3D%22blur%22%3E%3CfeGaussianBlur%20stdDeviation%3D%225%22%2F%3E%3C%2Ffilter%3E%3C%2Fdefs%3E%3C%2Fsvg%3E#blur");
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+}
+
 
 @media (min-width: 768px) {
 	.navbar-nav>li>a {
@@ -316,14 +423,18 @@ body {
 		width: auto;
 	}
 
-}
-/*JUST LARGE*/
-@media (min-width: 992px) {
-	.get-started-button {
-	    padding-top: 100px;
 
-	}
+.max-width-1300 {
+	max-width: 1300px;
+	margin-left: auto;
+	margin-right: auto;
 }
+
+
+
+
+
+
 
 
 /* Custom, iPhone Retina */
@@ -336,6 +447,18 @@ body {
 
 	}
 
+	.get-started-button {
+		text-align: center;
+	}
+	.intro-text {
+		font-size: 80px;
+		line-height: 130px;
+
+	}
+
+	.adventure-large {
+		font-size: 140px;
+	}
 }
 
 /* Extra Small Devices, Phones */
@@ -346,8 +469,36 @@ body {
 		margin-bottom: 0px;
 
 	}
+	.get-started-button {
+		text-align: center;
+	}
+	.intro-text {
+		font-size: 80px;
+
+
+	}
+
+	.adventure-large {
+		font-size: 140px;
+	}
+}
+
+
+/* Smaller Devices, Tablets */
+@media (min-width : 690px){
+	.intro-text {
+		font-size: 100px;
+		line-height: 130px;
+
+	}
+
+	.adventure-large {
+		font-size: 170px;
+	}
+
 
 }
+
 
 /* Small Devices, Tablets */
 @media (min-width : 768px){
@@ -358,9 +509,24 @@ body {
 		margin-bottom: 30px;
 
 	}
+	.get-started-button {
+		text-align: center;
+	}
+
+	.intro-text {
+		font-size: 100px;
+		line-height: 130px;
+
+
+	}
+
+	.adventure-large {
+		font-size: 170px;
+	}
 
 
 }
+
 
 /* Medium Devices, Desktops */
 @media (min-width : 992px){
@@ -375,44 +541,20 @@ body {
 		margin-bottom: 30px;
 
 	}
+	.intro-text {
+		font-size: 100px;
+		line-height: 130px;
 
-}
-
-
-
-/* Large Devices, Wide Screens */
-@media (min-width : 1200px){
-
-	.get-started-button {
-	    padding-top: 100px;
 
 	}
-	#map-continent-name {
-		font-size: 40px;
-		line-height: 40px;
+
+	.adventure-large {
+		font-size: 170px;
 	}
-
-}
-
-
-/*ALL BUT LARGE*/
-@media (max-width: 991px) {
-	#intro-img {
-	    position: fixed;
-	    width: auto;
-	    height: 500px;
-	    right: 0;
-	    z-index: -1;
-	    top: 0;
-	}
-}
-
-@media (max-width: 767px) {
 
 	.contact-more-info {
 		padding-left: 15px;
 		height: 300px;
-		/*border-top: solid 1px #fff;*/
 		border-left: none;
 		margin-top: 15px;
 		padding-top: 15px;
@@ -434,17 +576,85 @@ body {
 	.ew-download-guide {
 
 		padding-top: 25px !important;
-		/*padding-bottom: 25px !important;*/
 	}
 
 
 }
 
-.row {
-	max-width:100%;
-	    margin-left: 0;
-	    margin-right: 0;
+
+
+/* Large Devices, Wide Screens */
+@media (min-width : 1200px){
+
+	.get-started-button {
+/*	    padding-top: 30px;*/
+		text-align: left;
+
+	}
+
+
+	.max-width-1300 {
+		max-width: 1300px;
+		margin-left: 0;
+		margin-right: auto;
+	}
+
+	.get-started-button > a {
+/*	    width: 25%;*/
+		margin-top: 30px;
+	    padding: 15px;
+	   	padding-bottom: 10px;
+	}
+	#map-continent-name {
+		font-size: 40px;
+		line-height: 40px;
+	}
+
+
+	.intro-text {
+		font-size: 100px;
+		line-height: 130px;
+		float: right;
+		text-align: right;
+
+	}
+	.adventure-large {
+		font-size: 170px;
+	}
+
+	.contact-more-info {
+		padding-left: 15px;
+		height: 300px;
+		border-left: none;
+		margin-top: 15px;
+		padding-top: 15px;
+		text-align: left;
+		
+	}
+	#guidebook-img {
+		width: 100%;
+	}
+	.section-title {
+		font-size: 40px;
+	}
+	.section-title.download-title {
+		font-size: 30px;
+		line-height: 35px;
+		margin-bottom: 10px;
+	}
+
+	.ew-download-guide {
+
+		padding-top: 25px !important;
+	}
+
+
+
 }
+
+
+
+
 
 .navbar-toggle .icon-bar {
 	    background-color: #cfcfcf;
@@ -456,6 +666,12 @@ body {
 
 .navbar-nav>li>a {
     color:#fff;
+    background: none;
+}
+
+.navbar-nav>li {
+    color:#fff;
+    background: none;
 }
 
 .navbar-nav>li>a:hover {
@@ -471,12 +687,6 @@ body {
 
 .max-width-1000 {
 	max-width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.max-width-1300 {
-	max-width: 1300px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -605,4 +815,6 @@ body {
 	margin-bottom: 0;
 	margin-top:15px;
 }
+
+
 
