@@ -44,6 +44,7 @@ body {
 .section-title {
 	font-size: 50px;
 	text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+	color: #fff;
 }
 .ew-intro {
 	background: url("../images/hiking.jpg");
@@ -71,7 +72,7 @@ body {
 }
 
 .get-started-button {
-	text-align: center;
+	text-align: left;
 
 }
 
@@ -99,16 +100,16 @@ body {
 
 
 .intro-text {
-	font-size: 60px;
-	line-height: 80px;
+	font-size: 40px;
+	line-height: 60px;
 	float: left;
-	text-align: center;
+	text-align: left;
 	width: 100%;
 
 }
 
 .adventure-large {
-	font-size: 100px;
+	font-size: 80px;
 }
 
 
@@ -125,9 +126,9 @@ body {
 	padding-bottom: 100px;
 }
 
-.text-blue {
+.text-dark-blue {
 	color: #0876ab;
-	font-weight: bold;
+
 }
 
 .text-grey {
@@ -232,6 +233,12 @@ body {
 	margin-bottom: 15px;
 }
 
+
+.margin-bottom-40 {
+	margin-bottom: 40px;
+}
+
+
 .margin-top-15 {
 	margin-top: 15px;
 }
@@ -243,6 +250,10 @@ body {
 
 .margin-bottom-25 {
 	margin-bottom: 25px;
+}
+
+.margin-top-25 {
+	margin-top: 25px;
 }
 
 .margin-bottom-10 {
@@ -326,7 +337,16 @@ body {
 
 
 
+@media (max-width: 767px) {
+	.step-title {
+		font-size: 30px;
+	}
+	.step-title-name {
+		font-size: 70px;
+		line-height: 70px;
+	}
 
+}
 
 
 
@@ -345,6 +365,11 @@ body {
 .ew-continent-intro {
 	height: auto;
 
+	background: url("../images/hiking.jpg");
+	background-position: center bottom;
+	background-size: 100% auto;
+	color:#fff;
+	padding-top: 80px;
 }
 
 .intro-content.continent {
@@ -366,6 +391,135 @@ body {
 	background: none;
 }
 
+.research-icon {
+	float: left;
+	width: 75px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.research-icon-headline {
+	font-size: 25px;
+
+	text-align: left;
+}
+
+.research-icon-text {
+	font-size: 20px;
+	width: 100%;
+	text-align: left;
+	margin-bottom: 20px;
+}
+
+.ew-activity-level  {
+	background: url("../images/sheep.jpg");
+	background-size: 100%;
+	color:#fff;
+
+}
+
+#expedition-cards {
+	max-height: 750px;
+	overflow: scroll;
+}
+/*
+#slider {
+	background: repeating-linear-gradient(
+	  to right,
+	  #fff,
+	  #fff 1px,
+	  rgba(0,0,0,0) 2px,
+	  rgba(0,0,0,0) 6px
+	);
+	border: none;
+	border-radius: 0;
+}
+
+#slider-row {
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+
+#slider label {
+    position: absolute;
+    width: 20px;
+    margin-left: -10px;
+    text-align: center;
+    margin-top: -25px;
+    color: #fff;
+    font-family: dinRegular;
+}
+*/
+
+.activity-tabs > div {
+	width: 14.0%;
+	text-align: center;
+	display: inline-block;
+	font-size: 15px;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+	font-weight: bold;
+}
+
+
+.activity-tabs-border {
+	background: repeating-linear-gradient(
+	  to right,
+	  #fff,
+	  #fff 1px,
+	  rgba(0,0,0,0) 2px,
+	  rgba(0,0,0,0) 6px
+	);
+	width: 100%;
+	height: 10px;
+}
+/*.ui-slider-handle.ui-state-default.ui-corner-all {
+	border: none !important;
+	background: #fff !important;
+}*/
+
+.expedition-card {
+	background: rgba(255, 255, 255, 0.6);
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	color: #333;
+}
+
+.expedition-card-headline {
+	font-size: 24px;
+	line-height: 25px;
+}
+
+.expedition-card-subheadline {
+	font-size: 15px;
+
+}
+.detail-category {
+	margin-bottom: 7px;
+}
+
+.expedition-img {
+	width: 100%;
+}
+.expedition-card-btn {
+	padding-top:15px;
+}
+
+.text-green {
+	color: #00956d;
+}
+
+.text-blue {
+	color: #31b1ca;
+}
+
+.text-orange {
+	color: #e25829;
+}
+
+.text-yellow {
+	color: #dbb313;
+}
 
 
 .country-land.continent {
@@ -431,12 +585,6 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 	}
 
 
-.max-width-1300 {
-	max-width: 1300px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 
 
 
@@ -462,10 +610,11 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		line-height: 130px;
 
 	}
-
-	.adventure-large {
-		font-size: 140px;
+	.research-icon {
+		width: 50px;
 	}
+
+
 }
 
 /* Extra Small Devices, Phones */
@@ -477,7 +626,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 	}
 	.get-started-button {
-		text-align: center;
+		text-align: left;
 	}
 	.intro-text {
 		font-size: 80px;
@@ -488,6 +637,8 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 	.adventure-large {
 		font-size: 140px;
 	}
+
+
 }
 
 
@@ -502,13 +653,16 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 	.adventure-large {
 		font-size: 170px;
 	}
+	.research-icon {
+		width: 50px;
+	}
 
 
 }
 
 
 /* Small Devices, Tablets */
-@media (min-width : 768px){
+@media (max-width : 768px){
 
 
 	.ew-download-guide > div{
@@ -517,7 +671,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 	}
 	.get-started-button {
-		text-align: center;
+		text-align: left;
 	}
 
 	.intro-text {
@@ -530,7 +684,21 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 	.adventure-large {
 		font-size: 170px;
 	}
+	.research-icon {
+		width: 50px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	.research-icon-headline {
+		text-align: left;
+		padding-left: 10px; 
+	}
 
+
+	.research-icon-text {
+		text-align: left;
+		display: block;
+	}
 
 }
 
@@ -585,6 +753,22 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		padding-top: 25px !important;
 	}
 
+	.research-icon {
+		width: 75%;
+		margin-left: 12.5%;
+		margin-right: 12.5%;
+	}
+	.research-icon-headline {
+		text-align: center;
+
+	}
+
+
+	.research-icon-text {
+		text-align: center;
+		display: block;
+	}
+
 
 }
 
@@ -595,7 +779,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 	.get-started-button {
 /*	    padding-top: 30px;*/
-		text-align: left;
+		/*text-align: left;*/
 
 	}
 
@@ -621,8 +805,8 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 	.intro-text {
 		font-size: 100px;
 		line-height: 130px;
-		float: right;
-		text-align: right;
+	/*	float: right;*/
+/*		text-align: right;*/
 
 	}
 	.adventure-large {
@@ -694,8 +878,8 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 .max-width-1000 {
 	max-width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
+	margin-left: auto !important;
+	margin-right: auto !important;
 }
 
 
@@ -753,12 +937,12 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 .country-outline {
 	fill: none;
-	stroke: #38424c;
+	stroke: rgba(255,255,255,0.9);
 }
 
 .country-land {
 	fill:none;
-	stroke: #38424c;
+	stroke: rgba(255,255,255,0.9);
 }
 
 
@@ -825,3 +1009,129 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 
 
+
+
+
+.max-width-1300 {
+	max-width: 1300px;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+
+
+/*RANGESTEPPER*/
+
+/**
+ * rangestepper.css 0.1
+ *
+ *
+ * (c) 2014+ Radu-Sebastian Amarie
+ * http://skidding.mit-license.org
+ */
+
+
+
+.rangestepper {
+  width: 100%;
+  height: 15px;
+  position: relative;
+
+  text-align: justify;
+  -ms-text-justify: distribute-all-lines;
+  text-justify: distribute-all-lines;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+.dragger {
+  margin-top: -23px;
+  text-align: center;
+  display: block;
+  position:relative;
+}
+
+.dragger .arrow {
+  width: 14px;
+  height: 16px;
+  position: relative;
+  background: none;
+  border: 1px solid #fff;
+  display: inline-block;
+  border-radius: 2px 2px 0 0;
+  color:#fff;
+  cursor: ew-resize;
+}
+
+.dragger .arrow:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.dragger .arrow:before {
+  border-top-color: #fff;
+  border-width: 7px;
+  margin-left: -7px;
+}
+
+.rangestepper .step {
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor:pointer;
+  vertical-align: top;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+.rangestepper.subscript .step:nth-child(odd):after{
+  content:attr(data-val);
+  color:#595959;
+  font-size: 80%;
+  position: absolute;
+  bottom: -20px;
+  text-align: center;
+  width: 14px;
+}
+
+.rangestepper .rangeline{
+  position: absolute;
+  top: 5px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  height: 5px;
+  background-color: #fff;
+
+}
+
+.rangestepper .step .active{
+  width: 10px;
+  height: 10px;
+  background-color:#fff;
+  border-radius: 50%;
+  display: inline-block;
+  margin-top: 7px;
+}
+
+.rangestepper .stretch {
+  width: 100%;
+  display: inline-block;
+  font-size: 0;
+  line-height: 0
+}

@@ -1,30 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Earthwatch</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link href='http://fonts.googleapis.com/css?family=Leckerli+One' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
+  
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="http://d3js.org/topojson.v1.min.js"></script>
+
+	<script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
 
 
 
 
 
-<div class="row ew-section ew-intro" id="ew-continent-intro" data-stellar-background-ratio="0.3" >
 
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 intro-content">
+</head>
+<body  name="home-anchor" id="home-anchor">
 
-			<div class="row width-100">
-				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 hidden-xs hidden-sm"></div>
 
-				<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-					<div class="row max-width-1300">
-						<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 text-center">
-							<div class="intro-text font-mission text-shadow">Welcome to Africa!</div>
-						</div>
-						<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 ">
+	<nav class="navbar navbar-ew navbar-fixed-top">
+	  <div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+
+	      <a class="navbar-brand" href="#">
+	      	<img src="images/logo-white.png">
+	      </a>
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li class="active-tab"><a href="#home-anchor">HOME</a></li>
+	        <li><a href="#download-anchor">CONTINENT</a></li>
+	        <li><a href="#continent-anchor">AFRICA</a></li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+	<div class="container-fluid ew-content" id="ew-content">
+
+		<div class="row ew-section ew-continent-intro" id="ew-continent-intro" data-stellar-background-ratio="0.3" >
+
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 intro-content continent">
+
+					<div class="row">
+						<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 hidden-xs hidden-sm"></div>
+
+						<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
 							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-lg">
-									<img class="height-150-px" src="images/compass.png">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+									<div class="intro-text continent font-mission text-shadow adventure-large text-center">Welcome to Africa!</div>
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-15 margin-bottom-15"></div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+									<div class="get-started-button continent">
+										<a href="#continent-anchor" class="btn btn-ew ">Choose a research type</a>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-sm  hidden-xs"></div>
+					</div>
+
+			</div>
+		</div>
+
+
+
+		<div class="row ew-section ew-step-2" name="continent-anchor" id="continent-anchor">
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div>
+			<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 no-padding">
+				<div class="row max-width-1000">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+
+						<div class="row"><!-- headline -->
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="font-dinMedium text-uppercase font-size-45 text-shadow margin-bottom-10 step-title">Step: 2</div>
+								<div class="font-mission font-size-80 choose-research-text text-shadow step-title-name">Choose Your Research Type</div>
+
+							<!-- 	<img class="width-100" src="images/continent-text.png"> -->
+							</div>
+
+						</div>
+						<div class="row"><!-- headline -->
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<h4 class="font-dinMedium text-uppercase font-size-25 text-shadow">Click on the research type you would like to pursue</h4>
+							</div>
+
+						</div>
+						<div class="row margin-top-25"><!-- icons -->
+							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+								<img class="research-icon" src="../images/wildlife-icon.png">
+								<div class="text-uppercase  font-dinMedium research-icon-headline margin-top-15 text-green"> Wildlife and Ecosystems</div>
+								<br>
+								<div class="text-center font-dinRegular research-icon-text">
+									Bacon ipsum dolor amet boudin bresaola prosciutto frankfurter, leberkas shankle ribeye ground round cupim. Cupim sirloin alcatra chuck tri-tip. Frankfurter turkey pork shoulder pork loin meatloaf.
 								</div>
 							</div>
-							<div class="row">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-									<div class="get-started-button ">
-										<a href="#continent-anchor" class="btn btn-ew ">Get Started</a>
+							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+								<img class="research-icon" src="../images/ocean-icon.png">
+								<div class="text-uppercase font-dinMedium research-icon-headline margin-top-15 text-blue"> Ocean Health</div>
+								<br>
+								<div class="text-center font-dinRegular research-icon-text">
+									Bacon ipsum dolor amet boudin bresaola prosciutto frankfurter, leberkas shankle ribeye ground round cupim. Cupim sirloin alcatra chuck tri-tip. Frankfurter turkey pork shoulder pork loin meatloaf.
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+								<img class="research-icon" src="../images/climate-icon.png">
+								<div class="text-uppercase font-dinMedium research-icon-headline margin-top-15 text-orange"> Climate Change</div>
+								<br>
+								<div class="text-center font-dinRegular research-icon-text">
+									Bacon ipsum dolor amet boudin bresaola prosciutto frankfurter, leberkas shankle ribeye ground round cupim. Cupim sirloin alcatra chuck tri-tip. Frankfurter turkey pork shoulder pork loin meatloaf.
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+								<img class="research-icon" src="../images/archeology-icon.png">
+								<div class="text-uppercase font-dinMedium research-icon-headline margin-top-15 text-yellow">Archeology</div>
+								<br>
+								<div class="text-center font-dinRegular research-icon-text">
+									Bacon ipsum dolor amet boudin bresaola prosciutto frankfurter, leberkas shankle ribeye ground round cupim. Cupim sirloin alcatra chuck tri-tip. Frankfurter turkey pork shoulder pork loin meatloaf.
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs  hidden-sm"></div>
+		</div>
+
+		<div class="row ew-section ew-activity-level" name="activity-anchor" id="activity-anchor">
+			<div class="row">
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div>
+				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 no-padding">
+					<div class="row max-width-1000">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+
+							<div class="row"><!-- headline -->
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<div class="font-dinMedium text-uppercase font-size-45 text-shadow margin-bottom-10 step-title">Step: 3</div>
+									<div class="font-mission font-size-80 choose-research-text text-shadow step-title-name">Choose Your Activity Level</div>
+
+								<!-- 	<img class="width-100" src="images/continent-text.png"> -->
+								</div>
+
+							</div>
+		
+			
+						</div>
+
+					</div>
+
+				</div>
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs  hidden-sm"></div>
+			</div>
+			<div class="row max-width-1000">
+<!-- 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div> -->
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+						<div class="section-title text-uppercase text-shadow ">Activity level</div>
+						<div class="font-size-20 text-shadow margin-bottom-40">
+							Bacon ipsum dolor amet meatball tenderloin ball tip, filet mignon shank pork chop porchetta short loin flank meatloaf picanha jowl. Shankle boudin flank ham hock. Tri-tip turducken tenderloin, boudin ribeye pancetta t-bone turkey chicken pork chop tail. Turkey landjaeger frankfurter sausage pork loin t-bone fatback drumstick brisket. T-bone sausage spare ribs, kevin landjaeger frankfurter leberkas beef ribs fatback beef. Ribeye pork belly andouille ball tip pastrami, picanha brisket leberkas turducken jerky fatback ground round frankfurter tail.
+						</div>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs">
+
+						 
+						<!-- <div id="slider"></div> -->
+						  <div>All</div>
+						  <div>Very Easy</div>
+						  <div>Easy</div>
+						  <div>Moderate</div>
+						  <div>very active</div>
+						  <div>strenuous</div>
+						  <div>varies</div>
+
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs-border">
+
+					</div>
+
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding" id="expedition-cards">
+						<div class="row expedition-card">
+							<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 no-padding">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<div class="text-uppercase font-dinMedium text-dark-blue expedition-card-headline margin-bottom-15">Coral Communities in the Seychelles</div>
+									
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+									<img class="expedition-img" src="../images/sheep.jpg">
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+										Bacon ipsum dolor amet boudin bresaola prosciutto frankfurter, leberkas shankle ribeye ground round cupim. 
+									</div>
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+										<div class="expedition-card-btn">
+											<a href="#" class="btn btn-ew ">Download Briefing</a>
+										</div>
+									</div>
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+										<div class="expedition-card-btn">
+											<a href="#" class="btn btn-ew ">Book Now</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 no-padding">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<div class="text-uppercase font-dinMedium text-dark-blue expedition-card-headline margin-bottom-15">$2275-$3750</div>
+									
+								</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<div class="detail-category">
+										<span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Location</span>
+										<br>
+										<span>Boston, MA</span>
+									
+									</div>
+									<div class="detail-category">
+										<span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Duration</span>
+										<br>
+										<span>7 days</span>
+									
+									</div>
+									<div class="detail-category">
+										<span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Activities</span>
+										<br>
+										<span>Icons</span>
+									
+									</div>
+									<div class="detail-category">
+										<span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Audience</span>
+										<br>
+										<span>Adult</span>
+									
 									</div>
 								</div>
 							</div>
@@ -32,210 +266,127 @@
 
 					</div>
 				</div>
-				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-sm  hidden-xs"></div>
-			</div>
-
-	</div>
-</div>
-<div class="row ew-section ew-download-guide" name="download-anchor" id="download-anchor">
-	<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 hidden-xs"></div>
-	<div class="col-lg-10 col-md-10 col-sm-10 col-xs-12 no-padding">
-		<div class="row max-width-1000">
-			<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 no-padding">
-				<div class="row"><!-- headline -->
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-uppercase text-shadow">
-						<img id="download-img" class="width-100 hidden-xs" src="images/download-text.png">
-						<div class="section-title download-title text-center visible-xs">DOWNLOAD OUR 2016 EXPEDITION GUIDE</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-9 col-md-12 col-sm-12 col-xs-12 margin-bottom-15">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-					</div>
-					<div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 text-center margin-bottom-25">
-						<a href="#" class="btn btn-ew">Download</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 no-padding text-center"> <!-- book picture -->
-				<img id="guidebook-img" src="images/guidebook.png">
+<!-- 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1  hidden-xs hidden-sm"></div> -->
 			</div>
 		</div>
-	</div>
-	<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 hidden-xs"></div>
-</div>
 
 
-<div class="row ew-section ew-step-1" name="continent-anchor" id="continent-anchor">
-	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs"></div>
-	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 no-padding">
-		<div class="row">
-			<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 no-padding">
+		<div class="row ew-section ew-contact ">
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg"></div>
+			<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center text-uppercase text-center text-shadow margin-bottom-15">
+							<div class="section-title">Contact Us</div>
+						</div>
+					</div>
+					<div class="row"><!-- headline -->
+						<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 
-				<div class="row"><!-- headline -->
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<img class="width-100" src="images/continent-text.png">
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<div class="font-size-25">
+										E-MAIL US
+									</div>
+								</div> <!-- name -->
+		
+							</div>
+
+							<div class="row">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 contact-field contact-name">
+									<div  id="contact-name">
+										Name
+									</div>
+								</div> <!-- name -->
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 contact-field contact-email">
+									<div  id="contact-email">
+										Email
+									</div>
+								</div> <!-- email -->
+							</div>
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contact-field contact-message">
+									<div id="contact-message" class="margin-bottom-10">
+										Message
+									</div>
+									<div class="text-dark-blue font-size-25 font-dinMedium">SUBMIT EMAIL ></div>
+								</div> <!-- message -->
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<div class="contact-more-info font-size-20">
+								<div class="font-size-25 text-uppercase margin-bottom-10 font-dinMedium">More Info</div>
+								<div class=" text-uppercase margin-bottom-10">Earthwatch Institute</div>
+								<div class="">Call Toll-free:</div>
+								<div class="">U.S. <span class="text-dark-blue"> 1.800.776.0188</span></div>
+								<div class=" margin-bottom-10">U.S. <span class="text-dark-blue"> 1.800.776.0188</span></div>
+								<div class=" margin-bottom-10"><span class="text-dark-blue"> earthwatch.org</span></div>
+								<div class="font-dinLight">
+									<div class="">114 Western Avenue</div>
+									<div class="">Boston, MA 02134</div>
+									<div class="">U.S.A</div>
+								</div>
+
+							</div>
+						</div>
 					</div>
 
-				</div>
-				<div class="row"><!-- headline -->
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<h4 class="font-dinMedium text-uppercase font-size-25 text-shadow">Click on the region you'd like to travel to.</h4>
-					</div>
-
-				</div>
 
 			</div>
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 hidden-xs"> <!-- book picture -->
-	
-				<img src="images/compass.png">
-				
-			</div>
+			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg"></div>
 		</div>
-		<div class="row hidden-lg hidden-md ">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				<div class="list-group text-grey font-dimMedium">
-					<button type="button" class="list-group-item">North America</button>
-					<button type="button" class="list-group-item">South America</button>
-					<button type="button" class="list-group-item">Europe</button>
-					<button type="button" class="list-group-item">Africa</button>
-					<button type="button" class="list-group-item">Asia</button>
-				</div>
-			</div>
 
-		</div>
-	</div>
-	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs"></div>
-</div>
-
-
-<div class="row hidden-xs hidden-sm map-row ">
-	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 " id="map-side-col">
-		<div class="row bottom-0 position-absolute width-100" >
-			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom-15" >
-					<div class="font-dinMedium text-uppercase  text-center" id="map-continent-name"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom-15" >
-					<div class="font-dinNormal   text-center" id="map-continent-description"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="map-compass">
-					<img src="images/compass.png">
-				</div>
-			</div>
-
-		</div>
-	</div>
-	<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-		<div class="container-fluid " id="map-container">
-			<svg id="map"></svg>
-		</div>
-	</div>
-
-</div>
-
-
-<div class="row ew-section ew-contact ">
-	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg"></div>
-	<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
-			<div class="row">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center text-uppercase text-center text-shadow margin-bottom-15">
-					<div class="section-title">Contact Us</div>
-				</div>
-			</div>
-			<div class="row"><!-- headline -->
+		<div id="connect-row">
+			<div class="row ew-section ew-connect">
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs"></div>
 				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							<div class="font-size-25">
-								E-MAIL US
-							</div>
-						</div> <!-- name -->
-
-					</div>
-
-					<div class="row">
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 contact-field contact-name">
-							<div  id="contact-name">
-								Name
-							</div>
-						</div> <!-- name -->
-						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 contact-field contact-email">
-							<div  id="contact-email">
-								Email
-							</div>
-						</div> <!-- email -->
-					</div>
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contact-field contact-message">
-							<div id="contact-message" class="margin-bottom-10">
-								Message
-							</div>
-							<div class="text-blue font-size-25 font-dinMedium">SUBMIT EMAIL ></div>
-						</div> <!-- message -->
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-					<div class="contact-more-info font-size-20">
-						<div class="font-size-25 text-uppercase margin-bottom-10 font-dinMedium">More Info</div>
-						<div class=" text-uppercase margin-bottom-10">Earthwatch Institute</div>
-						<div class="">Call Toll-free:</div>
-						<div class="">U.S. <span class="text-blue"> 1.800.776.0188</span></div>
-						<div class=" margin-bottom-10">U.S. <span class="text-blue"> 1.800.776.0188</span></div>
-						<div class=" margin-bottom-10"><span class="text-blue"> earthwatch.org</span></div>
-						<div class="font-dinLight">
-							<div class="">114 Western Avenue</div>
-							<div class="">Boston, MA 02134</div>
-							<div class="">U.S.A</div>
-						</div>
-
-					</div>
-				</div>
-			</div>
-
-
-	</div>
-	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 visible-lg"></div>
-</div>
-
-<div id="connect-row">
-	<div class="row ew-section ew-connect">
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs"></div>
-		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center text-uppercase text-shadow margin-bottom-15">
-						<h1 class="section-title">Connect with us!</h1>
-					</div>
-				</div>
-				<div class="row"><!-- headline -->
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-					</div>
-					<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-
-
 						<div class="row">
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-								<img class="connect-icon" src="images/wordpress-icon.png">
-							</div> <!-- message -->
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-								<img class="connect-icon" src="images/twitter-icon.png">
-							</div> <!-- message -->
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-								<img class="connect-icon" src="images/facebook-icon.png">
-							</div> <!-- message -->
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center text-uppercase text-shadow margin-bottom-15">
+								<h1 class="section-title">Connect with us!</h1>
+							</div>
 						</div>
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
-					</div>
+						<div class="row"><!-- headline -->
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							</div>
+							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+
+
+								<div class="row">
+									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+										<img class="connect-icon" src="images/wordpress-icon.png">
+									</div> <!-- message -->
+									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+										<img class="connect-icon" src="images/twitter-icon.png">
+									</div> <!-- message -->
+									<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+										<img class="connect-icon" src="images/facebook-icon.png">
+									</div> <!-- message -->
+								</div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							</div>
+						</div>
+
+
 				</div>
-
-
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs"></div>
+			</div>
 		</div>
-		<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs"></div>
+
+
+	   
 	</div>
-</div>
+
+    <script type="text/javascript">
+        if(!earthwatch){
+            var earthwatch = {};
+        }
+        earthwatch.home = earthwatch.home || {};
+    </script>
+	<script type="text/javascript" src="js/stellar.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/rangestepper.js"></script>
+
+
+
+</body>
+</html>

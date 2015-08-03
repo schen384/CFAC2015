@@ -14,7 +14,7 @@ $(window).resize(function() {
 });
 
 // North America
-const USA = 840,
+const AMERICA = 840,
 	CANADA = 124;
 
 
@@ -53,11 +53,11 @@ const INTRO_IMG_WIDTH = 1000;
 const CONNECT_ROW_ID = "connect-row";
 const EW_CONTENT_ID = "ew-content";
 
-const CONTINENT_PAGE = false;
+const CONTINENT_PAGE = true;
 
 const CURRENT_MAP = "../json/world.json";
 
-var northAmerica = [USA, CANADA];
+var northAmerica = [AMERICA, CANADA];
 var southAmerica = [PERU, ECUADOR, BELIZE, JAMAICA, PUERTO_RICO];
 var europe = [ITALY, SPAIN, FRANCE, GERMANY, UK, MONACO, SLOVENIA];
 var africa = [SOUTH_AFRICA, MALAWI, UGANDA, KENYA];
@@ -70,15 +70,19 @@ function earthwatchObject() {
     this.setup = function() {
 
 
-		this.loadSections();
+		//this.loadSections();
+		this.parallax();
 		this.attachListeners();
-		//this.drawMap();
-    	
+		this.setIntroImage();
+		this.drawMap();
+		this.mapListeners();
+
     }
 
     this.resize = function() {
 		$("#map").empty();
-		this.setup();
+		//this.drawMap();
+		this.setIntroImage();
     	
     }
 
@@ -92,6 +96,7 @@ function earthwatchObject() {
     	if (CONTINENT_PAGE) {
     		$("#"+EW_CONTENT_ID).html("");
     		$("#"+EW_CONTENT_ID).load("../html/continent.html", function() {
+    	
     			that.afterLoad();
     		});
     	} else {
@@ -101,9 +106,10 @@ function earthwatchObject() {
     }
 
     this.afterLoad = function () {
-		this.drawMap();
+		//this.drawMap();
 		this.parallax();
 		this.setIntroImage();
+
     }
 
     this.parallax = function () {
@@ -143,13 +149,12 @@ function earthwatchObject() {
 		}
 
 		$("#ew-intro").css("background-size", size);
+		 $("#ew-continent-intro").css("background-size", size);
 		
 	}
 
+
     this.drawMap = function(mapJSON) {
-
-
-		console.log("in draw map");
 		var mapRatio = 0.5;
 
 
@@ -165,9 +170,6 @@ function earthwatchObject() {
 		var sideCol = document.getElementById("map-side-col");
 		sideCol.style.height = height+"px";
 
-
-		console.log("width = "+width);
-		console.log("height = "+height);
 
 		var projection = d3.geo.cylindricalStereographic()
 		    .parallel(45)
@@ -191,28 +193,11 @@ function earthwatchObject() {
 		    .attr("d", path);
 
 		d3.json(CURRENT_MAP, function(error, world) {
-			console.log("in d3 step 1");
+
 		  	if (error) throw error;
-		  	console.log("in d3 step 2");
-		  	if (CURRENT_MAP != "../json/world.json") {
-		  		//var geometries = world.objects.collection.geometries;
-		  		var countries = topojson.feature(world, world.objects.collection).features,
-			  		neighbors = topojson.neighbors(world.objects.collection.geometries);
-		  	} else {
-		  		//var geometries = world.objects.countries.geometries;
-				var countries = topojson.feature(world, world.objects.countries).features,
-				  neighbors = topojson.neighbors(world.objects.countries.geometries);
-		  	}
-			
-			console.log(countries);
-			// for (var i = 0; i < geometries.length; i++) {
-			// 	if (geometries[i].id == 10) {
-			// 		delete geometries[i];
-			// 	}
-			// };
 
-			// world.objects.countries.geometries = geometries;
-
+			var countries = topojson.feature(world, world.objects.countries).features,
+			  neighbors = topojson.neighbors(world.objects.countries.geometries);
 
 
 
@@ -243,7 +228,7 @@ function earthwatchObject() {
 				  				return className;
 
 							})
-			  console.log('STEP 1');
+
 
 			svg.insert("path", ".graticule")
 			  .datum(topojson.feature(world, world.objects.land))
@@ -253,14 +238,12 @@ function earthwatchObject() {
 			  .attr("class", "country-land continent");
 
 
-console.log('STEP 2');
 			svg.insert("path", ".graticule")
 			  .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
 			  .attr("class", "boundary")
 			  .attr("d", path)
 			  .attr("class", "country-outline");
 
-console.log('STEP 3');
 
 
 
@@ -273,7 +256,7 @@ console.log('STEP 3');
 
 
 	this.mapListeners = function() {
-		console.log("Map listener");
+
 		$('.country-no-fill').hover(function() {
 		    
 		    var className = $(this).attr('class').replace('country-no-fill ',''),

@@ -4,16 +4,22 @@
   <title>Earthwatch</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link href='http://fonts.googleapis.com/css?family=Leckerli+One' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/index.css">
   
-  <link href='http://fonts.googleapis.com/css?family=Leckerli+One' rel='stylesheet' type='text/css'>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 	<script src="http://d3js.org/topojson.v1.min.js"></script>
 
 	<script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
+
 
 
 
@@ -60,24 +66,16 @@
 						<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 hidden-xs hidden-sm"></div>
 
 						<div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-							<div class="row max-width-1300">
-								<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12 text-center">
-									<div class="intro-text font-mission text-shadow">Choose Your Own <br><span class="adventure-large">Adventure!</span></div>
+							<div class="row max-width-1000 text-left">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+									<div class="intro-text font-mission text-shadow text-left">Choose Your Own <br><span class="adventure-large">Adventure!</span></div>
 								</div>
-								<div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 ">
-									<div class="row">
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 visible-lg">
-											<img class="height-150-px" src="images/compass.png">
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-											<div class="get-started-button ">
-												<a href="#continent-anchor" class="btn btn-ew ">Get Started</a>
-											</div>
-										</div>
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+									<div class="get-started-button text-left">
+										<a href="#continent-anchor" class="btn btn-ew ">Get Started</a>
 									</div>
 								</div>
+					
 
 
 
@@ -137,12 +135,15 @@
 		<div class="row ew-section ew-step-1" name="continent-anchor" id="continent-anchor">
 			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs"></div>
 			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 no-padding">
-				<div class="row">
-					<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 no-padding">
+				<div class="row max-width-1000">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
 
 						<div class="row"><!-- headline -->
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-								<img class="width-100" src="images/continent-text.png">
+								<div class="font-dinMedium text-uppercase font-size-45 text-shadow margin-bottom-10 step-title">Step: 1</div>
+								<div class="font-mission font-size-80 choose-research-text text-shadow step-title-name">Choose a Continent</div>
+
+							<!-- 	<img class="width-100" src="images/continent-text.png"> -->
 							</div>
 
 						</div>
@@ -154,11 +155,7 @@
 						</div>
 
 					</div>
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 hidden-xs"> <!-- book picture -->
-			
-						<img src="images/compass.png">
-						
-					</div>
+		
 				</div>
 				<div class="row hidden-lg hidden-md ">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -174,37 +171,37 @@
 				</div>
 			</div>
 			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs"></div>
+
+			<div class="row hidden-xs hidden-sm  ">
+				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm hidden-md hidden-lg" id="map-side-col">
+					<div class="row bottom-0 position-absolute width-100" >
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom-15" >
+								<div class="font-dinMedium text-uppercase  text-center" id="map-continent-name"></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom-15" >
+								<div class="font-dinNormal   text-center" id="map-continent-description"></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="map-compass">
+								<img src="images/compass.png">
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="container-fluid " id="map-container">
+						<svg id="map"></svg>
+					</div>
+				</div>
+
+			</div>
 		</div>
 
-
-		<div class="row hidden-xs hidden-sm map-row ">
-			<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 " id="map-side-col">
-				<div class="row bottom-0 position-absolute width-100" >
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom-15" >
-							<div class="font-dinMedium text-uppercase  text-center" id="map-continent-name"></div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-bottom-15" >
-							<div class="font-dinNormal   text-center" id="map-continent-description"></div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="map-compass">
-							<img src="images/compass.png">
-						</div>
-					</div>
-
-				</div>
-			</div>
-			<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
-				<div class="container-fluid " id="map-container">
-					<svg id="map"></svg>
-				</div>
-			</div>
-
-		</div>
 
 
 		<div class="row ew-section ew-contact ">
@@ -244,7 +241,7 @@
 									<div id="contact-message" class="margin-bottom-10">
 										Message
 									</div>
-									<div class="text-blue font-size-25 font-dinMedium">SUBMIT EMAIL ></div>
+									<div class="text-dark-blue font-size-25 font-dinMedium">SUBMIT EMAIL ></div>
 								</div> <!-- message -->
 							</div>
 						</div>
@@ -253,9 +250,9 @@
 								<div class="font-size-25 text-uppercase margin-bottom-10 font-dinMedium">More Info</div>
 								<div class=" text-uppercase margin-bottom-10">Earthwatch Institute</div>
 								<div class="">Call Toll-free:</div>
-								<div class="">U.S. <span class="text-blue"> 1.800.776.0188</span></div>
-								<div class=" margin-bottom-10">U.S. <span class="text-blue"> 1.800.776.0188</span></div>
-								<div class=" margin-bottom-10"><span class="text-blue"> earthwatch.org</span></div>
+								<div class="">U.S. <span class="text-dark-blue"> 1.800.776.0188</span></div>
+								<div class=" margin-bottom-10">U.S. <span class="text-dark-blue"> 1.800.776.0188</span></div>
+								<div class=" margin-bottom-10"><span class="text-dark-blue"> earthwatch.org</span></div>
 								<div class="font-dinLight">
 									<div class="">114 Western Avenue</div>
 									<div class="">Boston, MA 02134</div>
@@ -286,6 +283,7 @@
     </script>
 	<script type="text/javascript" src="js/stellar.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/rangestepper.js"></script>
 
 
 
