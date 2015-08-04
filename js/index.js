@@ -80,7 +80,7 @@ function earthwatchObject() {
 
     this.resize = function() {
 		$("#map").empty();
-		//this.drawMap();
+		this.drawMap();
 		this.setIntroImage();
     	
     }
@@ -195,6 +195,7 @@ function earthwatchObject() {
 
 		$("#ew-intro").css("background-size", size);
 		 $("#ew-continent-intro").css("background-size", size);
+		  $("#activity-anchor").css("background-size", size);
 		
 	}
 
@@ -213,7 +214,10 @@ function earthwatchObject() {
 		}
 
 		var sideCol = document.getElementById("map-side-col");
-		sideCol.style.height = height+"px";
+		if (sideCol) {
+			sideCol.style.height = height+"px";
+		}
+
 
 
 		var projection = d3.geo.cylindricalStereographic()

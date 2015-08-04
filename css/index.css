@@ -52,7 +52,7 @@ body {
 	background-size: auto 110%;
 	color:#fff;
 	height: 100vh;
-	padding-top: 80px;
+	margin-top: -50px;
 }
 
 #intro-img {
@@ -99,13 +99,78 @@ body {
 }
 
 
-.intro-text {
+.intro-title {
 	font-size: 40px;
 	line-height: 60px;
 	float: left;
 	text-align: left;
 	width: 100%;
 
+}
+
+.color-border {
+
+/*	background: repeating-linear-gradient(
+      to right, 
+      transparent,
+      transparent 5px,
+      #00956d 5px,
+      #00956d 5px,
+      transparent 5px,
+      transparent 5px,
+      #dbb313 5px,
+      #dbb313 5px,   
+      transparent 5px
+    );*/
+	background: url("../images/color-border.png");
+	background-size: auto 100%;
+background-repeat: repeat-x;
+	width: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
+	height: 10px;
+
+
+
+}
+
+.position-absolute {
+	position: absolute;
+}
+
+.bottom-0 {
+	bottom: 0;
+}
+
+
+.continue-button {
+	font-size: 40px;
+	color:#fff !important;
+	line-height: 40px;
+	width: 80px;
+	height: 80px;
+	border: solid 3px #fff;
+	margin-left: auto;
+	margin-right: auto;
+	display: table;
+	border-radius: 40px;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+	margin-bottom: 20px;
+}
+
+.continue-button > .glyphicon {
+	font-size: 40px;
+	line-height: 40px;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.intro-text {
+	font-size: 30px;
+	line-height: 30px;
+	font-family: dinRegular;
+	text-align: center;
+	margin-top: 35px;
 }
 
 .adventure-large {
@@ -120,7 +185,7 @@ body {
 }
 
 .ew-download-guide {
-	background: #0876ab;
+	background: #0079AC;
 	color: #fff;
 	padding-top: 100px;
 	padding-bottom: 100px;
@@ -382,7 +447,7 @@ body {
 }
 
 
-.intro-text.continent {
+.intro-title.continent {
 	text-align: center;
 
 }
@@ -410,8 +475,23 @@ body {
 	margin-bottom: 20px;
 }
 
+.research-select {
+	border: 1px solid;
+	text-transform: uppercase;
+	font-weight: bold;
+	width: auto;
+	font-size: 25px;
+	display: inline-block;
+	padding: 5px;
+
+}
+
+.research-select > a {
+	text-decoration: none;
+}
+
 .ew-activity-level  {
-	background: url("../images/sheep.jpg");
+	background: url("../images/hiking.jpg");
 	background-size: 100%;
 	color:#fff;
 
@@ -477,6 +557,64 @@ body {
 	background: #fff !important;
 }*/
 
+.gradient-fade {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&amp;0+0,1+100 */
+background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+	position: absolute;
+	bottom: 0;
+	height: 100px;
+}
+
+.gradient-img {
+	position: absolute;
+	bottom: 0;
+	height: 200px;
+	width: 100%;
+
+}
+
+
+.scroll-top {
+	text-decoration: none;
+	padding: 5px;
+	border: solid 1px rgba(0,0,0,0);
+	display: inline-block;
+}
+
+.scroll-top.light:hover {
+	text-decoration: none;
+	border: solid 1px #fff;
+	border-radius: 4px;
+}
+
+.scroll-top.dark:hover {
+	text-decoration: none;
+	outline: solid 1px #fff;
+	border-radius: 4px;
+}
+
+.scroll-top.light {
+	color: #fff !important;
+}
+
+.scroll-top.dark {
+	color: #343e48 !important;
+}
+
+.no-margin {
+	margin: 0 !important;
+}
+
+.border-bottom-dotted {
+	border-bottom: dotted #fff 4px;
+}
+
 .expedition-card {
 	background: rgba(255, 255, 255, 0.6);
 	padding-top: 15px;
@@ -506,20 +644,39 @@ body {
 }
 
 .text-green {
-	color: #00956d;
+	color: #00956d !important;
 }
 
+.outline-green {
+	border: solid 1px #00956d;
+}
+
+
 .text-blue {
-	color: #31b1ca;
+	color: #31b1ca !important;
+}
+
+.outline-blue {
+	border: solid 1px #31b1ca;
 }
 
 .text-orange {
-	color: #e25829;
+	color: #e25829 !important;
 }
 
-.text-yellow {
-	color: #dbb313;
+.outline-orange {
+	border: solid 1px #e25829;
 }
+
+
+.text-yellow {
+	color: #dbb313 !important;
+}
+
+.outline-yellow {
+	border: solid 1px #dbb313;
+}
+
 
 
 .country-land.continent {
@@ -605,7 +762,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 	.get-started-button {
 		text-align: center;
 	}
-	.intro-text {
+	.intro-title {
 		font-size: 80px;
 		line-height: 130px;
 
@@ -628,7 +785,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 	.get-started-button {
 		text-align: left;
 	}
-	.intro-text {
+	.intro-title {
 		font-size: 80px;
 
 
@@ -644,7 +801,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 /* Smaller Devices, Tablets */
 @media (min-width : 690px){
-	.intro-text {
+	.intro-title {
 		font-size: 100px;
 		line-height: 130px;
 
@@ -674,7 +831,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		text-align: left;
 	}
 
-	.intro-text {
+	.intro-title {
 		font-size: 100px;
 		line-height: 130px;
 
@@ -716,7 +873,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		margin-bottom: 30px;
 
 	}
-	.intro-text {
+	.intro-title {
 		font-size: 100px;
 		line-height: 130px;
 
@@ -779,7 +936,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 	.get-started-button {
 /*	    padding-top: 30px;*/
-		/*text-align: left;*/
+		text-align: center;
 
 	}
 
@@ -802,11 +959,11 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 	}
 
 
-	.intro-text {
+	.intro-title {
 		font-size: 100px;
 		line-height: 130px;
 	/*	float: right;*/
-/*		text-align: right;*/
+		text-align: center;
 
 	}
 	.adventure-large {
