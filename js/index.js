@@ -75,6 +75,14 @@ function earthwatchObject() {
 		this.parallax();
 		this.attachListeners();
 		this.setIntroImage();
+
+		if ($("#expedition-cards").length) {
+			$("#expedition-cards").mCustomScrollbar({
+				axis:"y",
+				scrollbarPosition: "outside"
+			});
+		}
+
 		//this.drawMap();
 		this.loadMap();
 		this.mapListeners();
@@ -220,10 +228,8 @@ function earthwatchObject() {
     }
 
     this.parallax = function () {
-		$(window).stellar({
-			 horizontalOffset: 50,
-			 verticalOffset: 105
-		});
+		$(window).stellar();
+
     }
 
 
@@ -306,7 +312,7 @@ function earthwatchObject() {
 
 		$("#ew-intro").css("background-size", size);
 		 $("#ew-continent-intro").css("background-size", size);
-		  $("#activity-anchor").css("background-size", size);
+		  $("#activities-anchor").css("background-size", size);
 		
 	}
 
