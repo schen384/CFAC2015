@@ -64,7 +64,10 @@ var africa = [SOUTH_AFRICA, MALAWI, UGANDA, KENYA];
 var asia = [AUSTRALIA, INDIA, MALAYSIA, MONGOLIA];
 
 function earthwatchObject() {
-    
+    this.continent,
+    this.activityLevel,
+    this.researchType;
+
 
 
     this.setup = function() {
@@ -80,7 +83,7 @@ function earthwatchObject() {
 
     this.resize = function() {
 		$("#map").empty();
-		this.drawMap();
+		//this.drawMap();
 		this.setIntroImage();
     	
     }
@@ -88,6 +91,65 @@ function earthwatchObject() {
     this.loadMap = function(){
     	var map = new Datamap({
     		element: document.getElementById("map-container"),
+    		projection: 'cylindricalStereographic',
+    		fills:{
+    			defaultFill:'rgba(0,0,0,0.5)',
+    			'NA': '#4CB074',
+    			'SA': '#F5670F',
+    			'AF': '#dcb312',
+    			'EU': '#31b0c9',
+    			'AS': '#1675a9',
+    			'AU': '#006EB8'
+    		},
+    		data:{
+    			'USA': {fillKey: 'NA'},
+    			'CAN': {fillKey: 'NA'},
+    			'PER': {fillKey: 'SA'},
+    			'ARG': {fillKey: 'SA'},
+    			'ECU': {fillKey: 'SA'},
+    			'NIC': {fillKey: 'SA'},
+    			'PRI': {fillKey: 'SA'},
+    			'BLZ': {fillKey: 'SA'},
+    			'JAM': {fillKey: 'SA'},
+    			'CRI': {fillKey: 'SA'},
+    			'ZAF': {fillKey: 'AF'},
+    			'MWI': {fillKey: 'AF'},
+    			'KEN': {fillKey: 'AF'},
+    			'UGA': {fillKey: 'AF'},
+    			'AUS': {fillKey: 'AU'},
+    			'IND': {fillKey: 'AU'},
+    			'MYS': {fillKey: 'AU'},
+    			'MNG': {fillKey: 'AU'},
+    			'ESP': {fillKey: 'EU'},
+    			'FRA': {fillKey: 'EU'},
+    			'ITA': {fillKey: 'EU'},
+    			'GBR': {fillKey: 'EU'},
+    			'IRL': {fillKey: 'EU'},
+    		},
+    		geographyConfig:{
+    			borderColor: 'rgba(255,255,255,0.8)',
+    			//highlightFillColor: 'yellow',
+    			//highlightBorderColor: 'green',
+    			//highlightFillOpacity: 0.75
+    		}
+    	});
+    }
+
+    this.loadContinentMap = function(){
+    	var map = new Datamap({
+    		element: document.getElementById("map-container"),
+    		// projection: 'cylindricalStereographic',
+    		setProjection: function(element) {
+			    var projection = d3.geo.equirectangular()
+			      .center([23, -3])
+			      .rotate([4.4, 0])
+			      .scale(200)
+			      .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+			    var path = d3.geo.path()
+			      .projection(projection);
+			    
+			    return {path: path, projection: projection};
+			  },
     		fills:{
     			defaultFill:'white',
     			'NA': '#4CB074',
@@ -166,7 +228,51 @@ function earthwatchObject() {
 
 
     this.attachListeners = function() {
-		    	
+		console.log("in attachListeners");    
+
+		// $(".research-select").each(function() {
+		// 	console.log($(this));
+		// })
+
+		$(".research-select").click(function() {
+
+			// var str = $(this).attr('class');
+			// console.log("all classes = "+str);
+			// str = str.split(new RegExp("\\s+")).pop();
+			// console.log("split string = "+str);
+
+			var outlineColor = $(this).attr('class').split(new RegExp("\\s+")).pop();
+			console.log($(this).attr('class'));
+			console.log(outlineColor);
+			$(this).children("div").addClass("select-inverse");
+			$(this).removeClass("no-background");
+			$(this).addClass("select-clicked");
+			// console.log(children);
+			//children[0].addClass("select-inverse");
+			//console.log("in research select");
+			//console.log(otherButtons);
+			$('.research-select:not(.' + outlineColor + ')').each(function() {
+				$(this).children("div").removeClass("select-inverse");
+				$(this).addClass("no-background");
+				$(this).removeClass("select-clicked");
+			})
+
+		});
+
+		$(".research-select").mouseover(function() {
+
+			$(this).removeClass("no-background");
+
+		});
+
+		$(".research-select").mouseout(function() {
+			if (!$(this).hasClass("select-clicked")) {
+				$(this).addClass("no-background");
+			}
+			
+
+		});
+
 		$('a').click(function(){
 
 			var scroll = $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top - 50;
@@ -174,8 +280,13 @@ function earthwatchObject() {
 		    $('html, body').animate({
 		        scrollTop: scroll
 		    }, 500);
+
+
+
 		    return false;
 		});
+
+
 
     }
 
