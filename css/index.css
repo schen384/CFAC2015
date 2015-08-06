@@ -21,7 +21,7 @@ body {
 
 @font-face {
     font-family: missionScript;
-    src: url("../fonts/Mission-Script.otf");
+    src: url("../fonts/mission-script-webfont.ttf");
 }
 
 .font-dinMedium {
@@ -39,6 +39,7 @@ body {
 .font-mission {
 	font-family: missionScript;
 }
+
 
 
 .section-title {
@@ -71,6 +72,13 @@ body {
     height: 50vh;
 }
 
+.intro-content.continent
+{	margin-top: 25vh !important;
+    margin-bottom: 25vh !important;
+    height: 50vh;
+}
+
+
 .get-started-button {
 	text-align: left;
 
@@ -94,6 +102,10 @@ body {
 	font-size: 100px;
 }
 
+.font-size-15	 {
+	font-size: 15px;
+}
+
 .font-size-45 {
 	font-size: 45px;
 }
@@ -107,6 +119,15 @@ body {
 	width: 100%;
 
 }
+
+.dropdown-menu {
+	width: 100%;
+}
+
+
+
+
+
 
 .color-border {
 
@@ -431,13 +452,16 @@ background-repeat: repeat-x;
 	background-position: center bottom;
 	background-size: 100% auto;
 	color:#fff;
+	margin-top: -50px;
 /*	padding-top: 80px;*/
 }
 
-.intro-content.continent {
-	margin-top: 150px !important;
-/*	margin-bottom: 100px !important;*/
+.intro-content.continent
+{	margin-top: 25vh !important;
+    margin-bottom: 25vh !important;
+    height: 50vh;
 }
+
 
 .get-started-button.continent {
 	text-align: center;
@@ -446,6 +470,7 @@ background-repeat: repeat-x;
 
 .intro-title.continent {
 	text-align: center;
+	margin-bottom: 20px;
 
 }
 
@@ -568,16 +593,35 @@ background-repeat: repeat-x;
     box-shadow: none;
 }
 
+.display-block {
+	display: block;
+}
 
 .activity-tabs > div {
-	width: 14.0%;
+	width: 13.5%;
 	text-align: center;
 	display: inline-block;
 	font-size: 15px;
 	text-transform: uppercase;
 	text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
 	font-weight: bold;
+	padding-bottom: 5px;
+	border-bottom: 5px solid transparent;
+
 }
+
+.activity-tabs > div:hover {
+
+	border-bottom: 5px solid rgba(255,255,255,0.5);
+
+}
+
+.activity-tabs > div.active-level {
+
+	border-bottom: 5px solid rgba(255,255,255,1);
+
+}
+
 
 
 .activity-tabs-border {
@@ -858,6 +902,19 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		font-size: 30px;
 		line-height: 30px;
 		margin-bottom: 10px;
+	}
+
+	.navbar-collapse {
+		background: #eee;
+	}
+
+	.navbar-collapse >ul > li{
+		border-bottom: 1px solid #B8B8B8;
+	}
+
+	.navbar-collapse >ul {
+		margin-top: 0px;
+		margin-bottom: 0px;
 	}
 }
  
@@ -1248,14 +1305,6 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 
 
-
-.navbar-toggle .icon-bar {
-	    background-color: #cfcfcf;
-}
-
-.navbar-toggle  {
-	    border: solid 2px #cfcfcf;
-}
 
 .navbar-nav>li>a {
     color:#fff;

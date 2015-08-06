@@ -279,6 +279,17 @@ function earthwatchObject() {
 
 		});
 
+		$(".activity-tab").click(function() {
+
+			console.log("clicked activity tab");
+			$('.activity-tab').each(function() {
+				$(this).removeClass("active-level");
+			})
+
+			$(this).addClass("active-level");
+
+		})
+
 		$('a').click(function(){
 
 			var scroll = $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top - 50;
