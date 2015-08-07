@@ -72,7 +72,7 @@ function earthwatchObject() {
     this.continent,
     this.activityLevel,
     this.researchType;
-    var exp_continent;
+    var exp_continent,exp_type,all_exp;
 
 
     this.setup = function() {
@@ -113,7 +113,7 @@ function earthwatchObject() {
         $("#continent-wel").html('Welcome to ' + continent + '!');
         $("#continent-nav").html(continent);
         exp_continent = data[continent];
-        var all_exp = [];
+        all_exp = [];
         for (var key in exp_continent) {
           for (var j = 0;j < exp_continent[key].length;j++) {
             all_exp.push(exp_continent[key][j]);
@@ -311,7 +311,7 @@ function earthwatchObject() {
 			})
       var cards = $("#mCSB_1_container");
       cards.empty();
-      var exp_type = exp_continent[$(this).attr('id')];
+      exp_type = exp_continent[$(this).attr('id')];
       if (exp_type) {
         for (var i = 0; i < exp_type.length; i++) {
           var temp = $("#card-template").html();
@@ -319,16 +319,7 @@ function earthwatchObject() {
           cards.append(html);
         }
         $("#expedition-cards").mCustomScrollbar("scrollTo","top");
-        // if ($(".expedition-card").length > 0) {
-        //   // $("#expedition-cards").removeClass("mCustomScrollbar");
-        //   $("#expedition-cards").mCustomScrollbar({
-        //     axis:"y",
-        //     scrollbarPosition: "outside",
-        //     advanced:{
-        //       updateOnContentResize: true
-        //     }
-        //   });
-        // }
+
       }
 		});
 
@@ -347,13 +338,26 @@ function earthwatchObject() {
 		});
 
 		$(".activity-tab").click(function() {
-      console.log($(this)[0].innerHTML);
 			$('.activity-tab').each(function() {
 				$(this).removeClass("active-level");
 			})
-
 			$(this).addClass("active-level");
 
+      var cards = $("#mCSB_1_container");
+      cards.empty();
+      var level = $(this)[0].innerHTML;
+      for (exp in exp_type) {
+        if(level != 'All' && exp_type[exp]['Activity Level'] == level) {
+          var temp = $("#card-template").html();
+          var html = Mustache.render(temp,exp_type[exp]);
+          cards.append(html);
+        } else if (level == 'All') {
+          var temp = $("#card-template").html();
+          var html = Mustache.render(temp,exp_type[exp]);
+          cards.append(html);
+        };
+      }
+      $("#expedition-cards").mCustomScrollbar("scrollTo","top");
 		})
 
 		$('a').click(function(){
