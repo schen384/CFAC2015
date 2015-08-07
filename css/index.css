@@ -40,7 +40,9 @@ body {
 	font-family: missionScript;
 }
 
-
+.text-white {
+	color:#fff;
+}
 
 .section-title {
 	font-size: 40px;
@@ -48,7 +50,14 @@ body {
 	color: #fff;
 }
 .ew-intro {
-	background: url("../images/hiking.jpg");
+
+
+	background: 
+	    linear-gradient(
+	      rgba(0, 0, 0, 0.45), 
+	      rgba(0, 0, 0, 0)
+	    ),
+		url("../images/hiking.jpg");
 	background-position: center bottom;
 	background-size: auto 110%;
 	color:#fff;
@@ -445,10 +454,34 @@ background-repeat: repeat-x;
 
 /*CONTINENT PAGE*/
 
+
+#wildlife-section {
+	background: url("../images/africa-wildlife-bg.jpg");
+}
+
+#climate-section {
+	background: url("../images/africa-CC-bg.jpg");
+}
+
+#ocean-section {
+	background: url("../images/africa-ocean-bg.jpg");
+}
+
+
+#archology-section {
+	background: url("../images/africa-arch-bg.jpg");
+}
+
+
 .ew-continent-intro {
 	height: auto;
 
-	background: url("../images/test.jpg");
+	background: 
+	    linear-gradient(
+	      rgba(0, 0, 0, 0.45), 
+	      rgba(0, 0, 0, 0)
+	    ),
+		url("../images/test.jpg");
 	background-position: center bottom;
 	background-size: 100% auto;
 	color:#fff;

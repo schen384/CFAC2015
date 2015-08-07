@@ -420,10 +420,10 @@ function earthwatchObject() {
 		if (ratio < docRatio) {
 			size = "100% auto";
 		}
-
+		size = "auto 120%";
 		$("#ew-intro").css("background-size", size);
 		 $("#ew-continent-intro").css("background-size", size);
-		  $("#activities-anchor").css("background-size", size);
+		  // $("#activities-anchor").css("background-size", size);
 
 	}
 
