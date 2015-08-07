@@ -180,10 +180,29 @@ function earthwatchObject() {
     		},
     		geographyConfig:{
     			borderColor: 'rgba(255,255,255,0.8)',
-    			popupOnHover:false
-    			//highlightFillColor: 'yellow',
-    			//highlightBorderColor: 'green',
-    			//highlightFillOpacity: 0.75
+    			popupOnHover:false,
+    			highlightFillColor: function(data){
+    				if(data.fillKey){
+    					return data.fillKey;
+    				}else{
+    					return 'rgba(0,0,0,0.5)';
+    				}
+    			},
+    			highlightBorderColor: function(data){
+    				console.log(data);
+    				if(data.fillKey){
+    					return "yellow";
+    				}else{
+    					return 'rgba(255,255,255,0.8)';
+    				}
+    			},
+    			highlightBorderWidth: function(data){
+    				if(data.fillKey){
+    					return 3;
+    				}else{
+    					return 1;
+    				}
+    			}
     		},
     		done:function(datamap){
     			datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography){
