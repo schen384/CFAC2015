@@ -49,15 +49,15 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse text-uppercase" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
-	        <li class="active-tab"><a href="#home-anchor">Africa</a></li>
+	        <li class="active-tab"><a href="#home-anchor" id='continent-nav'></a></li>
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CHANGE CONTINENT <span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="#">Africa</a></li>
-					<li><a href="#">North America</a></li>
-					<li><a href="#">South america</a></li>
-					<li><a href="#">Europe</a></li>
-					<li><a href="#">Asia</a></li>
+					<li><a href="continent.html?continent=Africa">Africa</a></li>
+					<li><a href="continent.html?continent=Notrh America">North America</a></li>
+					<li><a href="continent.html?continent=South America">South America</a></li>
+					<li><a href="continent.html?continent=Europe">Europe</a></li>
+					<li><a href="continent.html?continent=Asia">Asia</a></li>
 
 
 				</ul>
@@ -69,7 +69,7 @@
 					<li><a href="#">Ocean health</a></li>
 					<li><a href="#">climate change</a></li>
 					<li><a href="#">archeology</a></li>
-	
+
 
 
 				</ul>
@@ -91,7 +91,7 @@
 						<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
 							<div class="row">
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-									<div class="intro-title continent font-mission text-shadow adventure-large text-center">Welcome to Africa!</div>
+									<div class="intro-title continent font-mission text-shadow adventure-large text-center" id="continent-wel"></div>
 								</div>
 
 
@@ -100,7 +100,7 @@
 								</div>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 intro-text text-shadow">
 									For more than 40 years, EARTHWATCH has connected everyday people with the world's top scientists to help conduct vital research for a sustainable planet.
-		
+
 								</div>
 
 							</div>
@@ -184,8 +184,8 @@
 
 
 									<div class="research-select-div  hidden-xs hidden-sm">
-										<a href="#activities-anchor" class="research-select no-background  outline-green">
-											<div  class=" text-green">select</div>
+										<a href="#activities-anchor" class="research-select no-background  outline-green" id="Wildlife &#38; Ecosystems">
+											<div  class="text-green">select</div>
 										</a>
 									</div>
 
@@ -208,7 +208,7 @@
 								</div>
 
 								<div class="research-select-div  hidden-xs hidden-sm">
-									<a href="#activities-anchor" class="research-select no-background  outline-blue">
+									<a href="#activities-anchor" class="research-select no-background  outline-blue" id="Ocean Health">
 										<div  class=" text-blue">select</div>
 									</a>
 								</div>
@@ -220,7 +220,7 @@
 
 									<div class="text-uppercase font-dinMedium research-icon-headline text-orange"> Climate Change</div>
 									<div class="research-select-div  hidden-md hidden-lg">
-										<a href="#activities-anchor" class="research-select no-background  outline-orange">
+										<a href="#activities-anchor" class="research-select no-background  outline-orange" >
 											<div  class=" text-orange">select</div>
 										</a>
 									</div>
@@ -231,7 +231,7 @@
 								</div>
 
 								<div class="research-select-div  hidden-xs hidden-sm">
-									<a href="#activities-anchor" class="research-select no-background  outline-orange">
+									<a href="#activities-anchor" class="research-select no-background  outline-orange" id="Climate Change">
 										<div  class=" text-orange">select</div>
 									</a>
 								</div>
@@ -255,7 +255,7 @@
 
 
 								<div class="research-select-div  hidden-xs hidden-sm">
-									<a href="#activities-anchor" class="research-select no-background  outline-yellow">
+									<a href="#activities-anchor" class="research-select no-background  outline-yellow" id="Archeology">
 										<div  class=" text-yellow">select</div>
 									</a>
 								</div>
@@ -317,7 +317,7 @@
 						<div class="dropdown activity-level-dropdown text-center">
 							<div class="input-group">
 
-							  <select class="form-control" placeholder="Username">
+							  <select class="form-control"  placeholder="Username">
 								<option>All</option>
 								<option>Very Easy</option>
 								<option>Easy</option>
@@ -349,69 +349,7 @@
 
 					</div>
 
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding mCustomScrollbar" id="expedition-cards"  data-mcs-theme="inset-3-dark">
-
-
-						<div class="row expedition-card">
-							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 no-padding">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<div class="text-uppercase font-dinMedium text-dark-blue expedition-card-headline margin-bottom-15">Coral Communities in the Seychelles</div>
-
-								</div>
-								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 expedition-card-img">
-									<img class="expedition-img " src="../images/sheep.jpg">
-								</div>
-								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-small margin-bottom-10-small">
-									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding expedition-card-description">
-										Bacon ipsum dolor amet boudin bresaola prosciutto frankfurter, leberkas shankle ribeye ground round cupim.
-									</div>
-									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-6 no-padding">
-										<div class="expedition-card-btn">
-											<a href="#" class="btn btn-ew ">Learn more</a>
-										</div>
-									</div>
-									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-6 no-padding">
-										<div class="expedition-card-btn">
-											<a href="#" class="btn btn-ew ">Book Now</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding expedition-card-details">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<div class="text-uppercase font-dinMedium text-dark-blue expedition-card-headline margin-bottom-15">$2275-$3750</div>
-
-								</div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<div class="detail-category">
-										<span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Location</span>
-										<br>
-										<span>Boston, MA</span>
-
-									</div>
-									<div class="detail-category">
-										<span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Duration</span>
-										<br>
-										<span>7 days</span>
-
-									</div>
-									<div class="detail-category">
-										<span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Activities</span>
-										<br>
-										<span>Icons</span>
-
-									</div>
-									<div class="detail-category">
-										<span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Audience</span>
-										<br>
-										<span>Adult</span>
-
-									</div>
-								</div>
-							</div>
-						</div>
-
-
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding  " id="expedition-cards"  data-mcs-theme="inset-3-dark">
 
 					</div>
 				</div>
@@ -531,13 +469,13 @@
   <div id="output">
 
   </div>
-
+	<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
   //Mustach template
   <script type="text/html" id="card-template">
     <div class="row expedition-card">
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 no-padding">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="text-uppercase font-dinMedium text-dark-blue expedition-card-headline margin-bottom-15">Coral Communities in the Seychelles</div>
+          <div class="text-uppercase font-dinMedium text-dark-blue expedition-card-headline margin-bottom-15">{{Title}}</div>
 
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 expedition-card-img">
@@ -545,7 +483,7 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-small margin-bottom-10-small">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding expedition-card-description">
-            Bacon ipsum dolor amet boudin bresaola prosciutto frankfurter, leberkas shankle ribeye ground round cupim.
+            {{Short Description}}
           </div>
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-6 no-padding">
             <div class="expedition-card-btn">
@@ -561,20 +499,20 @@
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding expedition-card-details">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="text-uppercase font-dinMedium text-dark-blue expedition-card-headline margin-bottom-15">$2275-$3750</div>
+          <div class="text-uppercase font-dinMedium text-dark-blue expedition-card-headline margin-bottom-15">${{US Price Range}}</div>
 
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="detail-category">
             <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Location</span>
             <br>
-            <span>Boston, MA</span>
+            <span>{{Location}}</span>
 
           </div>
           <div class="detail-category">
             <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Duration</span>
             <br>
-            <span>7 days</span>
+            <span>{{Duration}}</span>
 
           </div>
           <div class="detail-category">
@@ -586,7 +524,7 @@
           <div class="detail-category">
             <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Audience</span>
             <br>
-            <span>Adult</span>
+            <span>{{Audience}}</span>
 
           </div>
         </div>
@@ -602,7 +540,7 @@
     </script>
   <script type="text/javascript" src="js/datamaps.all.js"></script>
 	<script type="text/javascript" src="js/stellar.js"></script>
-	<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+
 	<script type="text/javascript" src="js/index.js"></script>
 
 

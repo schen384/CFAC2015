@@ -4,6 +4,11 @@ var earthwatch = new earthwatchObject;
 
 $(document).ready(function() {
     earthwatch.setup();
+    //if on continent page
+    var continent = earthwatch.getUrlParameter('continent');
+    if (continent != null) {
+      earthwatch.loadContinent(continent);
+    }
 });
 
 $(window).resize(function() {
@@ -67,7 +72,7 @@ function earthwatchObject() {
     this.continent,
     this.activityLevel,
     this.researchType;
-
+    var exp_continent;
 
 
     this.setup = function() {
@@ -75,11 +80,13 @@ function earthwatchObject() {
 		this.parallax();
 		this.attachListeners();
 		this.setIntroImage();
-
-		if ($("#expedition-cards").length) {
+		 if ($(".expedition-card").length > 1) {
 			$("#expedition-cards").mCustomScrollbar({
 				axis:"y",
-				scrollbarPosition: "outside"
+				scrollbarPosition: "outside",
+        advanced:{
+          updateOnContentResize: true
+        }
 			});
 		}
 
@@ -93,8 +100,45 @@ function earthwatchObject() {
 		$("#map").empty();
 		//this.drawMap();
 		this.setIntroImage();
-    	
+
     }
+
+    this.test = function() {
+      console.log(exp_continent);
+    }
+
+    this.loadContinent = function(continent) {
+      $.getJSON('../json/expeditions.json', function(data) {
+        var cards = $("#expedition-cards");
+        $("#continent-wel").html('Welcome to ' + continent + '!');
+        $("#continent-nav").html(continent);
+        exp_continent = data[continent];
+        var all_exp = [];
+        for (var key in exp_continent) {
+          for (var j = 0;j < exp_continent[key].length;j++) {
+            all_exp.push(exp_continent[key][j]);
+          }
+        }
+        if (all_exp.length) {
+          for (var i = 0; i < all_exp.length; i++) {
+            var temp = $("#card-template").html();
+            var html = Mustache.render(temp,all_exp[i]);
+            cards.append(html);
+          }
+        }
+        if ($(".expedition-card").length > 0) {
+          $("#expedition-cards").mCustomScrollbar({
+            axis:"y",
+            scrollbarPosition: "outside",
+            advanced:{
+              updateOnContentResize: true
+            }
+          });
+        }
+      });
+    }
+
+
 
     this.loadMap = function(){
     	var map = new Datamap({
@@ -155,7 +199,7 @@ function earthwatchObject() {
 			      .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
 			    var path = d3.geo.path()
 			      .projection(projection);
-			    
+
 			    return {path: path, projection: projection};
 			  },
     		fills:{
@@ -206,12 +250,12 @@ function earthwatchObject() {
     	// load connect section
     	jQuery("#"+CONNECT_ROW_ID).load("../html/connect.html");
 
-    	// load continent page 
+    	// load continent page
     	var that = this;
     	if (CONTINENT_PAGE) {
     		$("#"+EW_CONTENT_ID).html("");
     		$("#"+EW_CONTENT_ID).load("../html/continent.html", function() {
-    	
+
     			that.afterLoad();
     		});
     	} else {
@@ -232,9 +276,13 @@ function earthwatchObject() {
 
     }
 
+    this.scrollUpdate = function () {
+    $('#expedition-cards').mCustomScrollbar("update");
+}
+
 
     this.attachListeners = function() {
-		console.log("in attachListeners");    
+		console.log("in attachListeners");
 
 		// $(".research-select").each(function() {
 		// 	console.log($(this));
@@ -246,7 +294,6 @@ function earthwatchObject() {
 			// console.log("all classes = "+str);
 			// str = str.split(new RegExp("\\s+")).pop();
 			// console.log("split string = "+str);
-
 			var outlineColor = $(this).attr('class').split(new RegExp("\\s+")).pop();
 			console.log($(this).attr('class'));
 			console.log(outlineColor);
@@ -262,7 +309,27 @@ function earthwatchObject() {
 				$(this).addClass("no-background");
 				$(this).removeClass("select-clicked");
 			})
-
+      var cards = $("#mCSB_1_container");
+      cards.empty();
+      var exp_type = exp_continent[$(this).attr('id')];
+      if (exp_type) {
+        for (var i = 0; i < exp_type.length; i++) {
+          var temp = $("#card-template").html();
+          var html = Mustache.render(temp,exp_type[i]);
+          cards.append(html);
+        }
+        $("#expedition-cards").mCustomScrollbar("scrollTo","top");
+        // if ($(".expedition-card").length > 0) {
+        //   // $("#expedition-cards").removeClass("mCustomScrollbar");
+        //   $("#expedition-cards").mCustomScrollbar({
+        //     axis:"y",
+        //     scrollbarPosition: "outside",
+        //     advanced:{
+        //       updateOnContentResize: true
+        //     }
+        //   });
+        // }
+      }
 		});
 
 		$(".research-select").mouseover(function() {
@@ -275,13 +342,12 @@ function earthwatchObject() {
 			if (!$(this).hasClass("select-clicked")) {
 				$(this).addClass("no-background");
 			}
-			
+
 
 		});
 
 		$(".activity-tab").click(function() {
-
-			console.log("clicked activity tab");
+      console.log($(this)[0].innerHTML);
 			$('.activity-tab').each(function() {
 				$(this).removeClass("active-level");
 			})
@@ -324,7 +390,7 @@ function earthwatchObject() {
 		$("#ew-intro").css("background-size", size);
 		 $("#ew-continent-intro").css("background-size", size);
 		  $("#activities-anchor").css("background-size", size);
-		
+
 	}
 
 
@@ -386,8 +452,8 @@ function earthwatchObject() {
 
 			  .attr("d", path)
 			  .attr("id", function(d) { if(d) {return "country" + d.id;} })
-			  .attr("class", function(d) { 
-			  				
+			  .attr("class", function(d) {
+
 			  					var className = "country-no-fill ";
 			  					if (d) {
 				  					if (northAmerica.indexOf(d.id) != -1) {
@@ -410,7 +476,7 @@ function earthwatchObject() {
 			svg.insert("path", ".graticule")
 			  .datum(topojson.feature(world, world.objects.land))
 			  .attr("class", "land")
-			  
+
 			  .attr("d", path)
 			  .attr("class", "country-land continent");
 
@@ -435,7 +501,7 @@ function earthwatchObject() {
 	this.mapListeners = function() {
 
 		$('.country-no-fill').hover(function() {
-		    
+
 		    var className = $(this).attr('class').replace('country-no-fill ',''),
 		    	continent = className.replace('continent-','');
 
@@ -469,7 +535,7 @@ function earthwatchObject() {
 			    	continentDescription = "From studying climate change at the Arctic's edge to tracking the health of dolphins and whales off the coast of Southern California, Earthwatch's North American expeditions offer you the chance to contribute to critical research that addresses key environmental challenges.";
 			    	textColor = "#1675a9";
 			        break;
-		
+
 			}
 
 			$("#map-continent-name").html(continentName);
@@ -497,7 +563,20 @@ function earthwatchObject() {
 	}
 
 
+   this.getUrlParameter = function (sParam) {
+      var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i;
+
+      for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split('=');
+
+          if (sParameterName[0] === sParam) {
+              return sParameterName[1] === undefined ? true : sParameterName[1];
+          }
+      }
+  };
 
 
 };
-
