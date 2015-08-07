@@ -18,9 +18,6 @@ $(document).ready(function() {
 
 $(window).resize(function() {
 	earthwatch.resize();
-
-
-
 });
 
 // North America
@@ -113,6 +110,7 @@ function earthwatchObject() {
     }
 
     this.loadContinent = function(continent) {
+      $("#activities-anchor").hide();
       $.getJSON('../json/expeditions.json', function(data) {
         var cards = $("#expedition-cards");
         $("#continent-wel").html('Welcome to ' + continent + '!');
@@ -321,7 +319,7 @@ function earthwatchObject() {
 		// })
 
 		$(".research-select").click(function() {
-
+      $("#activities-anchor").show();
 			// var str = $(this).attr('class');
 			// console.log("all classes = "+str);
 			// str = str.split(new RegExp("\\s+")).pop();
