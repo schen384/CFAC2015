@@ -180,9 +180,17 @@ function earthwatchObject() {
     		},
     		geographyConfig:{
     			borderColor: 'rgba(255,255,255,0.8)',
+    			popupOnHover:false
     			//highlightFillColor: 'yellow',
     			//highlightBorderColor: 'green',
     			//highlightFillOpacity: 0.75
+    		},
+    		done:function(datamap){
+    			datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography){
+    				if(geography.properties.continent != undefined){
+    					window.location.href = "/continent.html?continent=" + geography.properties.continent;
+    				}
+    			});
     		}
     	});
     }
