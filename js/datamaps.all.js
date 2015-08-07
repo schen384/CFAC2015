@@ -699,7 +699,8 @@
             }, {
                 "type": "MultiPolygon",
                 "properties": {
-                    "name": "Argentina"
+                    "name": "Argentina",
+                    "continent": "South America"
                 },
                 "id": "ARG",
                 "arcs": [
@@ -763,7 +764,8 @@
             }, {
                 "type": "MultiPolygon",
                 "properties": {
-                    "name": "Australia"
+                    "name": "Australia",
+                    "continent": "Australia"
                 },
                 "id": "AUS",
                 "arcs": [
@@ -889,7 +891,8 @@
             }, {
                 "type": "Polygon",
                 "properties": {
-                    "name": "Belize"
+                    "name": "Belize",
+                    "continent": "North America"
                 },
                 "id": "BLZ",
                 "arcs": [
@@ -952,7 +955,8 @@
             }, {
                 "type": "MultiPolygon",
                 "properties": {
-                    "name": "Canada"
+                    "name": "Canada",
+                    "continent": "North America"
                 },
                 "id": "CAN",
                 "arcs": [
@@ -1132,7 +1136,8 @@
             }, {
                 "type": "Polygon",
                 "properties": {
-                    "name": "Costa Rica"
+                    "name": "Costa Rica",
+                    "continent": "North America"
                 },
                 "id": "CRI",
                 "arcs": [
@@ -1227,7 +1232,8 @@
             }, {
                 "type": "Polygon",
                 "properties": {
-                    "name": "Ecuador"
+                    "name": "Ecuador",
+                    "continent": "South America"
                 },
                 "id": "ECU",
                 "arcs": [
@@ -1254,7 +1260,8 @@
             }, {
                 "type": "Polygon",
                 "properties": {
-                    "name": "Spain"
+                    "name": "Spain",
+                    "continent": "Europe"
                 },
                 "id": "ESP",
                 "arcs": [
@@ -1316,7 +1323,8 @@
             }, {
                 "type": "MultiPolygon",
                 "properties": {
-                    "name": "France"
+                    "name": "France",
+                    "continent": "Europe"
                 },
                 "id": "FRA",
                 "arcs": [
@@ -1348,7 +1356,8 @@
             }, {
                 "type": "MultiPolygon",
                 "properties": {
-                    "name": "United Kingdom"
+                    "name": "United Kingdom",
+                    "continent": "Europe"
                 },
                 "id": "GBR",
                 "arcs": [
@@ -1540,7 +1549,8 @@
             }, {
                 "type": "Polygon",
                 "properties": {
-                    "name": "India"
+                    "name": "India",
+                    "continent": "Asia"
                 },
                 "id": "IND",
                 "arcs": [
@@ -1549,7 +1559,8 @@
             }, {
                 "type": "Polygon",
                 "properties": {
-                    "name": "Ireland"
+                    "name": "Ireland",
+                    "continent": "Europe"
                 },
                 "id": "IRL",
                 "arcs": [
@@ -1594,7 +1605,8 @@
             }, {
                 "type": "MultiPolygon",
                 "properties": {
-                    "name": "Italy"
+                    "name": "Italy",
+                    "continent": "Europe"
                 },
                 "id": "ITA",
                 "arcs": [
@@ -1611,7 +1623,8 @@
             }, {
                 "type": "Polygon",
                 "properties": {
-                    "name": "Jamaica"
+                    "name": "Jamaica",
+                    "continent": "North America"
                 },
                 "id": "JAM",
                 "arcs": [
@@ -1655,7 +1668,8 @@
             }, {
                 "type": "Polygon",
                 "properties": {
-                    "name": "Kenya"
+                    "name": "Kenya",
+                    "continent": "Africa"
                 },
                 "id": "KEN",
                 "arcs": [
@@ -1862,7 +1876,8 @@
             }, {
                 "type": "Polygon",
                 "properties": {
-                    "name": "Mongolia"
+                    "name": "Mongolia",
+                    "continent": "Asia"
                 },
                 "id": "MNG",
                 "arcs": [
@@ -1889,7 +1904,8 @@
             }, {
                 "type": "Polygon",
                 "properties": {
-                    "name": "Malawi"
+                    "name": "Malawi",
+                    "continent": "Africa"
                 },
                 "id": "MWI",
                 "arcs": [
@@ -1898,7 +1914,8 @@
             }, {
                 "type": "MultiPolygon",
                 "properties": {
-                    "name": "Malaysia"
+                    "name": "Malaysia",
+                    "continent": "Asia"
                 },
                 "id": "MYS",
                 "arcs": [
@@ -1948,7 +1965,8 @@
             }, {
                 "type": "Polygon",
                 "properties": {
-                    "name": "Nicaragua"
+                    "name": "Nicaragua",
+                    "continent": "North America"
                 },
                 "id": "NIC",
                 "arcs": [
@@ -2041,7 +2059,8 @@
             }, {
                 "type": "Polygon",
                 "properties": {
-                    "name": "Peru"
+                    "name": "Peru",
+                    "continent": "South America"
                 },
                 "id": "PER",
                 "arcs": [
@@ -2108,7 +2127,8 @@
             }, {
                 "type": "Polygon",
                 "properties": {
-                    "name": "Puerto Rico"
+                    "name": "Puerto Rico",
+                    "continent": "North America"
                 },
                 "id": "PRI",
                 "arcs": [
@@ -2489,7 +2509,8 @@
             }, {
                 "type": "Polygon",
                 "properties": {
-                    "name": "Uganda"
+                    "name": "Uganda",
+                    "continent": "Africa"
                 },
                 "id": "UGA",
                 "arcs": [
@@ -2516,7 +2537,8 @@
             }, {
                 "type": "MultiPolygon",
                 "properties": {
-                    "name": "United States of America"
+                    "name": "United States of America",
+                    "continent": "North America"
                 },
                 "id": "USA",
                 "arcs": [
@@ -2613,7 +2635,8 @@
             }, {
                 "type": "Polygon",
                 "properties": {
-                    "name": "South Africa"
+                    "name": "South Africa",
+                    "continent": "Africa"
                 },
                 "id": "ZAF",
                 "arcs": [
