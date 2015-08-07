@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+  if (window.location.pathname.indexOf("continent") > -1 && window.location.search.indexOf('continent') == null) {
+    window.location.replace("/");
+  }
+  </script>
   <title>Earthwatch</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -465,9 +470,7 @@
 
 
 	</div>
-  <div id="output">
 
-  </div>
 	<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
   //Mustach template
   <script type="text/html" id="card-template">

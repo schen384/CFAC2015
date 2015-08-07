@@ -3,9 +3,14 @@
 var earthwatch = new earthwatchObject;
 
 $(document).ready(function() {
+    var continent = earthwatch.getUrlParameter('continent');
+    // if (window.location.pathname.length > 1 && continent == null) {
+    //   window.location.replace("/");
+    // }
     earthwatch.setup();
     //if on continent page
-    var continent = earthwatch.getUrlParameter('continent');
+
+    console.log(window.location.search);
     if (continent != null) {
       earthwatch.loadContinent(continent);
     }
