@@ -4,13 +4,9 @@ var earthwatch = new earthwatchObject;
 
 $(document).ready(function() {
     var continent = earthwatch.getUrlParameter('continent');
-    // if (window.location.pathname.length > 1 && continent == null) {
-    //   window.location.replace("/");
-    // }
     earthwatch.setup();
     //if on continent page
-
-    console.log(window.location.search);
+    console.log(Continents);
     if (continent != null) {
       earthwatch.loadContinent(continent);
     }
@@ -111,7 +107,7 @@ function earthwatchObject() {
 
     this.loadContinent = function(continent) {
       $("#activities-anchor").hide();
-      $.getJSON('../json/expeditions.json', function(data) {
+      var data = Continents;
         var cards = $("#expedition-cards");
         $("#continent-wel").html('Welcome to ' + continent + '!');
         $("#continent-nav").html(continent);
@@ -138,7 +134,6 @@ function earthwatchObject() {
             }
           });
         }
-      });
     }
 
 
