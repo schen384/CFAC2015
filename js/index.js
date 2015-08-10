@@ -290,13 +290,32 @@ function earthwatchObject() {
     }
 
     this.afterLoad = function () {
-		//this.drawMap();
 		this.parallax();
 		this.setIntroImage();
 
     }
 
     this.parallax = function () {
+    	console.log("in parallax");
+    	var sectionIds = ["#wildlife-section", "#ocean-section", "#climate-section", "#archeology-section", "#activities-anchor"];
+
+		var windowHeight = $(window).height();
+		var windowWidth = $(window).width();
+		var ratio = (4.25/3.25);
+
+    	for (var i = 0; i < sectionIds.length; i++) {
+    		$(sectionIds[i]).attr("data-stellar-vertical-offset", 1.25*windowHeight);
+
+
+    	};
+			if (ratio < (windowWidth/windowHeight)) {
+				$("#ew-continent-intro").css("background-size", "120% auto");
+				$(".research-section-background").css("background-size", "120% auto");
+			} else {
+				$("#ew-continent-intro").css("background-size", "auto 150%");
+				$(".research-section-background").css("background-size", "auto 150%");
+			}
+
 		$(window).stellar();
 
     }
@@ -308,13 +327,17 @@ function earthwatchObject() {
 
     this.attachListeners = function() {
 		console.log("in attachListeners");
+		var that = this;
+		$( window ).resize(function() {
+			that.parallax();
 
-		// $(".research-select").each(function() {
-		// 	console.log($(this));
-		// })
+
+		});
+
+
 
 		$(".research-select").click(function() {
-      $("#activities-anchor").show();
+      	$("#activities-anchor").show();
 			// var str = $(this).attr('class');
 			// console.log("all classes = "+str);
 			// str = str.split(new RegExp("\\s+")).pop();
@@ -418,6 +441,7 @@ function earthwatchObject() {
 		size = "auto 120%";
 		$("#ew-intro").css("background-size", size);
 		 $("#ew-continent-intro").css("background-size", size);
+		// $(".research-section").css("background-size", size);
 		  // $("#activities-anchor").css("background-size", size);
 
 	}
