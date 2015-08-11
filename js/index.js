@@ -217,64 +217,6 @@ function earthwatchObject() {
     	});
     }
 
-    this.loadContinentMap = function(){
-    	var map = new Datamap({
-    		element: document.getElementById("map-container"),
-    		// projection: 'cylindricalStereographic',
-    		setProjection: function(element) {
-			    var projection = d3.geo.equirectangular()
-			      .center([23, -3])
-			      .rotate([4.4, 0])
-			      .scale(200)
-			      .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
-			    var path = d3.geo.path()
-			      .projection(projection);
-
-			    return {path: path, projection: projection};
-			  },
-    		fills:{
-    			defaultFill:'white',
-    			'NA': '#4CB074',
-    			'SA': '#F5670F',
-    			'AF': '#dcb312',
-    			'EU': '#31b0c9',
-    			'AS': '#1675a9',
-    			'AU': '#006EB8'
-    		},
-    		data:{
-    			'USA': {fillKey: 'NA'},
-    			'CAN': {fillKey: 'NA'},
-    			'PER': {fillKey: 'SA'},
-    			'ARG': {fillKey: 'SA'},
-    			'ECU': {fillKey: 'SA'},
-    			'NIC': {fillKey: 'SA'},
-    			'PRI': {fillKey: 'SA'},
-    			'BLZ': {fillKey: 'SA'},
-    			'JAM': {fillKey: 'SA'},
-    			'CRI': {fillKey: 'SA'},
-    			'ZAF': {fillKey: 'AF'},
-    			'MWI': {fillKey: 'AF'},
-    			'KEN': {fillKey: 'AF'},
-    			'UGA': {fillKey: 'AF'},
-    			'AUS': {fillKey: 'AU'},
-    			'IND': {fillKey: 'AU'},
-    			'MYS': {fillKey: 'AU'},
-    			'MNG': {fillKey: 'AU'},
-    			'ESP': {fillKey: 'EU'},
-    			'FRA': {fillKey: 'EU'},
-    			'ITA': {fillKey: 'EU'},
-    			'GBR': {fillKey: 'EU'},
-    			'IRL': {fillKey: 'EU'},
-    		},
-    		geographyConfig:{
-    			borderColor: 'black',
-    			//highlightFillColor: 'yellow',
-    			//highlightBorderColor: 'green',
-    			//highlightFillOpacity: 0.75
-    		}
-    	});
-    }
-
     this.loadSections = function () {
     	console.log("in load sections");
     	// load connect section
