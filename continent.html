@@ -819,16 +819,16 @@
 	<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 
   <script type="text/html" id="card-template">
-    <div class="row expedition-card no-padding {{typeclass}} {{Activity Level}}">
-      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12  equal-height padding-15">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+    <div class="row expedition-card {{typeclass}} {{Activity Level}}">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 no-padding">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="text-uppercase font-dinMedium text-dark-blue expedition-card-headline margin-bottom-15">{{Title}}</div>
 
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 expedition-card-img-small visible-xs visible-sm">
-          <img class="expedition-img-small  mCS_img_loaded" src="../images/sheep.jpg">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 expedition-card-img">
+          <img class="expedition-img " src="../images/sheep.jpg">
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding margin-bottom-10-small">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-small margin-bottom-10-small">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding expedition-card-description">
             {{Short Description}}
           </div>
@@ -843,46 +843,40 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding expedition-card-details">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="text-uppercase font-dinMedium text-dark-blue expedition-card-headline margin-bottom-15">${{US Price Range}}</div>
 
-
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding expedition-card-details">
-
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="detail-category">
-                    <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Price</span>
-                    <br>
-                    <span>${{US Price Range}}</span>
-
-                </div>
-
-                <div class="detail-category">
-                    <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Location</span>
-                    <br>
-                    <span>{{Location}}</span>
-
-                </div>
-                <div class="detail-category">
-                    <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Duration</span>
-                    <br>
-                    <span>{{Duration}}</span>
-
-                </div>
-              <div class="detail-category">
-                <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Activities</span>
-                <br>
-                <span>Icons</span>
-
-              </div>
-              <div class="detail-category">
-                <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Audience</span>
-                <br>
-                <span>{{Audience}}</span>
-
-              </div>
-            </div>
         </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="detail-category">
+            <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Location</span>
+            <br>
+            <span>{{Location}}</span>
 
+          </div>
+          <div class="detail-category">
+            <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Duration</span>
+            <br>
+            <span>{{Duration}}</span>
 
+          </div>
+          <div class="detail-category">
+            <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Activities</span>
+            <br>
+            <span>Icons</span>
+
+          </div>
+          <div class="detail-category">
+            <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Audience</span>
+            <br>
+            <span>{{Audience}}</span>
+
+          </div>
+        </div>
+      </div>
+    </div>
       </div>
 
 

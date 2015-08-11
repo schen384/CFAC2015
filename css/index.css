@@ -1027,8 +1027,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 
 .expedition-img {
-	width: auto;
-	height: 100%;
+	width:100%;
 }
 
 .expedition-img-small {
