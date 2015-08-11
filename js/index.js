@@ -4,13 +4,9 @@ var earthwatch = new earthwatchObject;
 
 $(document).ready(function() {
     var continent = earthwatch.getUrlParameter('continent');
-    // if (window.location.pathname.length > 1 && continent == null) {
-    //   window.location.replace("/");
-    // }
     earthwatch.setup();
     //if on continent page
-
-    console.log(window.location.search);
+    console.log(Continents);
     if (continent != null) {
       earthwatch.loadContinent(continent);
     }
@@ -111,7 +107,7 @@ function earthwatchObject() {
 
     this.loadContinent = function(continent) {
       $("#activities-anchor").hide();
-      $.getJSON('../json/expeditions.json', function(data) {
+      var data = Continents;
         var cards = $("#expedition-cards");
         $("#continent-wel").html('Welcome to ' + continent + '!');
         $("#continent-nav").html(continent);
@@ -138,7 +134,6 @@ function earthwatchObject() {
             }
           });
         }
-      });
     }
 
 
@@ -348,8 +343,8 @@ function earthwatchObject() {
 			// str = str.split(new RegExp("\\s+")).pop();
 			// console.log("split string = "+str);
 			var outlineColor = $(this).attr('class').split(new RegExp("\\s+")).pop();
-			console.log($(this).attr('class'));
-			console.log(outlineColor);
+			// console.log($(this).attr('class'));
+			// console.log(outlineColor);
 			$(this).children("div").addClass("select-inverse");
 			$(this).removeClass("no-background");
 			$(this).addClass("select-clicked");
@@ -365,6 +360,7 @@ function earthwatchObject() {
       var cards = $("#mCSB_1_container");
       cards.empty();
       exp_type = exp_continent[$(this).attr('id')];
+
       if (exp_type) {
         for (var i = 0; i < exp_type.length; i++) {
           var temp = $("#card-template").html();
@@ -372,7 +368,10 @@ function earthwatchObject() {
           cards.append(html);
         }
         $("#expedition-cards").mCustomScrollbar("scrollTo","top");
-
+      } else {
+        var noavailable = $("#no-available-card").html();
+        var html = Mustache.render(noavailable,{});
+        cards.append(html);
       }
 		});
 
@@ -399,17 +398,23 @@ function earthwatchObject() {
       var cards = $("#mCSB_1_container");
       cards.empty();
       var level = $(this)[0].innerHTML;
-      for (exp in exp_type) {
-        if(level != 'All' && exp_type[exp]['Activity Level'] == level) {
-          var temp = $("#card-template").html();
-          var html = Mustache.render(temp,exp_type[exp]);
+      if (!exp_type) {
+          var noavailable = $("#no-available-card").html();
+          var html = Mustache.render(noavailable,{});
           cards.append(html);
-        } else if (level == 'All') {
-          var temp = $("#card-template").html();
-          var html = Mustache.render(temp,exp_type[exp]);
-          cards.append(html);
-        };
-      }
+      } else {
+        for (exp in exp_type) {
+          if(level != 'All' && exp_type[exp]['Activity Level'] == level) {
+            var temp = $("#card-template").html();
+            var html = Mustache.render(temp,exp_type[exp]);
+            cards.append(html);
+          } else if (level == 'All') {
+            var temp = $("#card-template").html();
+            var html = Mustache.render(temp,exp_type[exp]);
+            cards.append(html);
+          };
+        }
+     }
       $("#expedition-cards").mCustomScrollbar("scrollTo","top");
 		})
 
