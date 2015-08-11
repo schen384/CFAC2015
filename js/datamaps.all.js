@@ -892,7 +892,7 @@
                 "type": "Polygon",
                 "properties": {
                     "name": "Belize",
-                    "continent": "North America"
+                    "continent": "Central America"
                 },
                 "id": "BLZ",
                 "arcs": [
@@ -1137,7 +1137,7 @@
                 "type": "Polygon",
                 "properties": {
                     "name": "Costa Rica",
-                    "continent": "North America"
+                    "continent": "Central America"
                 },
                 "id": "CRI",
                 "arcs": [
@@ -1624,7 +1624,7 @@
                 "type": "Polygon",
                 "properties": {
                     "name": "Jamaica",
-                    "continent": "North America"
+                    "continent": "The Caribbean"
                 },
                 "id": "JAM",
                 "arcs": [
@@ -1966,7 +1966,7 @@
                 "type": "Polygon",
                 "properties": {
                     "name": "Nicaragua",
-                    "continent": "North America"
+                    "continent": "Central America"
                 },
                 "id": "NIC",
                 "arcs": [
@@ -2128,7 +2128,7 @@
                 "type": "Polygon",
                 "properties": {
                     "name": "Puerto Rico",
-                    "continent": "North America"
+                    "continent": "The Caribbean"
                 },
                 "id": "PRI",
                 "arcs": [

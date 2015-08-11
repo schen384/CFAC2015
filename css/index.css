@@ -25,6 +25,15 @@ body {
     src: url("../fonts/mission-script-webfont.ttf");
 }
 
+.navbar-toggle .icon-bar {
+	background: #fff !important;
+
+}
+
+.navbar-toggle {
+	border: 1px solid #808080 !important;
+}
+
 .font-dinMedium {
 	font-family: dinMedium;
 }
@@ -53,9 +62,9 @@ body {
 .ew-intro {
 
 
-	background: 
+	background:
 	    linear-gradient(
-	      rgba(0, 0, 0, 0.45), 
+	      rgba(0, 0, 0, 0.45),
 	      rgba(0, 0, 0, 0)
 	    ),
 		url("../images/hiking.jpg");
@@ -76,7 +85,7 @@ body {
 
 }
 
-/*.intro-content 
+/*.intro-content
 {	margin-top: 25vh !important;
     margin-bottom: 25vh !important;
     height: 50vh;
@@ -142,7 +151,7 @@ body {
 .color-border {
 
 /*	background: repeating-linear-gradient(
-      to right, 
+      to right,
       transparent,
       transparent 5px,
       #00956d 5px,
@@ -150,7 +159,7 @@ body {
       transparent 5px,
       transparent 5px,
       #dbb313 5px,
-      #dbb313 5px,   
+      #dbb313 5px,
       transparent 5px
     );*/
 	background: url("../images/color-border.png");
@@ -409,13 +418,25 @@ transform: translate3d(0, 0, 0);*/
 
 .btn-ew {
     color: #fff;
-    background-color: rgba(0,0,0,0.3);
-    border-color: #fff;
+    background-color: #0876ab;
+    border-color: #0876ab;
     text-transform: uppercase;
-    border-radius: 0px;
+    border-radius: 5px;
     font-size: 20px;
+/*
+    box-shadow:2px 2px 10px rgba(0,0,0,0.5);*/
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+}
 
-    box-shadow:2px 2px 10px rgba(0,0,0,0.5);
+.btn-ew:hover {
+    color: #0876ab;
+    background-color: #fff;
+
+/*
+    box-shadow:2px 2px 10px rgba(0,0,0,0.5);*/
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
@@ -429,10 +450,7 @@ transform: translate3d(0, 0, 0);*/
 	-o-transition: all 0.30s ease-in-out;
 }
 
-.btn-ew:hover {
-	background-color: rgba(255,255,255,0.3);
-	color: #fff;
-}
+
 
 .navbar-ew {
     background-color: #38424c;
@@ -469,9 +487,42 @@ transform: translate3d(0, 0, 0);*/
 	height: 100%;
 }
 
+.research-type-content {
+	height: 85%;
+	padding-top: 50px;
+
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.research-type-continue {
+	height: 15%;
+
+
+}
+
+.research-type-continue > p {
+	font-size: 13px;
+	opacity: 0.5;
+
+}
+
+.research-type-continue:hover > p {
+	font-size: 15px;
+	opacity: 1;
+
+}
+
+
+
+
+.expedition-card-img {
+	background-size: auto 100%;
+}
+
+
 @media (max-height : 844px) and (min-width:692px){
 	@media (min-width:692px) {
-		.ew-intro {
+		.ew-intro, #research-anchor {
 			height: auto;
 			padding-top: 20px !important;
 			padding-bottom: 20px !important;
@@ -479,6 +530,7 @@ transform: translate3d(0, 0, 0);*/
 			margin-bottom: 0px !important;;
 
 		}
+
 	}
 
 }
@@ -486,9 +538,17 @@ transform: translate3d(0, 0, 0);*/
 @media (min-height : 845px)  and (min-width:692px){
 	@media (min-width:692px) {
 		.ew-intro {
-			height: 100vh;
+			height: calc(100vh - 50px);
 			padding-top: 25vh !important;
 			padding-bottom: 25vh !important;
+			margin-top: 0px !important;;
+			margin-bottom: 0px !important;;
+
+		}
+
+		 #research-anchor {
+			height: calc(100vh - 50px);
+
 			margin-top: 0px !important;;
 			margin-bottom: 0px !important;;
 
@@ -500,6 +560,8 @@ transform: translate3d(0, 0, 0);*/
 
 
 /*CONTINENT PAGE*/
+
+
 
 @media (max-height : 599px) {
 	@media (min-width:692px) {
@@ -521,7 +583,7 @@ transform: translate3d(0, 0, 0);*/
 	@media (min-width:692px) {
 		.research-section {
 			height: 100%;
-			padding-top: 10% !important;
+			padding-top: 5% !important;
 			padding-bottom: 0% !important;
 			margin-top: 0px !important;;
 			margin-bottom: 0px !important;;
@@ -535,7 +597,7 @@ transform: translate3d(0, 0, 0);*/
 
 @media (max-height : 844px){
 	@media (min-width:692px) {
-		.ew-continent-intro {
+		.ew-continent-intro, .ew-section {
 			height: auto;
 			padding-top: 20px !important;
 			padding-bottom: 20px !important;
@@ -549,7 +611,7 @@ transform: translate3d(0, 0, 0);*/
 @media (min-height : 845px){
 	@media (min-width:692px) {
 		.ew-continent-intro {
-			height: 100vh;
+			height: calc(100vh - 50px);
 			padding-top: 25vh !important;
 			padding-bottom: 25vh !important;
 			margin-top: 0px !important;;
@@ -568,7 +630,7 @@ transform: translate3d(0, 0, 0);*/
 
 #wildlife-section {
 	background: url("../images/africa-wildlife-bg.jpg");
-	height: 100vh;
+/*	height: 100vh;*/
 
 
 }
@@ -589,18 +651,18 @@ transform: translate3d(0, 0, 0);*/
 
 
 .ew-continent-intro {
-	height: auto;
-
-	background: 
+/*	height: auto;
+*/
+	background:
 	    linear-gradient(
-	      rgba(0, 0, 0, 0.45), 
+	      rgba(0, 0, 0, 0.45),
 	      rgba(0, 0, 0, 0)
 	    ),
 		url("../images/test.jpg");
 	background-position: center bottom;
 	background-size: 100% auto;
-	color:#fff;
-	margin-top: -50px;
+/*	color:#fff;
+	margin-top: -50px;*/
 /*	padding-top: 80px;*/
 }
 
@@ -608,8 +670,11 @@ transform: translate3d(0, 0, 0);*/
 
 
 .intro-content.continent
-{	
-    height: 100%;
+{
+    height: auto;
+    min-height: 85%;
+    margin: 0 !important;
+
 }
 
 
@@ -694,9 +759,9 @@ transform: translate3d(0, 0, 0);*/
 
 .ew-activity-level  {
 
-	background: 
+	background:
 	    linear-gradient(
-	      rgba(0, 0, 0, 0.3), 
+	      rgba(0, 0, 0, 0.3),
 	      rgba(0, 0, 0, 0)
 	    ),
 		url("../images/africa_activity-level-background.jpg");
@@ -705,12 +770,22 @@ transform: translate3d(0, 0, 0);*/
 	color:#fff;
 	padding-top: 50px;
 	padding-bottom: 50px;
+	height: 100vh;
 
 }
 
 #expedition-cards {
 	max-height: 750px;
 	/*overflow: scroll;*/
+}
+
+.research-expedition-cards {
+	max-height: 500px !important;
+}
+
+.intro-text.research-text {
+	font-size: 20px;
+	line-height: 20px;
 }
 /*
 #slider {
@@ -763,29 +838,93 @@ transform: translate3d(0, 0, 0);*/
 }
 
 .activity-tabs > div {
-	width: 13.97%;
+	width: 13.88%;
 	text-align: center;
 	display: inline-block;
 	font-size: 15px;
 	text-transform: uppercase;
 	text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
 	font-weight: bold;
-	padding-bottom: 5px;
-	border-bottom: 5px solid transparent;
+	padding: 5px;
+/*	border-bottom: 5px solid transparent;*/
 
 }
 
 .activity-tabs > div:hover {
-
-	border-bottom: 5px solid rgba(255,255,255,0.5);
+	background: rgba(255,255,255,0.5);
+	color:#fff;
+/*	border-bottom: 10px solid rgba(255,255,255,0.5);*/
 
 }
 
 .activity-tabs > div.active-level {
-
-	border-bottom: 5px solid rgba(255,255,255,1);
+	background: rgba(255,255,255,1);
+	color: #343e48;
+	font-weight: bold;
+	text-shadow:none;
+	/*border-bottom: 10px solid rgba(255,255,255,1);*/
 
 }
+
+.activity-tab-info-text {
+	border: 2px solid #fff;
+	background: #fff;
+	color: rgba(8, 118, 171, 0);
+	border-radius: 5px;
+	padding: 5px;
+	opacity: 0;
+
+}
+
+.activity-tab-info-text.active {
+	opacity: 1;
+	color: rgba(8, 118, 171, 1);
+
+}
+
+
+.activity-tabs-arrows {
+	height: 10px;
+	margin-top: -6px;
+	margin-bottom: 5px;
+}
+
+.activity-tabs-arrows > div {
+	width: 13.88%;
+	text-align: center;
+	display: inline-block;
+	font-size: 15px;
+	line-height: 10px;
+	height: 10px;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+	font-weight: bold;
+	padding: 0;
+	opacity: 0;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+/*	border-bottom: 5px solid transparent;*/
+
+}
+/*
+.activity-tabs-arrows > div:hover {
+	color:#fff;
+	opacity: 0.5;
+
+
+}*/
+
+.activity-tabs-arrows > div.active-level {
+	opacity: 1;
+	color: #fff;
+	font-weight: bold;
+	text-shadow:none;
+	/*border-bottom: 10px solid rgba(255,255,255,1);*/
+
+}
+
 
 
 
@@ -890,7 +1029,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 
 .expedition-img {
+	width: auto;
+	height: 100%;
+}
+
+.expedition-img-small {
 	width: 100%;
+
 }
 .expedition-card-btn {
 	padding-top:15px;
@@ -911,7 +1056,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out;	
+	-o-transition: all 0.30s ease-in-out;
 	border: solid 1px #00956d !important;
 	background: #00956d !important;
 }
@@ -921,7 +1066,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out;	
+	-o-transition: all 0.30s ease-in-out;
 	border: solid 1px #fff !important;
 	background: #fff !important;
 }
@@ -935,7 +1080,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out;	
+	-o-transition: all 0.30s ease-in-out;
 	border: solid 1px #31b1ca !important;
 	background: #31b1ca !important;
 }
@@ -948,7 +1093,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out;	
+	-o-transition: all 0.30s ease-in-out;
 	border: solid 1px #e25829 !important;
 	background: #e25829 !important;
 }
@@ -962,7 +1107,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out;	
+	-o-transition: all 0.30s ease-in-out;
 	border: solid 1px #dbb313 !important;
 	background: #dbb313 !important;
 }
@@ -989,13 +1134,20 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 
 
-
+.padding-15 {
+	padding: 15px;
+}
 
 .activity-level-text {
 	font-size: 20px;
 }
 
-
+@media (min-width : 768px){
+	.equal-height {
+		float: none;
+		display: table-cell;
+	}
+}
 
 
 
@@ -1027,13 +1179,19 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		bottom: 0;*/
 
 	}
+
+
 }
- 
+
 @media (max-width : 979px){
 
 }
- 
+
 @media (max-width : 767px){
+
+	#ew-continent-intro {
+		padding-top: 100px;
+	}
 
 	.research-select-div {
 /*		position: relative;
@@ -1109,7 +1267,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 	.expedition-card-btn > a:hover {
 
 		color:#0876ab;
-		outline: 2px solid #0876ab; 
+		outline: 2px solid #0876ab;
 	}
 	.margin-bottom-10-small {
 		margin-bottom: 15px;
@@ -1143,11 +1301,11 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		margin-bottom: 0px;
 	}
 }
- 
+
 @media (max-width : 480px){
- 
+
 }
- 
+
 @media (max-width : 320px){
 
 }
@@ -1363,7 +1521,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 	}
 	.research-icon-headline {
 		text-align: left;
-		padding-left: 10px; 
+		padding-left: 10px;
 
 	}
 
@@ -1410,7 +1568,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		margin-top: 15px;
 		padding-top: 15px;
 		text-align: left;
-		
+
 	}
 	#guidebook-img {
 		width: 100%;
@@ -1505,7 +1663,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		margin-top: 15px;
 		padding-top: 15px;
 		text-align: left;
-		
+
 	}
 	#guidebook-img {
 		width: 100%;
