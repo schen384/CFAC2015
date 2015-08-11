@@ -110,7 +110,12 @@ function earthwatchObject() {
       var data = Continents;
         var cards = $("#expedition-cards");
         $("#continent-wel").html('Welcome to ' + continent + '!');
-        $("#continent-nav").html(continent);
+        $("#continent-nav").html(continent+" <span class='caret'></span>");
+        $("#continent-nav").width($("#continent-dropdown-menu").width());
+
+        
+
+
         exp_continent = data[continent];
         all_exp = [];
         for (var key in exp_continent) {
@@ -337,42 +342,35 @@ function earthwatchObject() {
 
 
 		$(".research-select").click(function() {
-      	$("#activities-anchor").show();
-			// var str = $(this).attr('class');
-			// console.log("all classes = "+str);
-			// str = str.split(new RegExp("\\s+")).pop();
-			// console.log("split string = "+str);
+      		$("#activities-anchor").show();
+
 			var outlineColor = $(this).attr('class').split(new RegExp("\\s+")).pop();
-			// console.log($(this).attr('class'));
-			// console.log(outlineColor);
+
 			$(this).children("div").addClass("select-inverse");
 			$(this).removeClass("no-background");
 			$(this).addClass("select-clicked");
-			// console.log(children);
-			//children[0].addClass("select-inverse");
-			//console.log("in research select");
-			//console.log(otherButtons);
+
 			$('.research-select:not(.' + outlineColor + ')').each(function() {
 				$(this).children("div").removeClass("select-inverse");
 				$(this).addClass("no-background");
 				$(this).removeClass("select-clicked");
 			})
-      var cards = $("#mCSB_1_container");
-      cards.empty();
-      exp_type = exp_continent[$(this).attr('id')];
+			var cards = $("#mCSB_1_container");
+			cards.empty();
+			exp_type = exp_continent[$(this).attr('id')];
 
-      if (exp_type) {
-        for (var i = 0; i < exp_type.length; i++) {
-          var temp = $("#card-template").html();
-          var html = Mustache.render(temp,exp_type[i]);
-          cards.append(html);
-        }
-        $("#expedition-cards").mCustomScrollbar("scrollTo","top");
-      } else {
-        var noavailable = $("#no-available-card").html();
-        var html = Mustache.render(noavailable,{});
-        cards.append(html);
-      }
+			if (exp_type) {
+				for (var i = 0; i < exp_type.length; i++) {
+					var temp = $("#card-template").html();
+					var html = Mustache.render(temp,exp_type[i]);
+					cards.append(html);
+				}
+				$("#expedition-cards").mCustomScrollbar("scrollTo","top");
+			} else {
+				var noavailable = $("#no-available-card").html();
+				var html = Mustache.render(noavailable,{});
+				cards.append(html);
+			}
 		});
 
 		$(".research-select").mouseover(function() {
@@ -395,27 +393,50 @@ function earthwatchObject() {
 			})
 			$(this).addClass("active-level");
 
-      var cards = $("#mCSB_1_container");
-      cards.empty();
-      var level = $(this)[0].innerHTML;
-      if (!exp_type) {
-          var noavailable = $("#no-available-card").html();
-          var html = Mustache.render(noavailable,{});
-          cards.append(html);
-      } else {
-        for (exp in exp_type) {
-          if(level != 'All' && exp_type[exp]['Activity Level'] == level) {
-            var temp = $("#card-template").html();
-            var html = Mustache.render(temp,exp_type[exp]);
-            cards.append(html);
-          } else if (level == 'All') {
-            var temp = $("#card-template").html();
-            var html = Mustache.render(temp,exp_type[exp]);
-            cards.append(html);
-          };
-        }
-     }
-      $("#expedition-cards").mCustomScrollbar("scrollTo","top");
+      		var cards = $("#mCSB_1_container");
+			cards.empty();
+			var level = $(this)[0].innerHTML;
+			if (!exp_type) {
+			  	var noavailable = $("#no-available-card").html();
+			  	var html = Mustache.render(noavailable,{});
+			  	cards.append(html);
+			} else {
+				for (exp in exp_type) {
+				  	if(level != 'All' && exp_type[exp]['Activity Level'] == level) {
+				    	var temp = $("#card-template").html();
+				    	var html = Mustache.render(temp,exp_type[exp]);
+				    	cards.append(html);
+				  	} else if (level == 'All') {
+				    	var temp = $("#card-template").html();
+				    	var html = Mustache.render(temp,exp_type[exp]);
+				    	cards.append(html);
+				  	};
+				}
+			}
+			$("#expedition-cards").mCustomScrollbar("scrollTo","top");
+		})
+
+		$(".activity-tab").mouseover(function() {
+			var level = $(this).attr("activity-level");
+
+			$(".activity-tab-info").each(function() {
+				if ($(this).attr("activity-level") == level) {
+
+					$(this).addClass("active-level");
+					$(".activity-tab-info-text").addClass("active");
+				}
+			});
+		})
+
+
+		$(".activity-tab").mouseout(function() {
+			var level = $(this).attr("activity-level");
+			$(".activity-tab-info").each(function() {
+				if ($(this).attr("activity-level") == level) {
+					$(this).removeClass("active-level");
+					$(".activity-tab-info-text").removeClass("active");
+				}
+			});
 		})
 
 		$('a').click(function(){

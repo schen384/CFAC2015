@@ -51,10 +51,10 @@
 	      <ul class="nav navbar-nav navbar-right">
 
 	      	<li class=""><a href="/index.html" id='home-nav'>Home</a></li>
-	        <li class="active-tab"><a href="#home-anchor" id='continent-nav'></a></li>
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CHANGE CONTINENT <span class="caret"></span></a>
-				<ul class="dropdown-menu">
+	       <!--  <li class="active-tab"><a href="#home-anchor" id='continent-nav'></a></li> -->
+			<li class="dropdown active-tab">
+				<a href="#" id='continent-nav' class="dropdown-toggle text-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> </a>
+				<ul class="dropdown-menu" id="continent-dropdown-menu">
 					<li><a href="continent.html?continent=Africa">Africa</a></li>
 					<li><a href="continent.html?continent=North America">North America</a></li>
 					<li><a href="continent.html?continent=South America">South America</a></li>
@@ -83,7 +83,7 @@
 
 	<div class="container-fluid ew-content" id="ew-content">
 
-		<div class="row ew-section ew-continent-intro inset-top-shadow" id="ew-continent-intro" data-stellar-background-ratio="0.3"  data-stellar-horizontal-offset="0" data-stellar-vertical-offset="150" >
+		<div class="row ew-section ew-intro ew-continent-intro inset-top-shadow" id="ew-continent-intro" data-stellar-background-ratio="0.3"  data-stellar-horizontal-offset="0" data-stellar-vertical-offset="150" >
 
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 intro-content continent">
 
@@ -122,8 +122,8 @@
 
 
 			</div>
-			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-margin no-padding  text-center">
-				<p class="font-size-15 text-uppercase text-shadow" >Select your research type</p>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-margin no-padding  text-center research-type-continue ease-transition">
+				<p class="font-size-15 text-uppercase text-shadow ease-transition" >Select your research type</p>
 				<a href="#research-anchor">
 
 					<div class="continue-button text-shadow">
@@ -308,62 +308,87 @@
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-15 margin-bottom-15"></div>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 color-border">
 								</div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 intro-text research-text text-shadow">
-									For more than 40 years, EARTHWATCH has connected everyday people with the world's top scientists to help conduct vital research for a sustainable planet.
-								</div>
-								<div class="row max-width-1000 no-margin">
-					<!-- 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div> -->
-									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="row">
+									<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 intro-text research-text text-shadow">
+										For more than 40 years, EARTHWATCH has connected everyday people with the world's top scientists to help conduct vital research for a sustainable planet.
+									</div>
+									<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+										<div class="row max-width-1000 no-margin">
+							<!-- 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div> -->
+											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-										<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-										
-											<div class="text-shadow margin-bottom-40 activity-level-text">
-												Bacon ipsum dolor amet meatball tenderloin ball tip, filet mignon shank pork chop porchetta short loin flank meatloaf picanha jowl. Shankle boudin flank ham hock. Tri-tip turducken tenderloin, boudin ribeye pancetta t-bone turkey chicken pork chop tail. Turkey landjaeger frankfurter sausage pork loin t-bone fatback drumstick brisket. T-bone sausage spare ribs, kevin landjaeger frankfurter leberkas beef ribs fatback beef. Ribeye pork belly andouille ball tip pastrami, picanha brisket leberkas turducken jerky fatback ground round frankfurter tail.
-											</div>
-										</div> -->
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-uppercase no-padding  visible-xs display-block">
-											<div class="dropdown activity-level-dropdown text-center">
-												<div class="input-group">
+												<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+												
+													<div class="text-shadow margin-bottom-40 activity-level-text">
+														Bacon ipsum dolor amet meatball tenderloin ball tip, filet mignon shank pork chop porchetta short loin flank meatloaf picanha jowl. Shankle boudin flank ham hock. Tri-tip turducken tenderloin, boudin ribeye pancetta t-bone turkey chicken pork chop tail. Turkey landjaeger frankfurter sausage pork loin t-bone fatback drumstick brisket. T-bone sausage spare ribs, kevin landjaeger frankfurter leberkas beef ribs fatback beef. Ribeye pork belly andouille ball tip pastrami, picanha brisket leberkas turducken jerky fatback ground round frankfurter tail.
+													</div>
+												</div> -->
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-uppercase no-padding  visible-xs display-block">
+													<div class="dropdown activity-level-dropdown text-center">
+														<div class="input-group">
 
-												  <select class="form-control"  placeholder="Username">
-													<option>All</option>
-													<option>Very Easy</option>
-													<option>Easy</option>
-													<option>Moderate</option>
-													<option>very active</option>
-													<option>strenuous</option>
-													<option>varies</option>
-												  </select>
+														  <select class="form-control"  placeholder="Username">
+															<option>All</option>
+															<option>Very Easy</option>
+															<option>Easy</option>
+															<option>Moderate</option>
+															<option>very active</option>
+															<option>strenuous</option>
+															<option>varies</option>
+														  </select>
+														</div>
+
+													</div>
+												</div>
+												<br>
+
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding hidden-xs ease-transition">
+													<div  class="activity-tab-info-text ease-transition text-dark-blue">
+														bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+													</div>
+
+									
+
+												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs-arrows hidden-xs ">
+
+
+													<!-- <div id="slider"></div> -->
+													<div class="activity-tab-info" activity-level="all">&#9660;</div>
+													<div class="activity-tab-info" activity-level="very-easy"> &#9660;</div>
+													<div class="activity-tab-info" activity-level="easy">&#9660;</div>
+													<div class="activity-tab-info"  activity-level="moderate">&#9660;</div>
+													<div class="activity-tab-info " activity-level="very-active"> &#9660;</div>
+													<div class="activity-tab-info " activity-level="strenuous">&#9660;</div>
+													<div class="activity-tab-info " activity-level="varies">&#9660;</div>
+
+
+												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs hidden-xs ">
+
+
+													<!-- <div id="slider"></div> -->
+													  <div class="activity-tab active-level level-all" activity-level="all">All</div>
+													  <div class="activity-tab level-very-easy" activity-level="very-easy">Very Easy</div>
+													  <div class="activity-tab level-easy" activity-level="easy">Easy</div>
+													  <div class="activity-tab level-moderate" activity-level="moderate">Moderate</div>
+													  <div class="activity-tab level-very-active" activity-level="very-active">Very Active</div>
+													  <div class="activity-tab level-strenuous" activity-level="strenuous">Strenuous</div>
+													  <div class="activity-tab level-varies" activity-level="varies">Varies</div>
+
+												</div>
+											<!-- 	 -->
+
 												</div>
 
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding research-expedition-cards " id="expedition-cards"  data-mcs-theme="inset-3-dark">
+
+												</div>
 											</div>
-										</div>
-										<br>
-
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs hidden-xs ">
-
-
-											<!-- <div id="slider"></div> -->
-											  <div class="activity-tab active-level">All</div>
-											  <div class="activity-tab">Very Easy</div>
-											  <div class="activity-tab">Easy</div>
-											  <div class="activity-tab">Moderate</div>
-											  <div class="activity-tab">Very Active</div>
-											  <div class="activity-tab">Strenuous</div>
-											  <div class="activity-tab">Varies</div>
-
-										</div>
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs-border hidden-xs">
-
-										</div>
-
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding research-expedition-cards " id="expedition-cards"  data-mcs-theme="inset-3-dark">
-
+							<!-- 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1  hidden-xs hidden-sm"></div> -->
 										</div>
 									</div>
-					<!-- 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1  hidden-xs hidden-sm"></div> -->
 								</div>
-
 
 							</div>
 						</div>
@@ -373,8 +398,6 @@
 				</div>
 			</div>
 		</div>
-
-
 
 		<div class="text-white ">
 			<div class="row ew-section research-section-background inset-top-shadow" id="ocean-section" name="ocean-section"  data-stellar-background-ratio="0.3"  data-stellar-horizontal-offset="0" data-stellar-vertical-offset="2500" >
@@ -388,62 +411,87 @@
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-15 margin-bottom-15"></div>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 color-border">
 								</div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 intro-text research-text text-shadow">
-									For more than 40 years, EARTHWATCH has connected everyday people with the world's top scientists to help conduct vital research for a sustainable planet.
-								</div>
-								<div class="row max-width-1000 no-margin">
-					<!-- 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div> -->
-									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="row">
+									<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 intro-text research-text text-shadow">
+										For more than 40 years, EARTHWATCH has connected everyday people with the world's top scientists to help conduct vital research for a sustainable planet.
+									</div>
+									<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+										<div class="row max-width-1000 no-margin">
+							<!-- 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div> -->
+											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-										<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-										
-											<div class="text-shadow margin-bottom-40 activity-level-text">
-												Bacon ipsum dolor amet meatball tenderloin ball tip, filet mignon shank pork chop porchetta short loin flank meatloaf picanha jowl. Shankle boudin flank ham hock. Tri-tip turducken tenderloin, boudin ribeye pancetta t-bone turkey chicken pork chop tail. Turkey landjaeger frankfurter sausage pork loin t-bone fatback drumstick brisket. T-bone sausage spare ribs, kevin landjaeger frankfurter leberkas beef ribs fatback beef. Ribeye pork belly andouille ball tip pastrami, picanha brisket leberkas turducken jerky fatback ground round frankfurter tail.
-											</div>
-										</div> -->
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-uppercase no-padding  visible-xs display-block">
-											<div class="dropdown activity-level-dropdown text-center">
-												<div class="input-group">
+												<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+												
+													<div class="text-shadow margin-bottom-40 activity-level-text">
+														Bacon ipsum dolor amet meatball tenderloin ball tip, filet mignon shank pork chop porchetta short loin flank meatloaf picanha jowl. Shankle boudin flank ham hock. Tri-tip turducken tenderloin, boudin ribeye pancetta t-bone turkey chicken pork chop tail. Turkey landjaeger frankfurter sausage pork loin t-bone fatback drumstick brisket. T-bone sausage spare ribs, kevin landjaeger frankfurter leberkas beef ribs fatback beef. Ribeye pork belly andouille ball tip pastrami, picanha brisket leberkas turducken jerky fatback ground round frankfurter tail.
+													</div>
+												</div> -->
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-uppercase no-padding  visible-xs display-block">
+													<div class="dropdown activity-level-dropdown text-center">
+														<div class="input-group">
 
-												  <select class="form-control"  placeholder="Username">
-													<option>All</option>
-													<option>Very Easy</option>
-													<option>Easy</option>
-													<option>Moderate</option>
-													<option>very active</option>
-													<option>strenuous</option>
-													<option>varies</option>
-												  </select>
+														  <select class="form-control"  placeholder="Username">
+															<option>All</option>
+															<option>Very Easy</option>
+															<option>Easy</option>
+															<option>Moderate</option>
+															<option>very active</option>
+															<option>strenuous</option>
+															<option>varies</option>
+														  </select>
+														</div>
+
+													</div>
+												</div>
+												<br>
+
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding hidden-xs ease-transition">
+													<div  class="activity-tab-info-text ease-transition text-dark-blue">
+														bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+													</div>
+
+									
+
+												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs-arrows hidden-xs ">
+
+
+													<!-- <div id="slider"></div> -->
+													<div class="activity-tab-info" activity-level="all">&#9660;</div>
+													<div class="activity-tab-info" activity-level="very-easy"> &#9660;</div>
+													<div class="activity-tab-info" activity-level="easy">&#9660;</div>
+													<div class="activity-tab-info"  activity-level="moderate">&#9660;</div>
+													<div class="activity-tab-info " activity-level="very-active"> &#9660;</div>
+													<div class="activity-tab-info " activity-level="strenuous">&#9660;</div>
+													<div class="activity-tab-info " activity-level="varies">&#9660;</div>
+
+
+												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs hidden-xs ">
+
+
+													<!-- <div id="slider"></div> -->
+													  <div class="activity-tab active-level level-all" activity-level="all">All</div>
+													  <div class="activity-tab level-very-easy" activity-level="very-easy">Very Easy</div>
+													  <div class="activity-tab level-easy" activity-level="easy">Easy</div>
+													  <div class="activity-tab level-moderate" activity-level="moderate">Moderate</div>
+													  <div class="activity-tab level-very-active" activity-level="very-active">Very Active</div>
+													  <div class="activity-tab level-strenuous" activity-level="strenuous">Strenuous</div>
+													  <div class="activity-tab level-varies" activity-level="varies">Varies</div>
+
+												</div>
+											<!-- 	 -->
+
 												</div>
 
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding research-expedition-cards " id="expedition-cards"  data-mcs-theme="inset-3-dark">
+
+												</div>
 											</div>
-										</div>
-										<br>
-
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs hidden-xs ">
-
-
-											<!-- <div id="slider"></div> -->
-											  <div class="activity-tab active-level">All</div>
-											  <div class="activity-tab">Very Easy</div>
-											  <div class="activity-tab">Easy</div>
-											  <div class="activity-tab">Moderate</div>
-											  <div class="activity-tab">Very Active</div>
-											  <div class="activity-tab">Strenuous</div>
-											  <div class="activity-tab">Varies</div>
-
-										</div>
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs-border hidden-xs">
-
-										</div>
-
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding research-expedition-cards " id="expedition-cards"  data-mcs-theme="inset-3-dark">
-
+							<!-- 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1  hidden-xs hidden-sm"></div> -->
 										</div>
 									</div>
-					<!-- 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1  hidden-xs hidden-sm"></div> -->
 								</div>
-
 
 							</div>
 						</div>
@@ -453,7 +501,6 @@
 				</div>
 			</div>
 		</div>
-
 
 
 		<div class="text-white ">
@@ -468,62 +515,87 @@
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-15 margin-bottom-15"></div>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 color-border">
 								</div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 intro-text research-text text-shadow">
-									For more than 40 years, EARTHWATCH has connected everyday people with the world's top scientists to help conduct vital research for a sustainable planet.
-								</div>
-								<div class="row max-width-1000 no-margin">
-					<!-- 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div> -->
-									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="row">
+									<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 intro-text research-text text-shadow">
+										For more than 40 years, EARTHWATCH has connected everyday people with the world's top scientists to help conduct vital research for a sustainable planet.
+									</div>
+									<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+										<div class="row max-width-1000 no-margin">
+							<!-- 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div> -->
+											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-										<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-										
-											<div class="text-shadow margin-bottom-40 activity-level-text">
-												Bacon ipsum dolor amet meatball tenderloin ball tip, filet mignon shank pork chop porchetta short loin flank meatloaf picanha jowl. Shankle boudin flank ham hock. Tri-tip turducken tenderloin, boudin ribeye pancetta t-bone turkey chicken pork chop tail. Turkey landjaeger frankfurter sausage pork loin t-bone fatback drumstick brisket. T-bone sausage spare ribs, kevin landjaeger frankfurter leberkas beef ribs fatback beef. Ribeye pork belly andouille ball tip pastrami, picanha brisket leberkas turducken jerky fatback ground round frankfurter tail.
-											</div>
-										</div> -->
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-uppercase no-padding  visible-xs display-block">
-											<div class="dropdown activity-level-dropdown text-center">
-												<div class="input-group">
+												<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+												
+													<div class="text-shadow margin-bottom-40 activity-level-text">
+														Bacon ipsum dolor amet meatball tenderloin ball tip, filet mignon shank pork chop porchetta short loin flank meatloaf picanha jowl. Shankle boudin flank ham hock. Tri-tip turducken tenderloin, boudin ribeye pancetta t-bone turkey chicken pork chop tail. Turkey landjaeger frankfurter sausage pork loin t-bone fatback drumstick brisket. T-bone sausage spare ribs, kevin landjaeger frankfurter leberkas beef ribs fatback beef. Ribeye pork belly andouille ball tip pastrami, picanha brisket leberkas turducken jerky fatback ground round frankfurter tail.
+													</div>
+												</div> -->
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-uppercase no-padding  visible-xs display-block">
+													<div class="dropdown activity-level-dropdown text-center">
+														<div class="input-group">
 
-												  <select class="form-control"  placeholder="Username">
-													<option>All</option>
-													<option>Very Easy</option>
-													<option>Easy</option>
-													<option>Moderate</option>
-													<option>very active</option>
-													<option>strenuous</option>
-													<option>varies</option>
-												  </select>
+														  <select class="form-control"  placeholder="Username">
+															<option>All</option>
+															<option>Very Easy</option>
+															<option>Easy</option>
+															<option>Moderate</option>
+															<option>very active</option>
+															<option>strenuous</option>
+															<option>varies</option>
+														  </select>
+														</div>
+
+													</div>
+												</div>
+												<br>
+
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding hidden-xs ease-transition">
+													<div  class="activity-tab-info-text ease-transition text-dark-blue">
+														bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+													</div>
+
+									
+
+												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs-arrows hidden-xs ">
+
+
+													<!-- <div id="slider"></div> -->
+													<div class="activity-tab-info" activity-level="all">&#9660;</div>
+													<div class="activity-tab-info" activity-level="very-easy"> &#9660;</div>
+													<div class="activity-tab-info" activity-level="easy">&#9660;</div>
+													<div class="activity-tab-info"  activity-level="moderate">&#9660;</div>
+													<div class="activity-tab-info " activity-level="very-active"> &#9660;</div>
+													<div class="activity-tab-info " activity-level="strenuous">&#9660;</div>
+													<div class="activity-tab-info " activity-level="varies">&#9660;</div>
+
+
+												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs hidden-xs ">
+
+
+													<!-- <div id="slider"></div> -->
+													  <div class="activity-tab active-level level-all" activity-level="all">All</div>
+													  <div class="activity-tab level-very-easy" activity-level="very-easy">Very Easy</div>
+													  <div class="activity-tab level-easy" activity-level="easy">Easy</div>
+													  <div class="activity-tab level-moderate" activity-level="moderate">Moderate</div>
+													  <div class="activity-tab level-very-active" activity-level="very-active">Very Active</div>
+													  <div class="activity-tab level-strenuous" activity-level="strenuous">Strenuous</div>
+													  <div class="activity-tab level-varies" activity-level="varies">Varies</div>
+
+												</div>
+											<!-- 	 -->
+
 												</div>
 
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding research-expedition-cards " id="expedition-cards"  data-mcs-theme="inset-3-dark">
+
+												</div>
 											</div>
-										</div>
-										<br>
-
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs hidden-xs ">
-
-
-											<!-- <div id="slider"></div> -->
-											  <div class="activity-tab active-level">All</div>
-											  <div class="activity-tab">Very Easy</div>
-											  <div class="activity-tab">Easy</div>
-											  <div class="activity-tab">Moderate</div>
-											  <div class="activity-tab">Very Active</div>
-											  <div class="activity-tab">Strenuous</div>
-											  <div class="activity-tab">Varies</div>
-
-										</div>
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs-border hidden-xs">
-
-										</div>
-
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding research-expedition-cards " id="expedition-cards"  data-mcs-theme="inset-3-dark">
-
+							<!-- 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1  hidden-xs hidden-sm"></div> -->
 										</div>
 									</div>
-					<!-- 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1  hidden-xs hidden-sm"></div> -->
 								</div>
-
 
 							</div>
 						</div>
@@ -533,8 +605,6 @@
 				</div>
 			</div>
 		</div>
-
-
 
 		<div class="text-white ">
 			<div class="row ew-section research-section-background inset-top-shadow" id="archeology-section" name="archeology-section"  data-stellar-background-ratio="0.3"  data-stellar-horizontal-offset="0" data-stellar-vertical-offset="2500" >
@@ -548,62 +618,87 @@
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-15 margin-bottom-15"></div>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 color-border">
 								</div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 intro-text research-text text-shadow">
-									For more than 40 years, EARTHWATCH has connected everyday people with the world's top scientists to help conduct vital research for a sustainable planet.
-								</div>
-								<div class="row max-width-1000 no-margin">
-					<!-- 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div> -->
-									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="row">
+									<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 intro-text research-text text-shadow">
+										For more than 40 years, EARTHWATCH has connected everyday people with the world's top scientists to help conduct vital research for a sustainable planet.
+									</div>
+									<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+										<div class="row max-width-1000 no-margin">
+							<!-- 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div> -->
+											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
-										<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-										
-											<div class="text-shadow margin-bottom-40 activity-level-text">
-												Bacon ipsum dolor amet meatball tenderloin ball tip, filet mignon shank pork chop porchetta short loin flank meatloaf picanha jowl. Shankle boudin flank ham hock. Tri-tip turducken tenderloin, boudin ribeye pancetta t-bone turkey chicken pork chop tail. Turkey landjaeger frankfurter sausage pork loin t-bone fatback drumstick brisket. T-bone sausage spare ribs, kevin landjaeger frankfurter leberkas beef ribs fatback beef. Ribeye pork belly andouille ball tip pastrami, picanha brisket leberkas turducken jerky fatback ground round frankfurter tail.
-											</div>
-										</div> -->
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-uppercase no-padding  visible-xs display-block">
-											<div class="dropdown activity-level-dropdown text-center">
-												<div class="input-group">
+												<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+												
+													<div class="text-shadow margin-bottom-40 activity-level-text">
+														Bacon ipsum dolor amet meatball tenderloin ball tip, filet mignon shank pork chop porchetta short loin flank meatloaf picanha jowl. Shankle boudin flank ham hock. Tri-tip turducken tenderloin, boudin ribeye pancetta t-bone turkey chicken pork chop tail. Turkey landjaeger frankfurter sausage pork loin t-bone fatback drumstick brisket. T-bone sausage spare ribs, kevin landjaeger frankfurter leberkas beef ribs fatback beef. Ribeye pork belly andouille ball tip pastrami, picanha brisket leberkas turducken jerky fatback ground round frankfurter tail.
+													</div>
+												</div> -->
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-uppercase no-padding  visible-xs display-block">
+													<div class="dropdown activity-level-dropdown text-center">
+														<div class="input-group">
 
-												  <select class="form-control"  placeholder="Username">
-													<option>All</option>
-													<option>Very Easy</option>
-													<option>Easy</option>
-													<option>Moderate</option>
-													<option>very active</option>
-													<option>strenuous</option>
-													<option>varies</option>
-												  </select>
+														  <select class="form-control"  placeholder="Username">
+															<option>All</option>
+															<option>Very Easy</option>
+															<option>Easy</option>
+															<option>Moderate</option>
+															<option>very active</option>
+															<option>strenuous</option>
+															<option>varies</option>
+														  </select>
+														</div>
+
+													</div>
+												</div>
+												<br>
+
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding hidden-xs ease-transition">
+													<div  class="activity-tab-info-text ease-transition text-dark-blue">
+														bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+													</div>
+
+									
+
+												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs-arrows hidden-xs ">
+
+
+													<!-- <div id="slider"></div> -->
+													<div class="activity-tab-info" activity-level="all">&#9660;</div>
+													<div class="activity-tab-info" activity-level="very-easy"> &#9660;</div>
+													<div class="activity-tab-info" activity-level="easy">&#9660;</div>
+													<div class="activity-tab-info"  activity-level="moderate">&#9660;</div>
+													<div class="activity-tab-info " activity-level="very-active"> &#9660;</div>
+													<div class="activity-tab-info " activity-level="strenuous">&#9660;</div>
+													<div class="activity-tab-info " activity-level="varies">&#9660;</div>
+
+
+												</div>
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs hidden-xs ">
+
+
+													<!-- <div id="slider"></div> -->
+													  <div class="activity-tab active-level level-all" activity-level="all">All</div>
+													  <div class="activity-tab level-very-easy" activity-level="very-easy">Very Easy</div>
+													  <div class="activity-tab level-easy" activity-level="easy">Easy</div>
+													  <div class="activity-tab level-moderate" activity-level="moderate">Moderate</div>
+													  <div class="activity-tab level-very-active" activity-level="very-active">Very Active</div>
+													  <div class="activity-tab level-strenuous" activity-level="strenuous">Strenuous</div>
+													  <div class="activity-tab level-varies" activity-level="varies">Varies</div>
+
+												</div>
+											<!-- 	 -->
+
 												</div>
 
+												<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding research-expedition-cards " id="expedition-cards"  data-mcs-theme="inset-3-dark">
+
+												</div>
 											</div>
-										</div>
-										<br>
-
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs hidden-xs ">
-
-
-											<!-- <div id="slider"></div> -->
-											  <div class="activity-tab active-level">All</div>
-											  <div class="activity-tab">Very Easy</div>
-											  <div class="activity-tab">Easy</div>
-											  <div class="activity-tab">Moderate</div>
-											  <div class="activity-tab">Very Active</div>
-											  <div class="activity-tab">Strenuous</div>
-											  <div class="activity-tab">Varies</div>
-
-										</div>
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs-border hidden-xs">
-
-										</div>
-
-										<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding research-expedition-cards " id="expedition-cards"  data-mcs-theme="inset-3-dark">
-
+							<!-- 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1  hidden-xs hidden-sm"></div> -->
 										</div>
 									</div>
-					<!-- 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1  hidden-xs hidden-sm"></div> -->
 								</div>
-
 
 							</div>
 						</div>
@@ -611,98 +706,6 @@
 						<!-- <div class="col-lg-6 col-md-6 col-sm-1 col-xs-1 hidden-sm  hidden-xs"></div> -->
 					</div>
 				</div>
-			</div>
-		</div>
-
-
-
-
-
-
-
-		<div class="row ew-section ew-activity-level inset-top-shadow" name="activities-anchor" id="activities-anchor" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="0" data-stellar-vertical-offset="200vh">
-			<div class="row no-margin">
-
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-					<div class="row max-width-1000">
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  text-right">
-							<a href="#home-anchor">
-								<div class="text-uppercase scroll-top light">
-									Scroll to top <span class="glyphicon glyphicon-triangle-top"></span>
-								</div>
-							</a>
-						</div>
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-
-							<div class="row"><!-- headline -->
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-									<div class="font-dinMedium text-uppercase font-size-45 text-shadow margin-bottom-10 step-title">Step: 3</div>
-									<div class="font-mission font-size-80 choose-research-text text-shadow step-title-name">Choose Your Activity Level</div>
-
-								<!-- 	<img class="width-100" src="images/continent-text.png"> -->
-								</div>
-
-							</div>
-
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-			<div class="row max-width-1000 no-margin">
-<!-- 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div> -->
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-					<!-- <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
-					
-						<div class="text-shadow margin-bottom-40 activity-level-text">
-							Bacon ipsum dolor amet meatball tenderloin ball tip, filet mignon shank pork chop porchetta short loin flank meatloaf picanha jowl. Shankle boudin flank ham hock. Tri-tip turducken tenderloin, boudin ribeye pancetta t-bone turkey chicken pork chop tail. Turkey landjaeger frankfurter sausage pork loin t-bone fatback drumstick brisket. T-bone sausage spare ribs, kevin landjaeger frankfurter leberkas beef ribs fatback beef. Ribeye pork belly andouille ball tip pastrami, picanha brisket leberkas turducken jerky fatback ground round frankfurter tail.
-						</div>
-					</div> -->
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-uppercase no-padding  visible-xs display-block">
-						<div class="dropdown activity-level-dropdown text-center">
-							<div class="input-group">
-
-							  <select class="form-control"  placeholder="Username">
-								<option>All</option>
-								<option>Very Easy</option>
-								<option>Easy</option>
-								<option>Moderate</option>
-								<option>very active</option>
-								<option>strenuous</option>
-								<option>varies</option>
-							  </select>
-							</div>
-
-						</div>
-					</div>
-					<br>
-
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs hidden-xs ">
-
-
-						<!-- <div id="slider"></div> -->
-						  <div class="activity-tab active-level">All</div>
-						  <div class="activity-tab">Very Easy</div>
-						  <div class="activity-tab">Easy</div>
-						  <div class="activity-tab">Moderate</div>
-						  <div class="activity-tab">Very Active</div>
-						  <div class="activity-tab">Strenuous</div>
-						  <div class="activity-tab">Varies</div>
-
-					</div>
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding activity-tabs-border hidden-xs">
-
-					</div>
-
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding  " id="expedition-cards"  data-mcs-theme="inset-3-dark">
-
-					</div>
-				</div>
-<!-- 				<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1  hidden-xs hidden-sm"></div> -->
 			</div>
 		</div>
 
@@ -819,16 +822,16 @@
 	<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 
   <script type="text/html" id="card-template">
-    <div class="row expedition-card">
-      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 no-padding">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="row expedition-card no-padding">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12  equal-height padding-15">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
           <div class="text-uppercase font-dinMedium text-dark-blue expedition-card-headline margin-bottom-15">{{Title}}</div>
 
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 expedition-card-img">
-          <img class="expedition-img " src="../images/sheep.jpg">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 expedition-card-img-small">
+          <img class="expedition-img-small  mCS_img_loaded" src="../images/sheep.jpg">
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-small margin-bottom-10-small">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding margin-bottom-10-small">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding expedition-card-description">
             {{Short Description}}
           </div>
@@ -843,37 +846,54 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding expedition-card-details">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="text-uppercase font-dinMedium text-dark-blue expedition-card-headline margin-bottom-15">${{US Price Range}}</div>
 
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding expedition-card-details">
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="detail-category">
+                    <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Price</span>
+                    <br>
+                    <span>${{US Price Range}}</span>
+
+                </div>
+
+                <div class="detail-category">
+                    <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Location</span>
+                    <br>
+                    <span>{{Location}}</span>
+
+                </div>
+                <div class="detail-category">
+                    <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Duration</span>
+                    <br>
+                    <span>{{Duration}}</span>
+
+                </div>
+              <div class="detail-category">
+                <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Activities</span>
+                <br>
+                <span>Icons</span>
+
+              </div>
+              <div class="detail-category">
+                <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Audience</span>
+                <br>
+                <span>{{Audience}}</span>
+
+              </div>
+            </div>
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <div class="detail-category">
-            <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Location</span>
-            <br>
-            <span>{{Location}}</span>
 
-          </div>
-          <div class="detail-category">
-            <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Duration</span>
-            <br>
-            <span>{{Duration}}</span>
 
-          </div>
-          <div class="detail-category">
-            <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Activities</span>
-            <br>
-            <span>Icons</span>
+      </div>
 
-          </div>
-          <div class="detail-category">
-            <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Audience</span>
-            <br>
-            <span>{{Audience}}</span>
 
-          </div>
+
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 expedition-card-img no-padding equal-height" style="background: url('../images/sheep.jpg'); background-size:auto 100%;">
+      		<div class="expedition-img  mCS_img_loaded">
+      		</div>
+         <!--  <img class="expedition-img  mCS_img_loaded" src="../images/sheep.jpg"> -->
         </div>
       </div>
     </div>
