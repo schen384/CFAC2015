@@ -14,8 +14,8 @@ var expeditions = [{"Continent":"Africa","Research Type":"Wildlife & Ecosystems"
 {"Continent":"Africa","Research Type":"Climate Change","Activity Level":"Strenuous","Title":"ANIMALS OF MALAWI IN THE MAJETE WILDLIFE RESERVE","Short Description":"How can we best help African wildlife return to and thrive in their native habitat?","Image Name":"img1.jpg","US Price Range":3725,"UK Price Range":4125,"Location":"Majete Wildlife Reserve, Malawi","Duration":12,"Boating":null,"Digging":null,"Diving":null,"Flat Land Hiking":null,"Snorkeling":null,"Swimming":null,"Uphill Hiking":null},
 {"Continent":"Africa","Research Type":"Climate Change","Activity Level":"Very Active","Title":"ANIMALS OF MALAWI IN THE MAJETE WILDLIFE RESERVE","Short Description":"How can we best help African wildlife return to and thrive in their native habitat?","Image Name":"img1.jpg","US Price Range":3725,"UK Price Range":4125,"Location":"Majete Wildlife Reserve, Malawi","Duration":12,"Boating":null,"Digging":null,"Diving":null,"Flat Land Hiking":1,"Snorkeling":1,"Swimming":1,"Uphill Hiking":null}]
 
-var Continents = {"Africa":{}, "Antarctica":{}, "North America":{}, "South America":{}, "Europe":{}, "Asia":{}};
-var ResearchTypes = {"Wildlife & Ecosystems":[], "Ocean Health":[], "Climate Change":[]};
+var Continents = {"Africa":{}, "North America":{}, "South America":{}, "Europe":{}, "Asia":{}, "The Caribbean":{}, "Central America":{} };
+var ResearchTypes = {"Wildlife & Ecosystems":[], "Ocean Health":[], "Climate Change":[], "Archaeology":[]};
 
 for (var data in Continents) {
 	Continents[data] = ResearchTypes;
