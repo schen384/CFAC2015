@@ -424,6 +424,8 @@ function earthwatchObject() {
 
 					$(this).addClass("active-level");
 					$(".activity-tab-info-text").addClass("active");
+					$(".activity-tab-info-text").html("Text about activity level goes here");
+
 				}
 			});
 		})
@@ -435,6 +437,7 @@ function earthwatchObject() {
 				if ($(this).attr("activity-level") == level) {
 					$(this).removeClass("active-level");
 					$(".activity-tab-info-text").removeClass("active");
+					$(".activity-tab-info-text").html("");
 				}
 			});
 		})
