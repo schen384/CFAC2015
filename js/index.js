@@ -6,7 +6,6 @@ $(document).ready(function() {
     var continent = earthwatch.getUrlParameter('continent');
     earthwatch.setup();
     //if on continent page
-    console.log(Continents);
     if (continent != null) {
       earthwatch.loadContinent(continent);
     }
@@ -320,11 +319,6 @@ function earthwatchObject() {
 
     }
 
-    this.scrollUpdate = function () {
-    $('#expedition-cards').mCustomScrollbar("update");
-}
-
-
     this.attachListeners = function() {
 		console.log("in attachListeners");
 		var that = this;
@@ -415,6 +409,7 @@ function earthwatchObject() {
           };
         }
      }
+     console.log(cards.children);
       $("#expedition-cards").mCustomScrollbar("scrollTo","top");
 		})
 
