@@ -671,7 +671,8 @@ transform: translate3d(0, 0, 0);*/
 
 .intro-content.continent
 {	
-    height: 85%;
+    height: auto;
+    min-height: 85%;
     margin: 0 !important;
 
 }
