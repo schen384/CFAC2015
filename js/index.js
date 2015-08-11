@@ -94,7 +94,7 @@ function earthwatchObject() {
     }
 
     this.resize = function() {
-		$("#map").empty();
+		//$("#map").empty();
 		//this.drawMap();
 		this.setIntroImage();
 
