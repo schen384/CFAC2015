@@ -74,6 +74,9 @@ function earthwatchObject() {
 
     this.setup = function() {
 		//this.loadSections();
+
+
+
 		this.parallax();
 		this.attachListeners();
 		this.setIntroImage();
@@ -223,7 +226,7 @@ function earthwatchObject() {
     		element: document.getElementById("map-container"),
     		projection: 'cylindricalStereographic',
     		fills:{
-    			defaultFill:'rgba(245,245,245,1.0)',
+    			defaultFill:'rgba(245,245,245,0)',
     			'NA': '#4CB074',
     			'SA': '#F5670F',
     			'AF': '#dcb312',
@@ -257,13 +260,13 @@ function earthwatchObject() {
     			'IRL': {fillKey: 'EU'},
     		},
     		geographyConfig:{
-    			borderColor: 'rgba(0,0,0,0.8)',
+    			borderColor: 'rgba(255,255,255,1)',
     			popupOnHover:false,
     			highlightFillColor: function(data){
     				if(data.fillKey){
     					return data.fillKey;
     				}else{
-    					return 'rgba(245,245,245,1.0)';
+    					return 'rgba(245,245,245,0)';
     				}
     			},
     			highlightBorderColor: function(data){
@@ -271,7 +274,7 @@ function earthwatchObject() {
     				if(data.fillKey){
     					return "yellow";
     				}else{
-    					return 'rgba(0,0,0,0.8)';
+    					return 'rgba(255,255,255,1)';
     				}
     			},
     			highlightBorderWidth: function(data){
@@ -335,6 +338,10 @@ function earthwatchObject() {
 
 
     	};
+
+    	$("#climate-section").attr("data-stellar-vertical-offset", 1*windowHeight);
+    	$("#archeology-section").attr("data-stellar-vertical-offset", 1*windowHeight);
+
 			if (ratio < (windowWidth/windowHeight)) {
 				$("#ew-continent-intro").css("background-size", "120% auto");
 				$(".research-section-background").css("background-size", "120% auto");
@@ -343,7 +350,20 @@ function earthwatchObject() {
 				$(".research-section-background").css("background-size", "auto 150%");
 			}
 
-		$(window).stellar();
+
+
+
+        var ua = window.navigator.userAgent;
+        var msie = ua.indexOf("MSIE ");
+
+        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {     // If Internet Explorer, return version number
+            $("html").css('min-width', '798px');
+            return;
+        } else  {               // If another browser, return 0
+            $(window).stellar();
+		}
+
+		
 
     }
 
@@ -515,9 +535,10 @@ function earthwatchObject() {
 		})
 
 		$('a').click(function(){
-      if($(this).attr('href') == null) {
-        return;
-      }
+	      if($(this).attr('href') == '#') {
+	        return;
+	      }
+      		console.log($(this));
 			var scroll = $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top - 50;
 			//console.log(scroll);
 		    $('html, body').animate({
