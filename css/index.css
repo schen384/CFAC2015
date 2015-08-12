@@ -102,6 +102,10 @@ body {
 }*/
 
 
+#guidebook-img {
+	width: 100%;
+}
+
 .get-started-button {
 	text-align: left;
 
@@ -527,11 +531,32 @@ transform: translate3d(0, 0, 0);*/
 
 }
 
+.activity-icon-div {
+	display: inline;
+	float: left
 
+}
 
+.activity-icon-div>img {
+	width: 95%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+
+	
+}
+
+.activity-icons {
+	width: 100%;
+	display: block;
+}
 
 .expedition-card-img {
 	background-size: auto 100%;
+}
+
+
+#continent-nav {
+	text-align: center;
 }
 
 
@@ -1151,6 +1176,17 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 
 
+.step-3-title {
+	font-size:30px;
+	line-height: 30px;
+}
+
+.step-3-title-big {
+	font-size: 50px;
+	line-height: 50px;
+}
+
+
 .padding-15 {
 	padding: 15px;
 }
@@ -1169,6 +1205,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 
 @media (max-width : 1200px){
+
 
 	.step-subtitle {
 		font-size: 25px;
@@ -1205,6 +1242,8 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 }
  
 @media (max-width : 767px){
+
+
 
 
 	.intro-title {
@@ -1342,6 +1381,22 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		margin-top: 0px;
 		margin-bottom: 0px;
 	}
+
+	.step-3-title {
+		font-size:20px;
+		line-height: 20px;
+	}
+
+	.step-3-title-big {
+		font-size: 30px;
+		line-height: 30px;
+	}
+
+	#continent-nav {
+		text-align: left;
+	}
+
+
 }
  
 @media (max-width : 480px){
@@ -1455,7 +1510,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 	}
 	#guidebook-img {
-		width: auto;
+		width: 100%;
 	}
 
 
@@ -1471,8 +1526,8 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 
 	.ew-download-guide > div{
-		margin-top: 0px;
-		margin-bottom: 0px;
+/*		margin-top: 0px;
+		margin-bottom: 0px;*/
 
 	}
 
@@ -1494,11 +1549,11 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 /* Extra Small Devices, Phones */
 @media (min-width : 480px){
 
-	.ew-download-guide > div{
+/*	.ew-download-guide > div{
 		margin-top: 0px;
 		margin-bottom: 0px;
 
-	}
+	}*/
 	.get-started-button {
 		text-align: left;
 	}
@@ -1716,8 +1771,8 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		font-size: 40px;
 	}
 	.section-title.download-title {
-		font-size: 37px;
-		line-height: 35px;
+		font-size: 50px;
+		line-height: 50px;
 		margin-bottom: 10px;
 	}
 
@@ -1748,11 +1803,6 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
     color:#0876ab;
 }
 
-/*.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
-	max-width: 1000px !important;
-	margin-left: auto;
-	margin-right: auto;
-}      */
 
 
 .max-width-1000 {
