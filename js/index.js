@@ -155,7 +155,31 @@ function earthwatchObject() {
             var html = Mustache.render(temp,exp);
             cards.append(html);
             iconArr = ["Boating","Digging","Diving","Flat LandHiking","High Temp","Low Temp","Snorkeling","Swimming","Teen","Uphill Hiking","Wildlife"];
-
+            var iconDiv = $("#activity-icon-"+exp["Booking URL"]);
+            for (var index in iconArr) {
+              if (exp[iconArr[index]] != null) {
+                var iconTemp = $("#activity-icon-template").html();
+                var imgURL = iconArr[index].toLowerCase();
+                switch (iconArr[index]) {
+                  case "High Temp":
+                    imgURL = "hitemp"
+                    break;
+                  case "Low Temp":
+                    imgURL = "lotemp"
+                    break;
+                  case "Flat Land Hiking":
+                    imgURL = "hiking"
+                    break;
+                  case "Uphill Hiking":
+                    imgURL = "uphillhiking"
+                    break;
+                  default:
+                    break;
+                }
+                var html = Mustache.render(iconTemp,{"icon":"../images/"+imgURL+'.png'});
+                iconDiv.append(html);
+              }
+            }
           });
           if (cards.children().length > 0) {
             console.log()
