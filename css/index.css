@@ -24,6 +24,10 @@ body {
 	src: url("../fonts/mission-script-webfont.eot");
 }
 
+@font-face {
+    font-family: missionScript;
+    src: url("../fonts/mission-script-webfont.ttf");
+}
 
 .navbar-toggle .icon-bar {
 	background: #fff !important;
@@ -839,7 +843,7 @@ transform: translate3d(0, 0, 0);*/
 }
 
 .activity-tabs > div {
-	width: 13%;
+	width: 13.88%;
 	text-align: center;
 	display: inline-block;
 	font-size: 15px;
@@ -1539,7 +1543,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 
 /* Medium Devices, Desktops */
-@media screen and (min-width : 992px){
+@media (min-width : 992px){
 
 
 	#map-continent-name {
