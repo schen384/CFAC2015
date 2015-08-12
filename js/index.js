@@ -125,7 +125,6 @@ function earthwatchObject() {
 
 
         exp_continent = data[continent];
-        console.log(exp_continent);
         $.map(exp_continent,function(v,i) {
           console.log(i);
           var type;
@@ -145,14 +144,9 @@ function earthwatchObject() {
               break;
           }
           var cards = $("#expeditions-" + type);
-          // var noavailable = $("#no-available-card").html();
-          // var html = Mustache.render(noavailable,{});
-          // html.style.display = 'none';
-          // cards.append(html);
+          var levelArr = {"Very Easy":0,"Easy":0,"Moderate":0,"Very Active":0,"Strenuous":0,"Varies":0};
           v.map(function(exp) {
-            // if(exp["hiking"] != 0) {
-            //   exp['icon'] = url of the icon
-            // }
+            levelArr[exp["Activity Level"]] = levelArr[exp["Activity Level"]] + 1;
             exp["typeclass"] = 'exp-'+type;
             var temp = $("#card-template").html();
             var html = Mustache.render(temp,exp);
@@ -184,6 +178,38 @@ function earthwatchObject() {
               }
             }
           });
+          var levelCount = 0;
+          $.map(levelArr,function(item,level) {
+            if (levelArr[level] == 0) {
+              var disableLevel = level.toLowerCase();
+              switch (level) {
+                case "Very Easy":
+                  disableLevel = 'very-easy';
+                  break;
+                case "Very Active":
+                  disableLevel = 'very-active';
+                  break;
+                default:
+                  break;
+              }
+              $("."+type+"-"+disableLevel).fadeTo(0,0.1);
+              $("."+type+"-"+disableLevel).hide();
+            } else if (level != '') {
+              levelCount++;
+            }
+          })
+          if(levelCount == 1) {
+            for (var index in v) {
+              if(v[index]["Activeity Level"] != "") {
+                var onlyLev = v[index]["Activity Level"].toLowerCase();
+                if (v[index]["Ativity Level"] == 'Very Easy') onlyLev = 'very-easy';
+                if (v[index]["Ativity Level"] == 'Very Active') onlyLev = 'very-active';
+                  $("."+type+"-"+onlyLev).addClass("active-level");
+                  $("."+type+"-all").hide();
+              }
+              break;
+            }
+          }
           if (cards.children().length > 0) {
             console.log()
             cards.addClass("mCustomScrollbar")
@@ -195,25 +221,16 @@ function earthwatchObject() {
               }
             });
           }
-
-        // else {
-        //     //grey out the step 2
-        //     console.log(type);
-        //     $("#step2-" + type).fadeTo(0,0.5);
-        //     	var noavailable = $("#no-available-card").html();
-      	// 			var html = Mustache.render(noavailable,{});
-      	// 			cards.append(html);
-        //   }
         })
-
         typeArr = ["wildlife","ocean","climate","archeology"];
         for (index in typeArr) {
           if ($("#expeditions-"+typeArr[index]).children().length == 0) {
-            $("#step2-" + typeArr[index]).fadeTo(0,0.5);
-            $(".step2-select-"+typeArr[index]).fadeTo(0,0.3);
+            $("#step2-" + typeArr[index]).fadeTo(0,0.1);
+            $(".step2-select-"+typeArr[index]).fadeTo(0,0.1);
             $(".step2-select-"+typeArr[index]+" div").text("Unavailable");
             $(".step2-select-"+typeArr[index]).removeAttr('href');
             $("#"+typeArr[index]+"-section").hide();
+            $(".step2-select-"+typeArr[index]+"-hori").hide();
 
           }
         }
@@ -363,7 +380,7 @@ function earthwatchObject() {
             $(window).stellar();
 		}
 
-		
+
 
     }
 
@@ -372,8 +389,6 @@ function earthwatchObject() {
 		var that = this;
 		$( window ).resize(function() {
 			that.parallax();
-
-
 		});
 
 
@@ -395,22 +410,6 @@ function earthwatchObject() {
 				$(this).addClass("no-background");
 				$(this).removeClass("select-clicked");
 			})
-			// var cards = $("#mCSB_1_container");
-			// cards.empty();
-			// exp_type = exp_continent[$(this).attr('id')];
-      //
-			// if (exp_type) {
-			// 	for (var i = 0; i < exp_type.length; i++) {
-			// 		var temp = $("#card-template").html();
-			// 		var html = Mustache.render(temp,exp_type[i]);
-			// 		cards.append(html);
-			// 	}
-			// 	$("#expedition-cards").mCustomScrollbar("scrollTo","top");
-			// } else {
-			// 	var noavailable = $("#no-available-card").html();
-			// 	var html = Mustache.render(noavailable,{});
-			// 	cards.append(html);
-			// }
 		});
 
 		$(".research-select").mouseover(function() {
@@ -461,47 +460,6 @@ function earthwatchObject() {
           else {obj.style.display = 'none';}
         }
       }
-      // if (cards.children().length == 0 || count == 0) {
-      //   console.log(count);
-      //     var noavailable = $("#no-available-card").html();
-      //     var html = Mustache.render(noavailable,{});
-      //     cards.append(html);
-      // }
-
-      // var level = $(this)[0].innerHTML;
-      // for (exp in exp_type) {
-      //   if(level != 'All' && exp_type[exp]['Activity Level'] == level) {
-      //     var temp = $("#card-template").html();
-      //     var html = Mustache.render(temp,exp_type[exp]);
-      //     cards.append(html);
-      //   } else if (level == 'All') {
-      //     var temp = $("#card-template").html();
-      //     var html = Mustache.render(temp,exp_type[exp]);
-      //     cards.append(html);
-      //   };
-      // }
-
-
-      // var cards = $("#mCSB_1_container");
-      // cards.empty();
-      // var level = $(this)[0].innerHTML;
-      // if (!exp_type) {
-      //     var noavailable = $("#no-available-card").html();
-      //     var html = Mustache.render(noavailable,{});
-      //     cards.append(html);
-      // } else {
-      //   for (exp in exp_type) {
-      //     if(level != 'All' && exp_type[exp]['Activity Level'] == level) {
-      //       var temp = $("#card-template").html();
-      //       var html = Mustache.render(temp,exp_type[exp]);
-      //       cards.append(html);
-      //     } else if (level == 'All') {
-      //       var temp = $("#card-template").html();
-      //       var html = Mustache.render(temp,exp_type[exp]);
-      //       cards.append(html);
-      //     };
-      //   }
-      // }
   		$("#expedition-cards").mCustomScrollbar("scrollTo","top");
 
 		});
