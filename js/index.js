@@ -477,11 +477,11 @@ function earthwatchObject() {
 			$(".activity-tab-info").each(function() {
 				if ($(this).attr("activity-level") == level) {
 					$(this).removeClass("active-level");
-					$(this).addClass("inactive-level");
 					$(".activity-tab-info-text").removeClass("active");
 					// $(".activity-tab-info-text").html("");
 				}
 			});
+			if(!$(this).hasClass("active-level")){$(this).addClass("inactive-level");}
 		})
 
 		$('a').click(function(){
