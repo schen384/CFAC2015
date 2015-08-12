@@ -493,7 +493,7 @@ transform: translate3d(0, 0, 0);*/
 
 .research-section-background {
 /*	background-size: auto 150% !important;*/
-	height: 100vh;
+	height: auto;
 }
 
 

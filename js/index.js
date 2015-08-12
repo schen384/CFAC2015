@@ -314,6 +314,10 @@ function earthwatchObject() {
 
 
     	};
+
+    	$("#climate-section").attr("data-stellar-vertical-offset", 1*windowHeight);
+    	$("#archeology-section").attr("data-stellar-vertical-offset", 1*windowHeight);
+
 			if (ratio < (windowWidth/windowHeight)) {
 				$("#ew-continent-intro").css("background-size", "120% auto");
 				$(".research-section-background").css("background-size", "120% auto");
