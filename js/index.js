@@ -292,7 +292,7 @@ function earthwatchObject() {
 
     this.afterLoad = function () {
 		this.parallax();
-		this.setIntroImage();
+
 
     }
 
@@ -305,7 +305,7 @@ function earthwatchObject() {
 		var ratio = (4.25/3.25);
 
     	for (var i = 0; i < sectionIds.length; i++) {
-    		$(sectionIds[i]).attr("data-stellar-vertical-offset", 1.25*windowHeight);
+    		$(sectionIds[i]).attr("data-stellar-vertical-offset", 1.5*windowHeight);
 
 
     	};
@@ -515,8 +515,8 @@ function earthwatchObject() {
 			size = "100% auto";
 		}
 		size = "auto 120%";
-		$("#ew-intro").css("background-size", size);
-		 $("#ew-continent-intro").css("background-size", size);
+		// $("#ew-intro").css("background-size", size);
+		//  $("#ew-continent-intro").css("background-size", size);
 		// $(".research-section").css("background-size", size);
 		  // $("#activities-anchor").css("background-size", size);
 
