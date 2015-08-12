@@ -539,6 +539,11 @@ transform: translate3d(0, 0, 0);*/
 }
 
 
+#continent-nav {
+	text-align: center;
+}
+
+
 @media (max-height : 844px) and (min-width:692px){
 	@media (min-width:692px) {
 		.ew-intro, .ew-continent-intro, #research-anchor {
@@ -1155,6 +1160,17 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 
 
+.step-3-title {
+	font-size:30px;
+	line-height: 30px;
+}
+
+.step-3-title-big {
+	font-size: 50px;
+	line-height: 50px;
+}
+
+
 .padding-15 {
 	padding: 15px;
 }
@@ -1173,6 +1189,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 
 @media (max-width : 1200px){
+
 
 	.step-subtitle {
 		font-size: 25px;
@@ -1209,6 +1226,8 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 }
  
 @media (max-width : 767px){
+
+
 
 
 	.intro-title {
@@ -1346,6 +1365,22 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		margin-top: 0px;
 		margin-bottom: 0px;
 	}
+
+	.step-3-title {
+		font-size:20px;
+		line-height: 20px;
+	}
+
+	.step-3-title-big {
+		font-size: 30px;
+		line-height: 30px;
+	}
+
+	#continent-nav {
+		text-align: left;
+	}
+
+
 }
  
 @media (max-width : 480px){
