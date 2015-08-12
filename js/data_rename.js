@@ -48,11 +48,10 @@ var expeditions = [{"Region":"Africa","Research Type":"Wildlife & Ecosystems","A
 {"Region":"South America","Research Type":"Wildlife & Ecosystems","Activity Level":"Moderate","Title":"Trailing Penguins in Patagonia","Image Name":"https://s3.amazonaws.com/EarthwatchMedia/ExpeditionAvatars/3150.jpg","US Price Range":"2450-2500","UK Price Range":null,"Location":"Chubut, Patagonia, Argentina","Duration":7,"Boating":null,"Digging":null,"Diving":null,"Flat Land Hiking":1,"Snorkeling":null,"Swimming":null,"Uphill Hiking":null,"Teen":null,"Wildlife":null,"High Temp":null,"Low Temp":1,"Audience":"Adult","Learn More URL":"trailing-penguins-in-patagonia","Booking URL":3150}];
 
 var Continents = {"Africa":{}, "North America":{}, "South America":{}, "Europe":{}, "Asia":{}, "Central America & Caribbean":{}, "Australia":{} };
-var ResearchTypes = {"Wildlife & Ecosystems":[], "Ocean Health":[], "Climate Change":[], "Archaeology & Culture":[]};
+// var ResearchTypes = {"Wildlife & Ecosystems":[], "Ocean Health":[], "Climate Change":[], "Archaeology & Culture":[]};
 
 for (var data in Continents) {
-	Continents[data] = ResearchTypes;
-}
+	Continents[data] = {"Wildlife & Ecosystems":[], "Ocean Health":[], "Climate Change":[], "Archaeology & Culture":[]};}
 
 len = expeditions.length;
 for (i = 0; i < len; i++) {

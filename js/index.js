@@ -112,7 +112,6 @@ function earthwatchObject() {
 
     this.loadContinent = function(continent) {
       $("#activities-anchor").hide();
-      console.log(Continents);
       var data = Continents;
         // var cards = $("#expedition-cards");
         $("#continent-wel").html('Welcome to ' + continent + '!');
@@ -123,6 +122,7 @@ function earthwatchObject() {
 
 
         exp_continent = data[continent];
+        console.log(exp_continent);
         $.map(exp_continent,function(v,i) {
           console.log(i);
           var type;
@@ -142,6 +142,10 @@ function earthwatchObject() {
               break;
           }
           var cards = $("#expeditions-" + type);
+          // var noavailable = $("#no-available-card").html();
+          // var html = Mustache.render(noavailable,{});
+          // html.style.display = 'none';
+          // cards.append(html);
           v.map(function(exp) {
             // if(exp["hiking"] != 0) {
             //   exp['icon'] = url of the icon
@@ -151,7 +155,7 @@ function earthwatchObject() {
             var html = Mustache.render(temp,exp);
             cards.append(html);
             iconArr = ["Boating","Digging","Diving","Flat LandHiking","High Temp","Low Temp","Snorkeling","Swimming","Teen","Uphill Hiking","Wildlife"];
-            
+
           });
           if (cards.children().length > 0) {
             console.log()
@@ -164,6 +168,7 @@ function earthwatchObject() {
               }
             });
           }
+
         // else {
         //     //grey out the step 2
         //     console.log(type);
@@ -412,11 +417,12 @@ function earthwatchObject() {
           else {obj.style.display = 'none';}
         }
       }
-      if (cards.children().length == 0 || count == 0) {
-          var noavailable = $("#no-available-card").html();
-          var html = Mustache.render(noavailable,{});
-          cards.append(html);
-      }
+      // if (cards.children().length == 0 || count == 0) {
+      //   console.log(count);
+      //     var noavailable = $("#no-available-card").html();
+      //     var html = Mustache.render(noavailable,{});
+      //     cards.append(html);
+      // }
 
       // var level = $(this)[0].innerHTML;
       // for (exp in exp_type) {
