@@ -144,6 +144,7 @@ function earthwatchObject() {
             cards.append(html);
           });
           if (cards.children().length > 0) {
+            console.log()
             cards.addClass("mCustomScrollbar")
             $("#expedition-cards").mCustomScrollbar({
               axis:"y",
@@ -152,36 +153,29 @@ function earthwatchObject() {
                 updateOnContentResize: true
               }
             });
-          } else {
-            	var noavailable = $("#no-available-card").html();
-      				var html = Mustache.render(noavailable,{});
-      				cards.append(html);
           }
+        // else {
+        //     //grey out the step 2
+        //     console.log(type);
+        //     $("#step2-" + type).fadeTo(0,0.5);
+        //     	var noavailable = $("#no-available-card").html();
+      	// 			var html = Mustache.render(noavailable,{});
+      	// 			cards.append(html);
+        //   }
         })
 
+        typeArr = ["wildlife","ocean","climate","archeology"];
+        for (index in typeArr) {
+          if ($("#expeditions-"+typeArr[index]).children().length == 0) {
+            $("#step2-" + typeArr[index]).fadeTo(0,0.5);
+            $(".step2-select-"+typeArr[index]).fadeTo(0,0.3);
+            $(".step2-select-"+typeArr[index]+" div").text("Unavailable");
+            $(".step2-select-"+typeArr[index]).removeAttr('href');
+            console.log($(".step2-select-"+typeArr[index]).children()[0]);
+            $("#"+typeArr[index]+"-section").hide();
 
-        // all_exp = [];
-        // for (var key in exp_continent) {
-        //   for (var j = 0;j < exp_continent[key].length;j++) {
-        //     all_exp.push(exp_continent[key][j]);
-        //   }
-        // }
-        // if (all_exp.length) {
-        //   for (var i = 0; i < all_exp.length; i++) {
-        //     var temp = $("#card-template").html();
-        //     var html = Mustache.render(temp,all_exp[i]);
-        //     cards.append(html);
-        //   }
-        // }
-        // if ($(".expedition-card").length > 0) {
-        //   $("#expedition-cards").mCustomScrollbar({
-        //     axis:"y",
-        //     scrollbarPosition: "outside",
-        //     advanced:{
-        //       updateOnContentResize: true
-        //     }
-        //   });
-        // }
+          }
+        }
     }
 
 
@@ -322,6 +316,9 @@ function earthwatchObject() {
 
 
 		$(".research-select").click(function() {
+      if($(this).attr('href') == null) {
+        return;
+      }
       		$("#activities-anchor").show();
 
 			var outlineColor = $(this).attr('class').split(new RegExp("\\s+")).pop();
@@ -471,7 +468,9 @@ function earthwatchObject() {
 		})
 
 		$('a').click(function(){
-
+      if($(this).attr('href') == null) {
+        return;
+      }
 			var scroll = $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top - 50;
 			console.log(scroll);
 		    $('html, body').animate({
