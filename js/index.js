@@ -112,6 +112,7 @@ function earthwatchObject() {
 
     this.loadContinent = function(continent) {
       $("#activities-anchor").hide();
+      console.log(Continents);
       var data = Continents;
         // var cards = $("#expedition-cards");
         $("#continent-wel").html('Welcome to ' + continent + '!');
@@ -123,6 +124,7 @@ function earthwatchObject() {
 
         exp_continent = data[continent];
         $.map(exp_continent,function(v,i) {
+          console.log(i);
           var type;
           switch (i) {
             case "Wildlife & Ecosystems":
@@ -134,7 +136,7 @@ function earthwatchObject() {
             case "Climate Change":
               type = "climate"
               break;
-            case "Archeology":
+            case "Archaeology & Culture":
               type = "archeology";
             default:
               break;
@@ -148,6 +150,8 @@ function earthwatchObject() {
             var temp = $("#card-template").html();
             var html = Mustache.render(temp,exp);
             cards.append(html);
+            iconArr = ["Boating","Digging","Diving","Flat LandHiking","High Temp","Low Temp","Snorkeling","Swimming","Teen","Uphill Hiking","Wildlife"];
+            
           });
           if (cards.children().length > 0) {
             console.log()
@@ -177,7 +181,6 @@ function earthwatchObject() {
             $(".step2-select-"+typeArr[index]).fadeTo(0,0.3);
             $(".step2-select-"+typeArr[index]+" div").text("Unavailable");
             $(".step2-select-"+typeArr[index]).removeAttr('href');
-            console.log($(".step2-select-"+typeArr[index]).children()[0]);
             $("#"+typeArr[index]+"-section").hide();
 
           }

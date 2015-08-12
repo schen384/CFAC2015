@@ -864,7 +864,7 @@
 
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 expedition-card-img">
-          <img class="expedition-img " src="../images/sheep.jpg">
+          <img class="expedition-img " src="{{Image Name}}">
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-small margin-bottom-10-small">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding expedition-card-description">
@@ -903,7 +903,7 @@
           <div class="detail-category">
             <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Activities</span>
             <br>
-            <span>Icons</span>
+            <span class="activity-icon"></span>
 
           </div>
           <div class="detail-category">
@@ -926,6 +926,10 @@
         </div>
       </div>
     </div>
+  </script>
+
+  <script type="text/html" id="activity-icon-template">
+    <div class='activity-icon-div'><img class="activity-icon-img" src="{{icon}}"><div>
   </script>
 
   <script type="text/html" id="no-available-card">
