@@ -139,8 +139,8 @@ body {
 
 
 .intro-title {
-	font-size: 40px;
-	line-height: 60px;
+	font-size: 100px;
+	line-height: 130px;
 	float: left;
 	text-align: center;
 	width: 100%;
@@ -186,6 +186,10 @@ background-repeat: repeat-x;
 
 }
 
+.download-btn {
+	border: 1px solid #fff !important;
+}
+
 .position-absolute {
 	position: absolute;
 }
@@ -226,7 +230,7 @@ background-repeat: repeat-x;
 }
 
 .adventure-large {
-	font-size: 80px;
+	font-size: 170px;
 }
 
 
@@ -254,7 +258,7 @@ background-repeat: repeat-x;
 
 
 .ew-step-1 {
-	background: url("../images/jungle.jpg");
+	background: #343e48;
 	background-size: cover;
 	color:#fff;
 }
@@ -662,8 +666,8 @@ transform: translate3d(0, 0, 0);*/
 
 
 .ew-continent-intro {
-/*	height: auto;
-*/
+	height: auto;
+
 	background: 
 	    linear-gradient(
 	      rgba(0, 0, 0, 0.45), 
@@ -1203,6 +1207,19 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 @media (max-width : 767px){
 
 
+	.intro-title {
+	    font-size: 40px;
+	    line-height: 60px;
+	    float: left;
+	    text-align: center;
+	    width: 100%;
+	}
+
+	.adventure-large {
+		font-size: 80px;
+	}
+
+
 	.research-description {
 		font-size: 15px;
 		line-height: 20px;
@@ -1386,6 +1403,8 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 
 @media (min-width: 768px) {
+
+
 	.navbar-nav>li>a {
 	    padding-top: 5px;
 	    padding-bottom: 15px;
@@ -1995,4 +2014,3 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
   font-size: 0;
   line-height: 0
 }
-
