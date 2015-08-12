@@ -58,7 +58,5 @@ len = expeditions.length;
 for (i = 0; i < len; i++) {
 	var con = expeditions[i]["Region"];
 	var res = expeditions[i]["Research Type"];
-	console.log(con);
-	console.log(res);
 	Continents[con][res].push(expeditions[i]);
 }

@@ -19,6 +19,10 @@ body {
     src: url("../fonts/DINLight.ttf");
 }
 
+@font-face{
+	font-family: missionScript;
+	src: url("../fonts/mission-script-webfont.eot");
+}
 
 @font-face {
     font-family: missionScript;
