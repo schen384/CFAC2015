@@ -531,8 +531,24 @@ transform: translate3d(0, 0, 0);*/
 
 }
 
+.activity-icon-div {
+	display: inline;
+	float: left
 
+}
 
+.activity-icon-div>img {
+	width: 95%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+
+	
+}
+
+.activity-icons {
+	width: 100%;
+	display: block;
+}
 
 .expedition-card-img {
 	background-size: auto 100%;
