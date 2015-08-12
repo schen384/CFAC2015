@@ -232,8 +232,7 @@ background-repeat: repeat-x;
 }
 
 .text-dark-blue {
-	color: #0876ab;
-
+	color: #3399FF;
 }
 
 .text-grey {
@@ -846,6 +845,7 @@ transform: translate3d(0, 0, 0);*/
 	text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
 	font-weight: bold;
 	padding: 5px;
+	cursor:pointer;
 /*	border-bottom: 5px solid transparent;*/
 
 }
@@ -864,6 +864,10 @@ transform: translate3d(0, 0, 0);*/
 	text-shadow:none;
 	/*border-bottom: 10px solid rgba(255,255,255,1);*/
 
+}
+
+.activity-tabs > div.inactive-level{
+	background: rgba(84,84,84,0.7);
 }
 
 .activity-tab-info-text {

@@ -91,6 +91,12 @@ function earthwatchObject() {
 		this.loadMap();
 		this.mapListeners();
 
+		$(".activity-tab").each(function(){
+			if(!$(this).hasClass("active-level")){
+				$(this).addClass("inactive-level");
+			}
+		});
+
     }
 
     this.resize = function() {
@@ -101,7 +107,7 @@ function earthwatchObject() {
     }
 
     this.test = function() {
-      console.log(exp_continent);
+      //console.log(exp_continent);
     }
 
     this.loadContinent = function(continent) {
@@ -191,7 +197,7 @@ function earthwatchObject() {
     		element: document.getElementById("map-container"),
     		projection: 'cylindricalStereographic',
     		fills:{
-    			defaultFill:'rgba(0,0,0,0.5)',
+    			defaultFill:'rgba(245,245,245,1.0)',
     			'NA': '#4CB074',
     			'SA': '#F5670F',
     			'AF': '#dcb312',
@@ -225,21 +231,21 @@ function earthwatchObject() {
     			'IRL': {fillKey: 'EU'},
     		},
     		geographyConfig:{
-    			borderColor: 'rgba(255,255,255,0.8)',
+    			borderColor: 'rgba(0,0,0,0.8)',
     			popupOnHover:false,
     			highlightFillColor: function(data){
     				if(data.fillKey){
     					return data.fillKey;
     				}else{
-    					return 'rgba(0,0,0,0.5)';
+    					return 'rgba(245,245,245,1.0)';
     				}
     			},
     			highlightBorderColor: function(data){
-    				console.log(data);
+    				//console.log(data);
     				if(data.fillKey){
     					return "yellow";
     				}else{
-    					return 'rgba(255,255,255,0.8)';
+    					return 'rgba(0,0,0,0.8)';
     				}
     			},
     			highlightBorderWidth: function(data){
@@ -256,12 +262,17 @@ function earthwatchObject() {
     					window.location.href = "/continent.html?continent=" + geography.properties.continent;
     				}
     			});
+    			/*datamap.svg.selectAll('.datamaps-subunit').on('mouseover', function(geography){
+    				console.log("hovering");
+    				//$('.datamaps-subunit').css("fill",'rgba(245,245,245,1.0)');
+    				//$('.datamaps-subunit').css("cursor", "pointer");
+    			});*/
     		}
     	});
     }
 
     this.loadSections = function () {
-    	console.log("in load sections");
+    	//console.log("in load sections");
     	// load connect section
     	jQuery("#"+CONNECT_ROW_ID).load("../html/connect.html");
 
@@ -286,7 +297,7 @@ function earthwatchObject() {
     }
 
     this.parallax = function () {
-    	console.log("in parallax");
+    	//console.log("in parallax");
     	var sectionIds = ["#wildlife-section", "#ocean-section", "#climate-section", "#archeology-section", "#activities-anchor"];
 
 		var windowHeight = $(window).height();
@@ -311,7 +322,7 @@ function earthwatchObject() {
     }
 
     this.attachListeners = function() {
-		console.log("in attachListeners");
+		//console.log("in attachListeners");
 		var that = this;
 		$( window ).resize(function() {
 			that.parallax();
@@ -368,9 +379,11 @@ function earthwatchObject() {
 		});
 
 		$(".activity-tab").click(function() {
-  		$('.activity-tab').each(function() {
+  			$('.activity-tab').each(function() {
   				$(this).removeClass("active-level");
+  				$(this).addClass("inactive-level");
   		});
+  		$(this).removeClass("inactive-level");
   		$(this).addClass("active-level");
 
       var level = $(this)[0].innerHTML;
@@ -446,7 +459,7 @@ function earthwatchObject() {
 
 		$(".activity-tab").mouseover(function() {
 			var level = $(this).attr("activity-level");
-
+			$(this).removeClass("inactive-level");
 			$(".activity-tab-info").each(function() {
 				if ($(this).attr("activity-level") == level) {
 
@@ -464,6 +477,7 @@ function earthwatchObject() {
 			$(".activity-tab-info").each(function() {
 				if ($(this).attr("activity-level") == level) {
 					$(this).removeClass("active-level");
+					$(this).addClass("inactive-level");
 					$(".activity-tab-info-text").removeClass("active");
 					// $(".activity-tab-info-text").html("");
 				}
@@ -473,7 +487,7 @@ function earthwatchObject() {
 		$('a').click(function(){
 
 			var scroll = $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top - 50;
-			console.log(scroll);
+			//console.log(scroll);
 		    $('html, body').animate({
 		        scrollTop: scroll
 		    }, 500);
