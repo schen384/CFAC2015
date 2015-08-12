@@ -129,6 +129,10 @@ body {
 	font-size: 15px;
 }
 
+.font-size-20	 {
+	font-size: 20px;
+}
+
 .font-size-45 {
 	font-size: 45px;
 }
@@ -152,6 +156,8 @@ body {
 .padding-top-35{
 	padding-top:35px;
 }
+
+
 
 
 .color-border {
@@ -426,7 +432,7 @@ transform: translate3d(0, 0, 0);*/
     background-color: #0876ab;
     border-color: #0876ab;
     text-transform: uppercase;
-    border-radius: 5px;
+    border-radius: 0px;
     font-size: 20px;
 /*
     box-shadow:2px 2px 10px rgba(0,0,0,0.5);*/
@@ -527,7 +533,7 @@ transform: translate3d(0, 0, 0);*/
 
 @media (max-height : 844px) and (min-width:692px){
 	@media (min-width:692px) {
-		.ew-intro, #research-anchor {
+		.ew-intro, .ew-continent-intro, #research-anchor {
 			height: auto;
 			padding-top: 20px !important;
 			padding-bottom: 20px !important;
@@ -569,8 +575,8 @@ transform: translate3d(0, 0, 0);*/
 
 
 @media (max-height : 599px) {
-	@media (min-width:692px) {
-		.research-section {
+	
+		.research-section, .research-section-background {
 			height: auto;
 			padding-top: 20px !important;
 			padding-bottom: 20px !important;
@@ -578,15 +584,15 @@ transform: translate3d(0, 0, 0);*/
 			margin-bottom: 0px !important;;
 
 		}
-	}
+	
 
 
 
 }
 
 @media (min-height : 600px){
-	@media (min-width:692px) {
-		.research-section {
+	
+		.research-section, {
 			height: 100%;
 			padding-top: 5% !important;
 			padding-bottom: 0% !important;
@@ -594,7 +600,7 @@ transform: translate3d(0, 0, 0);*/
 			margin-bottom: 0px !important;;
 			min-height: 500px;
 		}
-	}
+	
 }
 
 
@@ -646,7 +652,7 @@ transform: translate3d(0, 0, 0);*/
 
 #ocean-section {
 	background: url("../images/africa-ocean-bg.jpg");
-	height: 100vh;
+
 }
 
 
@@ -663,7 +669,7 @@ transform: translate3d(0, 0, 0);*/
 	      rgba(0, 0, 0, 0.45), 
 	      rgba(0, 0, 0, 0)
 	    ),
-		url("../images/test.jpg");
+		url("../images/africa_intro-bg.jpg");
 	background-position: center bottom;
 	background-size: 100% auto;
 /*	color:#fff;
@@ -843,10 +849,10 @@ transform: translate3d(0, 0, 0);*/
 }
 
 .activity-tabs > div {
-	width: 13.88%;
+	width: 13%;
 	text-align: center;
 	display: inline-block;
-	font-size: 15px;
+	font-size: 12.5px;
 	text-transform: uppercase;
 	text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
 	font-weight: bold;
@@ -1196,6 +1202,12 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
  
 @media (max-width : 767px){
 
+
+	.research-description {
+		font-size: 15px;
+		line-height: 20px;
+	}
+
 	#ew-continent-intro {
 		padding-top: 100px;
 	}
@@ -1267,10 +1279,16 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		margin-left: 2.5%;
 		border-color: #0876ab;
 		color:#0876ab;
+		font-size: 3vw;
 		background: none;
 		text-shadow:none;
 		box-shadow: none;
 	}
+
+.expedition-card-headline {
+    font-size: 5vw !important;
+     line-height: 5vw !important; 
+}
 	.expedition-card-btn > a:hover {
 
 		color:#0876ab;
