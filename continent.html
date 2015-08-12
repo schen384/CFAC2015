@@ -4,7 +4,7 @@
 
   <title>Earthwatch</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
   <link href='http://fonts.googleapis.com/css?family=Leckerli+One' rel='stylesheet' type='text/css'>
@@ -67,10 +67,10 @@
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SELECT RESEARCH<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="#"  class="step2-select-wildlife">Wildlife &amp; <br>ecosystems</a></li>
-					<li><a href="#" class="step2-select-ocean">Ocean health</a></li>
-					<li><a href="#" class="step2-select-climate">climate change</a></li>
-					<li><a href="#" class="step2-select-archeology">archeology</a></li>
+					<li><a href="#wildlife-section"  class="step2-select-wildlife">Wildlife &amp; <br>ecosystems</a></li>
+					<li><a href="#ocean-section" class="step2-select-ocean">Ocean health</a></li>
+					<li><a href="#climate-section" class="step2-select-climate">climate change</a></li>
+					<li><a href="#archeology-section" class="step2-select-archeology">archeology</a></li>
 				</ul>
 			</li>
 	      </ul>
@@ -80,7 +80,7 @@
 
 	<div class="container-fluid ew-content" id="ew-content">
 
-		<div class="row ew-section ew-intro ew-continent-intro inset-top-shadow" id="ew-continent-intro" data-stellar-background-ratio="0.3"  data-stellar-horizontal-offset="0" data-stellar-vertical-offset="150" >
+		<div class="row ew-section ew-intro ew-continent-intro inset-top-shadow container-fluid" id="ew-continent-intro" data-stellar-background-ratio="0.3"  data-stellar-horizontal-offset="0" data-stellar-vertical-offset="150" >
 
 			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 intro-content continent">
 
@@ -95,7 +95,7 @@
 
 
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-15 margin-bottom-15"></div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 color-border">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 color-border" style="visibility:hidden">
 								</div>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 intro-text text-shadow">
 									For more than 40 years, EARTHWATCH has connected everyday people with the world's top scientists to help conduct vital research for a sustainable planet.
@@ -169,7 +169,7 @@
 							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 height-100" id="step2-wildlife">
 								<div class="width-100 margin-top-10">
 									<img class="research-icon" src="../images/wildlife-icon.png">
-									<div class="text-uppercase  font-dinMedium research-icon-headline text-green"> Wildlife &#38; Ecosystems</div>
+									<div class="text-uppercase  font-dinMedium research-icon-headline text-green"> Wildlife &amp; Ecosystems</div>
 									<div class="research-select-div  hidden-md hidden-lg">
 										<a href="#activities-anchor" class="research-select no-background  outline-green step2-select-wildlife">
 											<div  class=" text-green">select</div>
@@ -178,7 +178,7 @@
 								</div>
 								<br>
 								<div class="text-center font-dinRegular research-icon-text">
-									Bacon ipsum dolor amet boudin bresaola prosciutto frankfurter, leberkas shankle ribeye ground round cupim. Cupim sirloin alcatra chuck tri-tip. Frankfurter turkey pork shoulder pork loin meatloaf.
+
 								</div>
 
 
@@ -197,7 +197,7 @@
 								</div>
 								<br>
 								<div class="text-center font-dinRegular research-icon-text">
-									Bacon ipsum dolor amet boudin bresaola prosciutto frankfurter, leberkas shankle ribeye ground round cupim. Cupim sirloin alcatra chuck tri-tip. Frankfurter turkey pork shoulder pork loin meatloaf.
+
 								</div>
 
 
@@ -216,7 +216,7 @@
 								</div>
 								<br>
 								<div class="text-center font-dinRegular research-icon-text">
-									Bacon ipsum dolor amet boudin bresaola prosciutto frankfurter, leberkas shankle ribeye ground round cupim. Cupim sirloin alcatra chuck tri-tip. Frankfurter turkey pork shoulder pork loin meatloaf.
+
 								</div>
 
 
@@ -235,7 +235,7 @@
 								</div>
 								<br>
 								<div class="text-center font-dinRegular research-icon-text">
-									Bacon ipsum dolor amet boudin bresaola prosciutto frankfurter, leberkas shankle ribeye ground round cupim. Cupim sirloin alcatra chuck tri-tip. Frankfurter turkey pork shoulder pork loin meatloaf.
+
 								</div>
 
 
@@ -303,13 +303,23 @@
 									<div class=" continent font-mission text-shadow research-section-title text-center">Wildlife and Ecosystems</div>
 								</div>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-15 margin-bottom-15"></div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 color-border">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 color-border" style="visibility:hidden">
 								</div>
 								<div class="row">
-									<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 intro-text research-text text-shadow">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 intro-text research-text text-shadow">
 										For more than 40 years, EARTHWATCH has connected everyday people with the world's top scientists to help conduct vital research for a sustainable planet.
 									</div>
-									<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+								</div>
+								<div class="row max-width-1000 padding-top-35"><!-- headline -->
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<div class="font-dinMedium text-uppercase font-size-45 text-shadow margin-bottom-10 step-title">Step: 3</div>
+										<div class="font-mission font-size-80 choose-research-text text-shadow step-title-name">Choose Your Activity Level</div>
+
+										<!-- 	<img class="width-100" src="images/continent-text.png"> -->
+										</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<div class="row max-width-1000 no-margin">
 							<!-- 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div> -->
 											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -406,13 +416,22 @@
 									<div class=" continent font-mission text-shadow research-section-title text-center">Ocean Health</div>
 								</div>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-15 margin-bottom-15"></div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 color-border">
 								</div>
 								<div class="row">
-									<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 intro-text research-text text-shadow">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 intro-text research-text text-shadow">
 										For more than 40 years, EARTHWATCH has connected everyday people with the world's top scientists to help conduct vital research for a sustainable planet.
 									</div>
-									<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+								</div>
+								<div class="row max-width-1000 padding-top-35"><!-- headline -->
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<div class="font-dinMedium text-uppercase font-size-45 text-shadow margin-bottom-10 step-title">Step: 3</div>
+										<div class="font-mission font-size-80 choose-research-text text-shadow step-title-name">Choose Your Activity Level</div>
+
+										<!-- 	<img class="width-100" src="images/continent-text.png"> -->
+										</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<div class="row max-width-1000 no-margin">
 							<!-- 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div> -->
 											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -494,10 +513,10 @@
 						</div>
 
 						<!-- <div class="col-lg-6 col-md-6 col-sm-1 col-xs-1 hidden-sm  hidden-xs"></div> -->
-					</div>
 				</div>
-			</div>
 		</div>
+
+
 
 
 		<div class="text-white ">
@@ -510,13 +529,23 @@
 									<div class=" continent font-mission text-shadow research-section-title text-center">Climate Change</div>
 								</div>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-15 margin-bottom-15"></div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 color-border">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 color-border" style="visibility:hidden">
 								</div>
 								<div class="row">
-									<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 intro-text research-text text-shadow">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 intro-text research-text text-shadow">
 										For more than 40 years, EARTHWATCH has connected everyday people with the world's top scientists to help conduct vital research for a sustainable planet.
 									</div>
-									<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+								</div>
+								<div class="row max-width-1000 padding-top-35"><!-- headline -->
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<div class="font-dinMedium text-uppercase font-size-45 text-shadow margin-bottom-10 step-title">Step: 3</div>
+										<div class="font-mission font-size-80 choose-research-text text-shadow step-title-name">Choose Your Activity Level</div>
+
+										<!-- 	<img class="width-100" src="images/continent-text.png"> -->
+										</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<div class="row max-width-1000 no-margin">
 							<!-- 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div> -->
 											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -600,8 +629,8 @@
 						<!-- <div class="col-lg-6 col-md-6 col-sm-1 col-xs-1 hidden-sm  hidden-xs"></div> -->
 					</div>
 				</div>
-			</div>
 		</div>
+
 
 		<div class="text-white ">
 			<div class="row ew-section research-section-background inset-top-shadow" id="archeology-section" name="archeology-section"  data-stellar-background-ratio="0.3"  data-stellar-horizontal-offset="0" data-stellar-vertical-offset="2500" >
@@ -613,13 +642,23 @@
 									<div class=" continent font-mission text-shadow research-section-title text-center">Archeology</div>
 								</div>
 								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin-top-15 margin-bottom-15"></div>
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 color-border">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 color-border" style="visibility:hidden">
 								</div>
 								<div class="row">
-									<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 intro-text research-text text-shadow">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 intro-text research-text text-shadow">
 										For more than 40 years, EARTHWATCH has connected everyday people with the world's top scientists to help conduct vital research for a sustainable planet.
 									</div>
-									<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+								</div>
+								<div class="row max-width-1000 padding-top-35"><!-- headline -->
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+										<div class="font-dinMedium text-uppercase font-size-45 text-shadow margin-bottom-10 step-title">Step: 3</div>
+										<div class="font-mission font-size-80 choose-research-text text-shadow step-title-name">Choose Your Activity Level</div>
+
+										<!-- 	<img class="width-100" src="images/continent-text.png"> -->
+										</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 										<div class="row max-width-1000 no-margin">
 							<!-- 				<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 hidden-xs hidden-sm"></div> -->
 											<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -701,10 +740,10 @@
 						</div>
 
 						<!-- <div class="col-lg-6 col-md-6 col-sm-1 col-xs-1 hidden-sm  hidden-xs"></div> -->
-					</div>
 				</div>
 			</div>
 		</div>
+
 
 
 		<div class="row ew-section ew-contact inset-top-shadow">
@@ -791,13 +830,13 @@
 
 									<div class="row">
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-											<img class="connect-icon" src="images/wordpress-icon.png">
+											<a href="https://earthwatchunlocked.wordpress.com/" target="_blank"><img class="connect-icon" src="images/wordpress-icon.png"></a>
 										</div> <!-- message -->
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-											<img class="connect-icon" src="images/twitter-icon.png">
+											<a href="https://twitter.com/earthwatch_org?lang=en" target="_blank"><img class="connect-icon" src="images/twitter-icon.png"></a>
 										</div> <!-- message -->
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-											<img class="connect-icon" src="images/facebook-icon.png">
+											<a href="https://www.facebook.com/Earthwatch" target="_blank"><img class="connect-icon" src="images/facebook-icon.png"></a>
 										</div> <!-- message -->
 									</div>
 								</div>
@@ -814,21 +853,20 @@
 
 
 
-	</div>
 
 	<script type="text/javascript" src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 
   <script type="text/html" id="card-template">
-    <div class="row expedition-card no-padding {{typeclass}} {{Activity Level}}">
-      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12  equal-height padding-15">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
+    <div class="row expedition-card {{typeclass}} {{Activity Level}}">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 no-padding">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
           <div class="text-uppercase font-dinMedium text-dark-blue expedition-card-headline margin-bottom-15">{{Title}}</div>
 
         </div>
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 expedition-card-img-small visible-xs visible-sm">
-          <img class="expedition-img-small  mCS_img_loaded" src="../images/sheep.jpg">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 expedition-card-img">
+          <img class="expedition-img " src="../images/sheep.jpg">
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding margin-bottom-10-small">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 padding-small margin-bottom-10-small">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding expedition-card-description">
             {{Short Description}}
           </div>
@@ -843,46 +881,40 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 no-padding expedition-card-details">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="text-uppercase font-dinMedium text-dark-blue expedition-card-headline margin-bottom-15">${{US Price Range}}</div>
 
-
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 no-padding expedition-card-details">
-
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="detail-category">
-                    <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Price</span>
-                    <br>
-                    <span>${{US Price Range}}</span>
-
-                </div>
-
-                <div class="detail-category">
-                    <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Location</span>
-                    <br>
-                    <span>{{Location}}</span>
-
-                </div>
-                <div class="detail-category">
-                    <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Duration</span>
-                    <br>
-                    <span>{{Duration}}</span>
-
-                </div>
-              <div class="detail-category">
-                <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Activities</span>
-                <br>
-                <span>Icons</span>
-
-              </div>
-              <div class="detail-category">
-                <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Audience</span>
-                <br>
-                <span>{{Audience}}</span>
-
-              </div>
-            </div>
         </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="detail-category">
+            <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Location</span>
+            <br>
+            <span>{{Location}}</span>
 
+          </div>
+          <div class="detail-category">
+            <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Duration</span>
+            <br>
+            <span>{{Duration}}</span>
 
+          </div>
+          <div class="detail-category">
+            <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Activities</span>
+            <br>
+            <span>Icons</span>
+
+          </div>
+          <div class="detail-category">
+            <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Audience</span>
+            <br>
+            <span>{{Audience}}</span>
+
+          </div>
+        </div>
+      </div>
+    </div>
       </div>
 
 

@@ -19,11 +19,11 @@ body {
     src: url("../fonts/DINLight.ttf");
 }
 
-
-@font-face {
-    font-family: missionScript;
-    src: url("../fonts/mission-script-webfont.ttf");
+@font-face{
+	font-family: missionScript;
+	src: url("../fonts/mission-script-webfont.eot");
 }
+
 
 .navbar-toggle .icon-bar {
 	background: #fff !important;
@@ -62,9 +62,9 @@ body {
 .ew-intro {
 
 
-	background:
+	background: 
 	    linear-gradient(
-	      rgba(0, 0, 0, 0.45),
+	      rgba(0, 0, 0, 0.45), 
 	      rgba(0, 0, 0, 0)
 	    ),
 		url("../images/hiking.jpg");
@@ -85,7 +85,7 @@ body {
 
 }
 
-/*.intro-content
+/*.intro-content 
 {	margin-top: 25vh !important;
     margin-bottom: 25vh !important;
     height: 50vh;
@@ -145,13 +145,15 @@ body {
 
 
 
-
+.padding-top-35{
+	padding-top:35px;
+}
 
 
 .color-border {
 
 /*	background: repeating-linear-gradient(
-      to right,
+      to right, 
       transparent,
       transparent 5px,
       #00956d 5px,
@@ -159,7 +161,7 @@ body {
       transparent 5px,
       transparent 5px,
       #dbb313 5px,
-      #dbb313 5px,
+      #dbb313 5px,   
       transparent 5px
     );*/
 	background: url("../images/color-border.png");
@@ -232,8 +234,7 @@ background-repeat: repeat-x;
 }
 
 .text-dark-blue {
-	color: #0876ab;
-
+	color: #3399FF;
 }
 
 .text-grey {
@@ -653,9 +654,9 @@ transform: translate3d(0, 0, 0);*/
 .ew-continent-intro {
 /*	height: auto;
 */
-	background:
+	background: 
 	    linear-gradient(
-	      rgba(0, 0, 0, 0.45),
+	      rgba(0, 0, 0, 0.45), 
 	      rgba(0, 0, 0, 0)
 	    ),
 		url("../images/test.jpg");
@@ -670,7 +671,7 @@ transform: translate3d(0, 0, 0);*/
 
 
 .intro-content.continent
-{
+{	
     height: auto;
     min-height: 85%;
     margin: 0 !important;
@@ -759,9 +760,9 @@ transform: translate3d(0, 0, 0);*/
 
 .ew-activity-level  {
 
-	background:
+	background: 
 	    linear-gradient(
-	      rgba(0, 0, 0, 0.3),
+	      rgba(0, 0, 0, 0.3), 
 	      rgba(0, 0, 0, 0)
 	    ),
 		url("../images/africa_activity-level-background.jpg");
@@ -846,6 +847,7 @@ transform: translate3d(0, 0, 0);*/
 	text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
 	font-weight: bold;
 	padding: 5px;
+	cursor:pointer;
 /*	border-bottom: 5px solid transparent;*/
 
 }
@@ -866,10 +868,14 @@ transform: translate3d(0, 0, 0);*/
 
 }
 
+.activity-tabs > div.inactive-level{
+	background: rgba(84,84,84,0.7);
+}
+
 .activity-tab-info-text {
 	border: 2px solid #fff;
 	background: #fff;
-	color: rgba(8, 118, 171, 0);
+
 	border-radius: 5px;
 	padding: 5px;
 	opacity: 0;
@@ -878,8 +884,6 @@ transform: translate3d(0, 0, 0);*/
 
 .activity-tab-info-text.active {
 	opacity: 1;
-	color: rgba(8, 118, 171, 1);
-
 }
 
 
@@ -1029,8 +1033,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 }
 
 .expedition-img {
-	width: auto;
-	height: 100%;
+	width:100%;
 }
 
 .expedition-img-small {
@@ -1056,7 +1059,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;	
 	border: solid 1px #00956d !important;
 	background: #00956d !important;
 }
@@ -1066,7 +1069,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;	
 	border: solid 1px #fff !important;
 	background: #fff !important;
 }
@@ -1080,7 +1083,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;	
 	border: solid 1px #31b1ca !important;
 	background: #31b1ca !important;
 }
@@ -1093,7 +1096,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;	
 	border: solid 1px #e25829 !important;
 	background: #e25829 !important;
 }
@@ -1107,7 +1110,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
-	-o-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;	
 	border: solid 1px #dbb313 !important;
 	background: #dbb313 !important;
 }
@@ -1182,11 +1185,11 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 
 }
-
+ 
 @media (max-width : 979px){
 
 }
-
+ 
 @media (max-width : 767px){
 
 	#ew-continent-intro {
@@ -1232,9 +1235,9 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 	.step-subtitle {
 		font-size: 20px;
 	}
-	#mCSB_1_scrollbar_vertical {
+/*	#mCSB_1_scrollbar_vertical {
 		display: none !important;
-	}
+	}*/
 	#expedition-cards {
 		max-height: none;
 		/*overflow: scroll;*/
@@ -1267,7 +1270,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 	.expedition-card-btn > a:hover {
 
 		color:#0876ab;
-		outline: 2px solid #0876ab;
+		outline: 2px solid #0876ab; 
 	}
 	.margin-bottom-10-small {
 		margin-bottom: 15px;
@@ -1301,11 +1304,11 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		margin-bottom: 0px;
 	}
 }
-
+ 
 @media (max-width : 480px){
-
+ 
 }
-
+ 
 @media (max-width : 320px){
 
 }
@@ -1521,7 +1524,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 	}
 	.research-icon-headline {
 		text-align: left;
-		padding-left: 10px;
+		padding-left: 10px; 
 
 	}
 
@@ -1536,7 +1539,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 
 /* Medium Devices, Desktops */
-@media (min-width : 992px){
+@media screen and (min-width : 992px){
 
 
 	#map-continent-name {
@@ -1568,7 +1571,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		margin-top: 15px;
 		padding-top: 15px;
 		text-align: left;
-
+		
 	}
 	#guidebook-img {
 		width: 100%;
@@ -1663,7 +1666,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 		margin-top: 15px;
 		padding-top: 15px;
 		text-align: left;
-
+		
 	}
 	#guidebook-img {
 		width: 100%;
@@ -1970,3 +1973,4 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
   font-size: 0;
   line-height: 0
 }
+
