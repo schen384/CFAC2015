@@ -344,10 +344,10 @@ function earthwatchObject() {
 
 			if (ratio < (windowWidth/windowHeight)) {
 				$("#ew-continent-intro").css("background-size", "120% auto");
-				$(".research-section-background").css("background-size", "120% auto");
+				$(".research-section-background").css("background-size", "100% auto");
 			} else {
 				$("#ew-continent-intro").css("background-size", "auto 150%");
-				$(".research-section-background").css("background-size", "auto 150%");
+				$(".research-section-background").css("background-size", "auto 100%");
 			}
 
 
