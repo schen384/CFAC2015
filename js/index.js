@@ -302,7 +302,7 @@ function earthwatchObject() {
     			'IRL': {fillKey: 'EU'},
     		},
     		geographyConfig:{
-    			borderColor: 'rgba(255,255,255,1)',
+    			borderColor: 'rgba(0,0,0,1)',
     			popupOnHover:false,
     			highlightFillColor: function(data){
     				if(data.fillKey){
@@ -316,7 +316,7 @@ function earthwatchObject() {
     				if(data.fillKey){
     					return "yellow";
     				}else{
-    					return 'rgba(255,255,255,1)';
+    					return 'rgba(0,0,0,1)';
     				}
     			},
     			highlightBorderWidth: function(data){
