@@ -244,7 +244,7 @@ function earthwatchObject() {
               }
               // $("."+type+"-"+disableLevel).fadeTo(0,0.5);
               $("."+type+"-"+disableLevel).removeClass("activity-tab");
-              $("."+type+"-"+disableLevel).css({'cursor':'default','background-color':'lightgrey'});
+              $("."+type+"-"+disableLevel).css({'cursor':'default','background-color':'rgba(84,84,84,0.7)'});
               $(".opt-"+type+"-"+disableLevel).remove();
             } else if (level != '') {
               levelCount++;
@@ -262,7 +262,7 @@ function earthwatchObject() {
                   $("."+type+"-"+onlyLev).addClass("active-level");
                   $("."+type+"-all").removeClass("activity-tab active-level");
                   // $("."+type+"-all").fadeTo(0,0.5);
-                  $("."+type+"-all").css({'cursor':'default','background-color':'lightgrey'});
+                  $("."+type+"-all").css({'cursor':'default','background-color':'rgba(84,84,84,0.7)'});
               }
               break;
             }
@@ -566,16 +566,24 @@ function earthwatchObject() {
 		$(".activity-tab").mouseover(function() {
 			var level = $(this).attr("activity-level");
 			$(this).removeClass("inactive-level");
-			$(".activity-tab-info").each(function() {
+			$(this).parent().siblings('.activity-tabs-arrows').children().each(function() {
 				if ($(this).attr("activity-level") == level) {
-
 					$(this).addClass("active-level");
-					$(".activity-tab-info-text").addClass("active");
-					$(".activity-tab-info-text").html("Text about activity level goes here");
-
-
+          var textDiv = $(this).parent().siblings(".activity-tab-info-text-div");
+					textDiv.children().first().addClass("active")
+					                     .html("Text about activity level goes here");
 				}
 			});
+      // $(".activity-tab-info").each(function() {
+      //   if ($(this).attr("activity-level") == level) {
+      //
+      //     $(this).addClass("active-level");
+      //     $(".activity-tab-info-text").addClass("active");
+      //     $(".activity-tab-info-text").html("Text about activity level goes here");
+      //
+      //
+      //   }
+      // });
 		})
 
 
