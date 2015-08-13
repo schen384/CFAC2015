@@ -134,10 +134,7 @@ function earthwatchObject() {
 
 
         exp_continent = data[continent];
-<<<<<<< HEAD
-        //console.log(exp_continent);
-=======
->>>>>>> 9acc1d0e60d9bbaf4dd8cf31fcbe504e71570c65
+        
         $.map(exp_continent,function(v,i) {
           //console.log(i);
           var type;
