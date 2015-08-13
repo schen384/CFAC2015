@@ -139,7 +139,7 @@ function earthwatchObject() {
               type = "climate"
               break;
             case "Archaeology & Culture":
-              type = "archeology";
+              type = "archaeology";
             default:
               break;
           }
@@ -222,7 +222,7 @@ function earthwatchObject() {
             });
           }
         })
-        typeArr = ["wildlife","ocean","climate","archeology"];
+        typeArr = ["wildlife","ocean","climate","archaeology"];
         for (index in typeArr) {
           if ($("#expeditions-"+typeArr[index]).children().length == 0) {
             $("#step2-" + typeArr[index]).fadeTo(0,0.1);
@@ -344,7 +344,7 @@ function earthwatchObject() {
 
     this.parallax = function () {
     	//console.log("in parallax");
-    	var sectionIds = ["#wildlife-section", "#ocean-section", "#climate-section", "#archeology-section", "#activities-anchor"];
+    	var sectionIds = ["#wildlife-section", "#ocean-section", "#climate-section", "#archaeology-section", "#activities-anchor"];
 
 		var windowHeight = $(window).height();
 		var windowWidth = $(window).width();
@@ -357,7 +357,7 @@ function earthwatchObject() {
     	};
 
     	$("#climate-section").attr("data-stellar-vertical-offset", 1*windowHeight);
-    	$("#archeology-section").attr("data-stellar-vertical-offset", 1*windowHeight);
+    	$("#archaeology-section").attr("data-stellar-vertical-offset", 1*windowHeight);
 
 			if (ratio < (windowWidth/windowHeight)) {
 				$("#ew-continent-intro").css("background-size", "120% auto");
