@@ -7,7 +7,7 @@ $(document).ready(function() {
     earthwatch.setup();
     //if on continent page
     if (continent != null) {
-      earthwatch.loadContinent(continent);
+      earthwatch.loadContinent(continent,earthwatch);
     }
 });
 
@@ -113,7 +113,7 @@ function earthwatchObject() {
       //console.log(exp_continent);
     }
 
-    this.loadContinent = function(continent) {
+    this.loadContinent = function(continent,earthwatch) {
       $("#activities-anchor").hide();
       var data = Continents;
         // var cards = $("#expedition-cards");
@@ -123,10 +123,9 @@ function earthwatchObject() {
 
 
 
-
+console.log(data);
         exp_continent = data[continent];
         $.map(exp_continent,function(v,i) {
-          console.log(i);
           var type;
           switch (i) {
             case "Wildlife & Ecosystems":
@@ -193,9 +192,14 @@ function earthwatchObject() {
                   break;
               }
               $("."+type+"-"+disableLevel).fadeTo(0,0.1);
-              $("."+type+"-"+disableLevel).hide();
+
+              $("."+type+"-"+disableLevel).removeClass("activity-tab");
+              earthwatch.attachListeners();
+              // $("."+type+"-"+disableLevel).removeAttr('activity-level');
+              // $("."+type+"-"+disableLevel).hide();
             } else if (level != '') {
               levelCount++;
+              // $("."+type+"-"+disableLevel).addClass("activity-tab");
             }
           })
           if(levelCount == 1) {
@@ -234,6 +238,7 @@ function earthwatchObject() {
 
           }
         }
+
     }
 
 
@@ -427,6 +432,7 @@ function earthwatchObject() {
 		});
 
 		$(".activity-tab").click(function() {
+      console.log("clicked");
   			$('.activity-tab').each(function() {
   				$(this).removeClass("active-level");
   				$(this).addClass("inactive-level");
