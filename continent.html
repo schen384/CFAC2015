@@ -70,10 +70,10 @@
 			<li class="dropdown">
 				<a href="#" id='research-nav' class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SELECT RESEARCH<span class="caret"></span></a>
 				<ul class="dropdown-menu">
-					<li><a href="#wildlife-section"  class="step2-select-wildlife">Wildlife &amp; <br>ecosystems</a></li>
-					<li><a href="#ocean-section" class="step2-select-ocean">Ocean health</a></li>
-					<li><a href="#climate-section" class="step2-select-climate">climate change</a></li>
-					<li><a href="#archaeology-section" class="step2-select-archaeology">archaeology</a></li>
+					<li><a href="#wildlife-section"  class="has-scroll step2-select-wildlife">Wildlife &amp; <br>ecosystems</a></li>
+					<li><a href="#ocean-section" class="has-scroll step2-select-ocean">Ocean health</a></li>
+					<li><a href="#climate-section" class="has-scroll step2-select-climate">climate change</a></li>
+					<li><a href="#archaeology-section" class="has-scroll step2-select-archaeology">archaeology</a></li>
 				</ul>
 			</li>
 			<li class="">
@@ -123,7 +123,7 @@
 					</div>
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12  no-padding  text-center research-type-continue ease-transition">
 						<p class="font-size-15 text-uppercase text-shadow ease-transition" >Select your research type</p>
-						<a href="#research-anchor">
+						<a href="#research-anchor" class="has-scroll">
 
 							<div class="continue-button text-shadow">
 
@@ -148,7 +148,7 @@
 				<div class="row max-width-1000">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-right">
 						<a href="#home-anchor">
-							<div class="text-uppercase scroll-top light">
+							<div class="text-uppercase scroll-top has-scroll light">
 								Scroll to top <span class="glyphicon glyphicon-triangle-top"></span>
 							</div>
 						</a>
@@ -171,12 +171,12 @@
 
 						</div>
 						<div class="row margin-top-25"><!-- icons -->
-							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 height-100" id="step2-wildlife">
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 height-100" id="step2-wildlife">
 								<div class="width-100 margin-top-10">
 									<img class="research-icon" src="../images/wildlife-icon.png">
 									<div class="text-uppercase  font-dinMedium research-icon-headline text-green"> Wildlife &amp; Ecosystems</div>
-									<div class="research-select-div  hidden-md hidden-lg">
-										<a href="#activities-anchor" class="research-select no-background  outline-green step2-select-wildlife">
+									<div class="research-select-div  visible-xs">
+										<a href="#wildlife-section" class="research-select no-background  outline-green step2-select-wildlife has-scroll">
 											<div  class=" text-green">select</div>
 										</a>
 									</div>
@@ -189,13 +189,13 @@
 
 
 							</div>
-							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 height-100" id="step2-ocean">
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 height-100" id="step2-ocean">
 								<div class="width-100 margin-top-10">
 									<img class="research-icon" src="../images/ocean-icon.png">
 
 									<div class="text-uppercase font-dinMedium research-icon-headline text-blue"> Ocean Health</div>
-									<div class="research-select-div  hidden-md hidden-lg">
-										<a href="#activities-anchor" class="research-select no-background  outline-blue step2-select-ocean">
+									<div class="research-select-div  visible-xs">
+										<a href="#ocean-section" class="research-select no-background  outline-blue step2-select-ocean has-scroll">
 											<div  class=" text-blue">select</div>
 										</a>
 									</div>
@@ -208,13 +208,13 @@
 
 
 							</div>
-							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 height-100" id="step2-climate">
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 height-100" id="step2-climate">
 								<div class="width-100 margin-top-10">
 									<img class="research-icon" src="../images/climate-icon.png">
 
 									<div class="text-uppercase font-dinMedium research-icon-headline text-orange"> Climate Change</div>
-									<div class="research-select-div  hidden-md hidden-lg">
-										<a href="#activities-anchor" class="research-select no-background  outline-orange step2-select-climate" >
+									<div class="research-select-div  visible-xs">
+										<a href="#climate-section" class="research-select no-background  outline-orange step2-select-climate has-scroll" >
 											<div  class=" text-orange">select</div>
 										</a>
 									</div>
@@ -227,13 +227,13 @@
 
 
 							</div>
-							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 height-100" id="step2-archaeology">
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 height-100" id="step2-archaeology">
 								<div class="width-100 margin-top-10">
 									<img class="research-icon" src="../images/archeology-icon.png">
 
 									<div class="text-uppercase font-dinMedium research-icon-headline text-yellow">Archaeology</div>
-									<div class="research-select-div  hidden-md hidden-lg">
-										<a href="#activities-anchor" class="research-select no-background  outline-yellow step2-select-archaeology">
+									<div class="research-select-div  visible-xs">
+										<a href="#archaeology-section" class="research-select no-background  outline-yellow step2-select-archaeology has-scroll">
 											<div  class=" text-yellow">select</div>
 										</a>
 									</div>
@@ -249,30 +249,30 @@
 
 						</div>
 						<div class="row  hidden-xs">
-							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-								<div class="research-select-div  hidden-xs hidden-sm">
-									<a href="#activities-anchor" class="research-select no-background  outline-green step2-select-wildlife-hori" id="Wildlife &#38; Ecosystems">
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+								<div class="research-select-div  hidden-xs">
+									<a href="#wildlife-section" class="research-select no-background  outline-green step2-select-wildlife-hori has-scroll" id="Wildlife &#38; Ecosystems">
 										<div  class="text-green">select</div>
 									</a>
 								</div>
 							</div>
-							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-								<div class="research-select-div  hidden-xs hidden-sm">
-									<a href="#activities-anchor" class="research-select no-background  outline-blue step2-select-ocean-hori" id="Ocean Health">
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+								<div class="research-select-div  hidden-xs">
+									<a href="#ocean-section" class="research-select no-background  outline-blue step2-select-ocean-hori has-scroll" id="Ocean Health">
 										<div  class="text-blue">select</div>
 									</a>
 								</div>
 							</div>
-							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-								<div class="research-select-div  hidden-xs hidden-sm">
-									<a href="#activities-anchor" class="research-select no-background  outline-orange step2-select-climate-hori" id="Climate Change">
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+								<div class="research-select-div  hidden-xs">
+									<a href="#climate-section" class="research-select no-background  outline-orange step2-select-climate-hori has-scroll" id="Climate Change">
 										<div  class="text-orange">select</div>
 									</a>
 								</div>
 							</div>
-							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-								<div class="research-select-div  hidden-xs hidden-sm">
-									<a href="#activities-anchor" class="research-select no-background  outline-yellow step2-select-archaeology-hori" id="Archaeology">
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+								<div class="research-select-div  hidden-xs">
+									<a href="#archaeology-section" class="research-select no-background  outline-yellow step2-select-archaeology-hori has-scroll" id="Archaeology">
 										<div  class="text-yellow">select</div>
 									</a>
 								</div>
@@ -815,8 +815,8 @@
 									<div class="">Call Toll-free:</div>
 									<div class="">U.S. <span class="text-dark-blue"> 1.800.776.0188</span></div>
 									<div class=" margin-bottom-10">U.S. <span class="text-dark-blue"> 1.800.776.0188</span></div>
-									<div class=" margin-bottom-10"><span class="text-dark-blue"> earthwatch.org</span></div>
-									<div class="font-dinLight">
+									<div class=" margin-bottom-10"><a href="https://www.earthwatch.org" class="text-dark-blue "> earthwatch.org</a></div>
+									<div class="font-dinRegular">
 										<div class="">114 Western Avenue</div>
 										<div class="">Boston, MA 02134</div>
 										<div class="">U.S.A</div>
@@ -850,13 +850,13 @@
 
 									<div class="row">
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-											<a href="https://earthwatchunlocked.wordpress.com/" target="_blank"><img class="connect-icon" src="images/wordpress-icon.png"></a>
+											<a href="https://earthwatchunlocked.wordpress.com/" target="_blank"><img class="connect-icon " src="images/wordpress-icon.png"></a>
 										</div> <!-- message -->
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-											<a href="https://twitter.com/earthwatch_org?lang=en" target="_blank"><img class="connect-icon" src="images/twitter-icon.png"></a>
+											<a href="https://twitter.com/earthwatch_org?lang=en" target="_blank"><img class="connect-icon " src="images/twitter-icon.png"></a>
 										</div> <!-- message -->
 										<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-											<a href="https://www.facebook.com/Earthwatch" target="_blank"><img class="connect-icon" src="images/facebook-icon.png"></a>
+											<a href="https://www.facebook.com/Earthwatch" target="_blank"><img class="connect-icon " src="images/facebook-icon.png"></a>
 										</div> <!-- message -->
 									</div>
 								</div>
@@ -932,7 +932,7 @@
             <span>{{Audience}}</span>
           </div>
           <div class="detail-category">
-            <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Fielding Month</span>
+            <span class="text-uppercase text-dark-blue font-dinMedium expedition-card-subheadline">Fielding Months</span>
             <br>
             <span>{{Audience}}</span>
           </div>

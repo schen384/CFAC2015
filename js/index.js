@@ -17,19 +17,19 @@ $(window).resize(function() {
 });
 
 // North America
-const AMERICA = 840,
+var AMERICA = 840,
 	CANADA = 124;
 
 
 // South America
-const PERU = 604,
+var PERU = 604,
 	ECUADOR = 218,
 	BELIZE = 84,
 	JAMAICA = 388,
 	PUERTO_RICO = 630;
 
 // Europe
-const ITALY = 380,
+var ITALY = 380,
 	SPAIN = 724,
 	FRANCE = 250,
 	GERMANY = 276,
@@ -38,27 +38,27 @@ const ITALY = 380,
 	SLOVENIA = 705;
 
 // Africa
-const SOUTH_AFRICA = 710,
+var SOUTH_AFRICA = 710,
 	MALAWI = 454,
 	UGANDA = 800,
 	KENYA = 404;
 
 // ASIA
-const AUSTRALIA = 36,
+var AUSTRALIA = 36,
 	INDIA = 356,
 	MALAYSIA = 458,
 	MONGOLIA = 496;
 
 
-const INTRO_IMG_HEIGHT = 484;
-const INTRO_IMG_WIDTH = 1000;
+var INTRO_IMG_HEIGHT = 484;
+var INTRO_IMG_WIDTH = 1000;
 
-const CONNECT_ROW_ID = "connect-row";
-const EW_CONTENT_ID = "ew-content";
+var CONNECT_ROW_ID = "connect-row";
+var EW_CONTENT_ID = "ew-content";
 
-const CONTINENT_PAGE = true;
+var CONTINENT_PAGE = true;
 
-const CURRENT_MAP = "../json/world.json";
+var CURRENT_MAP = "../json/world.json";
 
 var northAmerica = [AMERICA, CANADA];
 var southAmerica = [PERU, ECUADOR, BELIZE, JAMAICA, PUERTO_RICO];
@@ -77,14 +77,15 @@ function earthwatchObject() {
 		//this.loadSections();
 
 
-
+		this.crossBrowser();
 		this.parallax();
+		this.mobileScroll();
 		this.attachListeners();
 	
 		 if ($(".expedition-card").length > 1) {
-			$("#expedition-cards").mCustomScrollbar({
+			$(".expedition-cards").mCustomScrollbar({
 				axis:"y",
-				scrollbarPosition: "outside",
+				scrollbarPosition: "inside",
         advanced:{
           updateOnContentResize: true
         }
@@ -105,28 +106,54 @@ function earthwatchObject() {
 
     this.resize = function() {
 
-    	console.log("in resize");
-    	var mobileWidth = 767;
-		console.log("parallax on resize");
 		this.parallax();
-		var scrollTheme = 'inset-3-dark'
-		if ($(window).width() <= mobileWidth) {
-			console.log("change to rounded-dots");
-			scrollTheme = "rounded-dots";
-		} 
-	
-			$(".research-expedition-cards").each(function() {
-				console.log("changing attr");
-				$(this).attr("data-mcs-theme", scrollTheme);
-			});
+		this.mobileScroll();
+    	console.log("in resize");
+
 
 		
 
     }
 
-    this.test = function() {
-      //console.log(exp_continent);
+    this.mobileScroll = function() {
+    	var mobileWidth = 767;
+		console.log("parallax on resize");
+
+		var pastTheme = "rounded-dots";
+		var scrollTheme = 'inset-3-dark';
+		var oldScrollPosition = 'inside';
+		var scrollPosition = 'outside';
+		if ($(window).width() <= mobileWidth) {
+			console.log("change to rounded-dots");
+			scrollTheme = "rounded-dots";
+			pastTheme = "inset-3-dark";
+			scrollPosition = "inside";
+			oldScrollPosition = "outside"
+
+
+		} 
+	
+		$(".research-expedition-cards").each(function() {
+			console.log("changing attr");
+			$(this).attr("data-mcs-theme", scrollTheme);
+		});
+
+		$(".mCS-"+pastTheme).each(function() {
+			console.log("removing mCS-"+pastTheme);
+			$(this).removeClass("mCS-"+pastTheme);
+			$(this).addClass("mCS-"+scrollTheme);
+
+		})
+
+		$(".mCSB_"+oldScrollPosition).each(function() {
+			console.log("removing mCSB_"+pastTheme);
+			$(this).removeClass("mCSB_"+oldScrollPosition);
+			$(this).addClass("mCSB_"+scrollPosition);
+
+		})
     }
+
+
 
     this.loadContinent = function(continent) {
       var valid_numbers = ["1","2","3","4","5"];
@@ -367,6 +394,19 @@ function earthwatchObject() {
 
     }
 
+    this.crossBrowser = function() {
+
+        var ua = window.navigator.userAgent;
+        var msie = ua.indexOf("MSIE ");
+
+        if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {     // If Internet Explorer, return version number
+            // $("body").css('min-width', '798px');
+            return;
+        } else  {               // If another browser, return 0
+            $(window).stellar();
+		}
+    }
+
     this.parallax = function () {
     	//console.log("in parallax");
     	var sectionIds = ["#wildlife-section", "#ocean-section", "#climate-section", "#archaeology-section", "#activities-anchor"];
@@ -399,7 +439,7 @@ function earthwatchObject() {
         var msie = ua.indexOf("MSIE ");
 
         if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./)) {     // If Internet Explorer, return version number
-            $("html").css('min-width', '798px');
+            // $("body").css('min-width', '798px');
             return;
         } else  {               // If another browser, return 0
             $(window).stellar();
@@ -451,7 +491,7 @@ function earthwatchObject() {
 		});
 
 		$(".activity-tab").click(function() {
-      console.log("clicked");
+      		console.log("clicked");
   			$('.activity-tab').each(function() {
   				$(this).removeClass("active-level");
   				$(this).addClass("inactive-level");
@@ -500,6 +540,7 @@ function earthwatchObject() {
 					$(".activity-tab-info-text").addClass("active");
 					$(".activity-tab-info-text").html("Text about activity level goes here");
 
+
 				}
 			});
 		})
@@ -522,15 +563,18 @@ function earthwatchObject() {
 	        return;
 	      }
       		console.log($(this));
-			var scroll = $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top - 50;
-			//console.log(scroll);
-		    $('html, body').animate({
-		        scrollTop: scroll
-		    }, 500);
+      		if($(this).hasClass("has-scroll")) {
+				var scroll = $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top - 50;
+				//console.log(scroll);
+			    $('html, body').animate({
+			        scrollTop: scroll
+			    }, 500);
 
 
 
-		    return false;
+			    return false;
+      		}
+
 		});
 
 
