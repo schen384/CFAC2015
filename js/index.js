@@ -80,7 +80,7 @@ function earthwatchObject() {
 
 		this.parallax();
 		this.attachListeners();
-	
+
 		 if ($(".expedition-card").length > 1) {
 			$("#expedition-cards").mCustomScrollbar({
 				axis:"y",
@@ -113,14 +113,14 @@ function earthwatchObject() {
 		if ($(window).width() <= mobileWidth) {
 			console.log("change to rounded-dots");
 			scrollTheme = "rounded-dots";
-		} 
-	
+		}
+
 			$(".research-expedition-cards").each(function() {
 				console.log("changing attr");
 				$(this).attr("data-mcs-theme", scrollTheme);
 			});
 
-		
+
 
     }
 
@@ -200,6 +200,7 @@ function earthwatchObject() {
             }
           });
           var levelCount = 0;
+          var NoLevExp = false;
           $.map(levelArr,function(item,level) {
             if (levelArr[level] == 0) {
               var disableLevel = level.toLowerCase();
@@ -218,9 +219,11 @@ function earthwatchObject() {
               $("."+type+"-"+disableLevel).css({'cursor':'default','color':'lightgrey'});
             } else if (level != '') {
               levelCount++;
+            } else {
+              NoLevExp = true;
             }
           })
-          if(levelCount == 1) {
+          if(levelCount == 1 && !NoLevExp) {
             for (var index in v) {
               if(v[index]["Activeity Level"] != "") {
                 var onlyLev = v[index]["Activity Level"].toLowerCase();
