@@ -201,7 +201,7 @@ function earthwatchObject() {
               }
               $("."+type+"-"+disableLevel).fadeTo(0,0.5);
               $("."+type+"-"+disableLevel).removeClass("activity-tab");
-              $("."+type+"-"+disableLevel).css('cursor','default');
+              $("."+type+"-"+disableLevel).css({'cursor':'default','color':'lightgrey'});
             } else if (level != '') {
               levelCount++;
             }
@@ -215,7 +215,7 @@ function earthwatchObject() {
                   $("."+type+"-"+onlyLev).addClass("active-level");
                   $("."+type+"-all").removeClass("activity-tab active-level");
                   $("."+type+"-all").fadeTo(0,0.5);
-                  $("."+type+"-all").css('cursor','default');
+                  $("."+type+"-all").css({'cursor':'default','color':'lightgrey'});
               }
               break;
             }
