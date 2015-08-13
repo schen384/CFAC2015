@@ -217,6 +217,7 @@ function earthwatchObject() {
               $("."+type+"-"+disableLevel).fadeTo(0,0.5);
               $("."+type+"-"+disableLevel).removeClass("activity-tab");
               $("."+type+"-"+disableLevel).css({'cursor':'default','color':'lightgrey'});
+              $(".opt-"+type+"-"+disableLevel).remove();
             } else if (level != '') {
               levelCount++;
             } else {
@@ -224,6 +225,7 @@ function earthwatchObject() {
             }
           })
           if(levelCount == 1 && !NoLevExp) {
+            $(".opt-"+type+"-all").remove();
             for (var index in v) {
               if(v[index]["Activeity Level"] != "") {
                 var onlyLev = v[index]["Activity Level"].toLowerCase();
@@ -238,7 +240,6 @@ function earthwatchObject() {
             }
           }
           if (cards.children().length > 0) {
-            console.log()
             cards.addClass("mCustomScrollbar")
             $("#expedition-cards").mCustomScrollbar({
               axis:"y",
@@ -448,10 +449,39 @@ function earthwatchObject() {
 		$(".research-select").mouseout(function() {
 			if (!$(this).hasClass("select-clicked")) {
 				$(this).addClass("no-background");
+
 			}
 
 
 		});
+
+    $(".level-selection").change(function() {
+        var levId = $(this).attr('id');
+        var level = $("#"+levId+" option:selected").text();
+        var type = levId.split('-')[0];
+        var cardArr = $(".exp-"+type);
+        var cards;
+        if ($("#mCSB_1_container").children().length > 0) {cards = $("#mCSB_1_container");}
+        else {cards = $("#expeditions-" + type);}
+        var count = 0;
+        if (level == 'All') {
+            for(var i = 0;i < cardArr.length;i++) {
+              if (cardArr[i] != null) {cardArr[i].style.display = ''; count++;}
+            }
+        } else {
+          for(var i = 0;i < cardArr.length;i++) {
+            var obj = cardArr[i];
+            var classArr = obj.className.split(' ');
+            var cardLev = classArr[classArr.length - 1];
+            if (classArr[classArr.length - 2] == 'Very') {
+              cardLev = 'Very ' + cardLev;
+            }
+            if (cardLev == level) {obj.style.display = ''; count++;}
+            else {obj.style.display = 'none';}
+          }
+        }
+        $("#expedition-cards").mCustomScrollbar("scrollTo","top");
+    })
 
 		$(".activity-tab").click(function() {
       console.log("clicked");

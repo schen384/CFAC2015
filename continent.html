@@ -176,7 +176,7 @@
 									<img class="research-icon" src="../images/wildlife-icon.png">
 									<div class="text-uppercase  font-dinMedium research-icon-headline text-green"> Wildlife &amp; Ecosystems</div>
 									<div class="research-select-div  hidden-md hidden-lg">
-										<a href="#activities-anchor" class="research-select no-background  outline-green step2-select-wildlife">
+										<a href="#wildlife-section" class="research-select no-background  outline-green step2-select-wildlife">
 											<div  class=" text-green">select</div>
 										</a>
 									</div>
@@ -195,7 +195,7 @@
 
 									<div class="text-uppercase font-dinMedium research-icon-headline text-blue"> Ocean Health</div>
 									<div class="research-select-div  hidden-md hidden-lg">
-										<a href="#activities-anchor" class="research-select no-background  outline-blue step2-select-ocean">
+										<a href="#ocean-section" class="research-select no-background  outline-blue step2-select-ocean">
 											<div  class=" text-blue">select</div>
 										</a>
 									</div>
@@ -214,7 +214,7 @@
 
 									<div class="text-uppercase font-dinMedium research-icon-headline text-orange"> Climate Change</div>
 									<div class="research-select-div  hidden-md hidden-lg">
-										<a href="#activities-anchor" class="research-select no-background  outline-orange step2-select-climate" >
+										<a href="#climate-section" class="research-select no-background  outline-orange step2-select-climate" >
 											<div  class=" text-orange">select</div>
 										</a>
 									</div>
@@ -233,7 +233,7 @@
 
 									<div class="text-uppercase font-dinMedium research-icon-headline text-yellow">Archaeology</div>
 									<div class="research-select-div  hidden-md hidden-lg">
-										<a href="#activities-anchor" class="research-select no-background  outline-yellow step2-select-archaeology">
+										<a href="#archaeology-section" class="research-select no-background  outline-yellow step2-select-archaeology">
 											<div  class=" text-yellow">select</div>
 										</a>
 									</div>
@@ -251,28 +251,28 @@
 						<div class="row  hidden-xs">
 							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 								<div class="research-select-div  hidden-xs hidden-sm">
-									<a href="#activities-anchor" class="research-select no-background  outline-green step2-select-wildlife-hori" id="Wildlife &#38; Ecosystems">
+									<a href="#wildlife-section" class="research-select no-background  outline-green step2-select-wildlife-hori" id="Wildlife &#38; Ecosystems">
 										<div  class="text-green">select</div>
 									</a>
 								</div>
 							</div>
 							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 								<div class="research-select-div  hidden-xs hidden-sm">
-									<a href="#activities-anchor" class="research-select no-background  outline-blue step2-select-ocean-hori" id="Ocean Health">
+									<a href="#ocean-section" class="research-select no-background  outline-blue step2-select-ocean-hori" id="Ocean Health">
 										<div  class="text-blue">select</div>
 									</a>
 								</div>
 							</div>
 							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 								<div class="research-select-div  hidden-xs hidden-sm">
-									<a href="#activities-anchor" class="research-select no-background  outline-orange step2-select-climate-hori" id="Climate Change">
+									<a href="#climate-section" class="research-select no-background  outline-orange step2-select-climate-hori" id="Climate Change">
 										<div  class="text-orange">select</div>
 									</a>
 								</div>
 							</div>
 							<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 								<div class="research-select-div  hidden-xs hidden-sm">
-									<a href="#activities-anchor" class="research-select no-background  outline-yellow step2-select-archaeology-hori" id="Archaeology">
+									<a href="#archaeology-section" class="research-select no-background  outline-yellow step2-select-archaeology-hori" id="Archaeology">
 										<div  class="text-yellow">select</div>
 									</a>
 								</div>
@@ -333,16 +333,16 @@
 													<div class="dropdown activity-level-dropdown text-center">
 														<div class="input-group">
 
-														  <select class="form-control text-uppercase"  placeholder="Username">
-															<option>Choose activity level</option>
-															<option>All</option>
-															<option>Very Easy</option>
-															<option>Easy</option>
-															<option>Moderate</option>
-															<option>very active</option>
-															<option>strenuous</option>
-															<option>varies</option>
-														  </select>
+                              <select class="form-control text-uppercase level-selection" id="wildlife-level" placeholder="Username">
+                              <!-- <option>Choose activity level</option> -->
+                              <option class="opt-wildlife-all" selected>All</option>
+                              <option class="opt-wildlife-very-easy">Very Easy</option>
+                              <option class="opt-wildlife-easy">Easy</option>
+                              <option class="opt-wildlife-moderate">Moderate</option>
+                              <option class="opt-wildlife-very-active">Very Active</option>
+                              <option class="opt-wildlife-strenuous">Strenuous</option>
+                              <option class="opt-wildlife-varies">Varies</option>
+                              </select>
 														</div>
 
 													</div>
@@ -452,16 +452,16 @@
 													<div class="dropdown activity-level-dropdown text-center">
 														<div class="input-group">
 
-														  <select class="form-control text-uppercase"  placeholder="Username">
-															<option>Choose activity level</option>
-															<option>All</option>
-															<option>Very Easy</option>
-															<option>Easy</option>
-															<option>Moderate</option>
-															<option>very active</option>
-															<option>strenuous</option>
-															<option>varies</option>
-														  </select>
+                              <select class="form-control text-uppercase level-selection" id="ocean-level" placeholder="Username">
+                              <!-- <option>Choose activity level</option> -->
+                              <option class="opt-ocean-all" selected>All</option>
+                              <option class="opt-ocean-very-easy">Very Easy</option>
+                              <option class="opt-ocean-easy">Easy</option>
+                              <option class="opt-ocean-moderate">Moderate</option>
+                              <option class="opt-ocean-very-active">Very Active</option>
+                              <option class="opt-ocean-strenuous">Strenuous</option>
+                              <option class="opt-ocean-varies">Varies</option>
+                              </select>
 														</div>
 
 													</div>
@@ -570,15 +570,15 @@
 													<div class="dropdown activity-level-dropdown text-center">
 														<div class="input-group">
 
-														  <select class="form-control text-uppercase"  placeholder="Username">
-															<option>Choose activity level</option>
-															<option>All</option>
-															<option>Very Easy</option>
-															<option>Easy</option>
-															<option>Moderate</option>
-															<option>very active</option>
-															<option>strenuous</option>
-															<option>varies</option>
+														  <select class="form-control text-uppercase level-selection" id="climate-level" placeholder="Username">
+															<!-- <option>Choose activity level</option> -->
+															<option class="opt-climate-all" selected>All</option>
+															<option class="opt-climate-very-easy">Very Easy</option>
+															<option class="opt-climate-easy">Easy</option>
+															<option class="opt-climate-moderate">Moderate</option>
+															<option class="opt-climate-very-active">Very Active</option>
+															<option class="opt-climate-strenuous">Strenuous</option>
+															<option class="opt-climate-varies">Varies</option>
 														  </select>
 														</div>
 
@@ -689,16 +689,16 @@
 													<div class="dropdown activity-level-dropdown text-center">
 														<div class="input-group">
 
-														  <select class="form-control text-uppercase"  placeholder="Username">
-															<option>Choose activity level</option>
-															<option>All</option>
-															<option>Very Easy</option>
-															<option>Easy</option>
-															<option>Moderate</option>
-															<option>very active</option>
-															<option>strenuous</option>
-															<option>varies</option>
-														  </select>
+                              <select class="form-control text-uppercase level-selection" id="archaeology-level" placeholder="Username">
+                              <!-- <option>Choose activity level</option> -->
+                              <option class="opt-archaeology-all" selected>All</option>
+                              <option class="opt-archaeology-very-easy">Very Easy</option>
+                              <option class="opt-archaeology-easy">Easy</option>
+                              <option class="opt-archaeology-moderate">Moderate</option>
+                              <option class="opt-archaeology-very-active">Very Active</option>
+                              <option class="opt-archaeology-strenuous">Strenuous</option>
+                              <option class="opt-archaeology-varies">Varies</option>
+                              </select>
 														</div>
 
 													</div>
