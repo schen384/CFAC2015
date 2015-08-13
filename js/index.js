@@ -554,7 +554,7 @@ function earthwatchObject() {
 	      if($(this).attr('href') == '#') {
 	        return;
 	      }
-      		console.log($(this));
+      		//console.log($(this));
 			var scroll = $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top - 50;
 			//console.log(scroll);
 		    $('html, body').animate({
