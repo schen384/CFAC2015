@@ -701,7 +701,7 @@ transform: translate3d(0, 0, 0);*/
 	height: auto;
 
 
-	background: 
+	background:
 
 		url("../images/africa_intro-bg.jpg");
 	background-position: center bottom;
@@ -916,6 +916,8 @@ transform: translate3d(0, 0, 0);*/
 }
 
 .activity-tabs > div.active-level {
+	/*background-color: #0876ab;*/
+	/*color: white;*/
 	background: rgba(255,255,255,1);
 	color: #343e48;
 	font-weight: bold;
@@ -925,7 +927,8 @@ transform: translate3d(0, 0, 0);*/
 }
 
 .activity-tabs > div.inactive-level{
-	background: rgba(84,84,84,0.7);
+	/*background: rgba(84,84,84,0.7);*/
+	background: #0876ab;
 }
 
 .activity-tab-info-text {
@@ -1360,10 +1363,10 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 
 	.research-icon-headline {
-	
+
 		display: inline;
 		float: left;
-		 width: auto; 
+		 width: auto;
 		margin-left: 2%;
 		text-align: left;
 	}
@@ -2082,6 +2085,7 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 
 
 
+
 /**, *::before, *::after{ 
     box-sizing: border-box; 
     -moz-box-sizing: border-box; 
@@ -2181,3 +2185,4 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
   -webkit-transform:    skewY(10deg);
   transform:    skewY(10deg);
 }
+

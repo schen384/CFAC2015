@@ -113,7 +113,7 @@ function earthwatchObject() {
     	console.log("in resize");
 
 
-		
+
 
     }
 
@@ -133,8 +133,8 @@ function earthwatchObject() {
 			oldScrollPosition = "outside"
 
 
-		} 
-	
+		}
+
 		$(".research-expedition-cards").each(function() {
 			console.log("changing attr");
 			$(this).attr("data-mcs-theme", scrollTheme);
@@ -244,9 +244,9 @@ function earthwatchObject() {
                 default:
                   break;
               }
-              $("."+type+"-"+disableLevel).fadeTo(0,0.5);
+              // $("."+type+"-"+disableLevel).fadeTo(0,0.5);
               $("."+type+"-"+disableLevel).removeClass("activity-tab");
-              $("."+type+"-"+disableLevel).css({'cursor':'default','color':'lightgrey'});
+              $("."+type+"-"+disableLevel).css({'cursor':'default','background-color':'rgba(84,84,84,0.7)'});
               $(".opt-"+type+"-"+disableLevel).remove();
             } else if (level != '') {
               levelCount++;
@@ -263,8 +263,8 @@ function earthwatchObject() {
                 if (v[index]["Ativity Level"] == 'Very Active') onlyLev = 'very-active';
                   $("."+type+"-"+onlyLev).addClass("active-level");
                   $("."+type+"-all").removeClass("activity-tab active-level");
-                  $("."+type+"-all").fadeTo(0,0.5);
-                  $("."+type+"-all").css({'cursor':'default','color':'lightgrey'});
+                  // $("."+type+"-all").fadeTo(0,0.5);
+                  $("."+type+"-all").css({'cursor':'default','background-color':'rgba(84,84,84,0.7)'});
               }
               break;
             }
@@ -548,8 +548,7 @@ function earthwatchObject() {
     })
 
 		$(".activity-tab").click(function() {
-      		console.log("clicked");
-  			$('.activity-tab').each(function() {
+  			$(this).siblings().each(function() {
   				$(this).removeClass("active-level");
   				$(this).addClass("inactive-level");
   		});
@@ -590,16 +589,24 @@ function earthwatchObject() {
 		$(".activity-tab").mouseover(function() {
 			var level = $(this).attr("activity-level");
 			$(this).removeClass("inactive-level");
-			$(".activity-tab-info").each(function() {
+			$(this).parent().siblings('.activity-tabs-arrows').children().each(function() {
 				if ($(this).attr("activity-level") == level) {
-
 					$(this).addClass("active-level");
-					$(".activity-tab-info-text").addClass("active");
-					$(".activity-tab-info-text").html("Text about activity level goes here");
-
-
+          var textDiv = $(this).parent().siblings(".activity-tab-info-text-div");
+					textDiv.children().first().addClass("active")
+					                     .html("Text about activity level goes here");
 				}
 			});
+      // $(".activity-tab-info").each(function() {
+      //   if ($(this).attr("activity-level") == level) {
+      //
+      //     $(this).addClass("active-level");
+      //     $(".activity-tab-info-text").addClass("active");
+      //     $(".activity-tab-info-text").html("Text about activity level goes here");
+      //
+      //
+      //   }
+      // });
 		})
 
 
@@ -620,7 +627,7 @@ function earthwatchObject() {
 	        return;
 	      }
 
-      		
+
       		if($(this).hasClass("has-scroll")) {
 				var scroll = $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top - 50;
 				//console.log(scroll);
