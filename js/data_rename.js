@@ -50,7 +50,9 @@ var expeditions = [{"Region":"Africa","Research Type":"Wildlife & Ecosystems","A
 var Continents = {"Africa":{}, "North America":{}, "Europe":{}, "Asia & Australia":{}, "Central, South America & The Caribbean":{} };
 
 for (var data in Continents) {
-	Continents[data] = {"Wildlife & Ecosystems":[], "Ocean Health":[], "Climate Change":[], "Archaeology & Culture":[]};}
+	Continents[data] = {"Wildlife & Ecosystems":[], "Ocean Health":[], "Climate Change":[], "Archaeology & Culture":[]};
+}
+
 
 len = expeditions.length;
 for (i = 0; i < len; i++) {
