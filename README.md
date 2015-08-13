@@ -31,9 +31,9 @@ Verify the following settings on Mr. Data Converter are correct:
 * Delimiter: Auto
 * Decimal Sign: Dot
 * First Row is the header: Checked
- *Transform: none
-*Include white spaces in output: Checked
- *Indent with: spaces
+ * Transform: none
+* Include white spaces in output: Checked
+ * Indent with: spaces
 * **Output as JSON - Properties**
 
 Paste (_control-v_) into the Input CSV or tab-delimited data section of the page (top field)  
