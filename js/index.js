@@ -551,7 +551,7 @@ function earthwatchObject() {
 		})
 
 		$('a').click(function(){
-	      if($(this).attr('href') == '#') {
+	      if($(this).attr('href') == null || $(this).attr('href') == '#') {
 	        return;
 	      }
       		//console.log($(this));
