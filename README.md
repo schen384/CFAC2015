@@ -1,11 +1,10 @@
-# CFAC2015
-nextjump 2015 summer intern cfac
+# UPDATING EARTHWATCHEXPEDITIONS DATA:
 
-##UPDATING EARTHWATCHEXPEDITIONS DATA HOW-TO:
+### To add updated data to the expeditions site, please use the following instructions.
 
-####To add updated data to the expeditions site, please use the following instructions.
+#### Verify the Spreadsheet
 
-######First, verify the excel spreadsheet has the correct data structures and naming conventions.
+###### First, verify the excel spreadsheet has the correct data structures and naming conventions.
 The following are valid "Region" fields:
 * "Africa"
 * "North America"
@@ -20,6 +19,8 @@ The following are valid "Research Type" fields:
 * "Archaeology & Culture"
 
 Please make the sure the headers of the excel sheet are named "Region" and "Research Type" as well!
+
+#### Convert to JSON
 
 Select all of the data (including first row of column names!) in the excel and spreadsheet, and copy it to the clipboard (control-a followed by control-c)
 
@@ -38,6 +39,7 @@ Verify the following settings on Mr. Data Converter are correct:
 Paste (control-v) into the Input CSV or tab-delimited data section of the page (top field)  
 Then, select and copy the json formatted data to the clipboard.
 
+#### Add the JSON Data to the website
 ######Now, open up the file data_rename.js, which is in the /js/ directory.
 
 The first line in the file should read:
