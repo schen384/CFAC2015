@@ -4,11 +4,12 @@ var earthwatch = new earthwatchObject;
 
 $(document).ready(function() {
     var continent = earthwatch.getUrlParameter('continent');
+    if (continent != null) {
+      earthwatch.loadContinent(continent,earthwatch);
+    }
     earthwatch.setup();
     //if on continent page
-    if (continent != null) {
-      earthwatch.loadContinent(continent);
-    }
+
 });
 
 $(window).resize(function() {
@@ -79,7 +80,7 @@ function earthwatchObject() {
 
 		this.parallax();
 		this.attachListeners();
-		this.setIntroImage();
+	
 		 if ($(".expedition-card").length > 1) {
 			$("#expedition-cards").mCustomScrollbar({
 				axis:"y",
@@ -103,9 +104,23 @@ function earthwatchObject() {
     }
 
     this.resize = function() {
-		//$("#map").empty();
-		//this.drawMap();
-		this.setIntroImage();
+
+    	console.log("in resize");
+    	var mobileWidth = 767;
+		console.log("parallax on resize");
+		this.parallax();
+		var scrollTheme = 'inset-3-dark'
+		if ($(window).width() <= mobileWidth) {
+			console.log("change to rounded-dots");
+			scrollTheme = "rounded-dots";
+		} 
+	
+			$(".research-expedition-cards").each(function() {
+				console.log("changing attr");
+				$(this).attr("data-mcs-theme", scrollTheme);
+			});
+
+		
 
     }
 
@@ -130,16 +145,9 @@ function earthwatchObject() {
         $("#continent-nav").html(continent+" <span class='caret'></span>");
         $("#continent-nav").width($("#continent-dropdown-menu").width());
 
-
-
-
         exp_continent = data[continent];
-<<<<<<< HEAD
-        //console.log(exp_continent);
-=======
->>>>>>> 9acc1d0e60d9bbaf4dd8cf31fcbe504e71570c65
+
         $.map(exp_continent,function(v,i) {
-          //console.log(i);
           var type;
           switch (i) {
             case "Wildlife & Ecosystems":
@@ -205,8 +213,9 @@ function earthwatchObject() {
                 default:
                   break;
               }
-              $("."+type+"-"+disableLevel).fadeTo(0,0.1);
-              $("."+type+"-"+disableLevel).hide();
+              $("."+type+"-"+disableLevel).fadeTo(0,0.5);
+              $("."+type+"-"+disableLevel).removeClass("activity-tab");
+              $("."+type+"-"+disableLevel).css('cursor','default');
             } else if (level != '') {
               levelCount++;
             }
@@ -218,7 +227,9 @@ function earthwatchObject() {
                 if (v[index]["Ativity Level"] == 'Very Easy') onlyLev = 'very-easy';
                 if (v[index]["Ativity Level"] == 'Very Active') onlyLev = 'very-active';
                   $("."+type+"-"+onlyLev).addClass("active-level");
-                  $("."+type+"-all").hide();
+                  $("."+type+"-all").removeClass("activity-tab active-level");
+                  $("."+type+"-all").fadeTo(0,0.5);
+                  $("."+type+"-all").css('cursor','default');
               }
               break;
             }
@@ -247,6 +258,7 @@ function earthwatchObject() {
 
           }
         }
+
     }
 
 
@@ -290,7 +302,7 @@ function earthwatchObject() {
     			'IRL': {fillKey: 'EU'},
     		},
     		geographyConfig:{
-    			borderColor: 'rgba(255,255,255,1)',
+    			borderColor: 'rgba(0,0,0,1)',
     			popupOnHover:false,
     			highlightFillColor: function(data){
     				if(data.fillKey){
@@ -304,7 +316,7 @@ function earthwatchObject() {
     				if(data.fillKey){
     					return "yellow";
     				}else{
-    					return 'rgba(255,255,255,1)';
+    					return 'rgba(0,0,0,1)';
     				}
     			},
     			highlightBorderWidth: function(data){
@@ -398,11 +410,10 @@ function earthwatchObject() {
     }
 
     this.attachListeners = function() {
-		//console.log("in attachListeners");
 		var that = this;
-		$( window ).resize(function() {
-			that.parallax();
-		});
+		// $( window ).resize(function() {
+		// 	that.parallax();
+		// });
 
 
 
@@ -440,6 +451,7 @@ function earthwatchObject() {
 		});
 
 		$(".activity-tab").click(function() {
+      console.log("clicked");
   			$('.activity-tab').each(function() {
   				$(this).removeClass("active-level");
   				$(this).addClass("inactive-level");
@@ -526,128 +538,109 @@ function earthwatchObject() {
     }
 
 
-	this.setIntroImage = function() {
-		var ratio = (INTRO_IMG_WIDTH/INTRO_IMG_HEIGHT);
-
-		var w = $(window).width();
-		var h = $(window).height();
 
 
-		var docRatio = w/h;
-		var size = "auto 110%"; //sizing for ratio < 1
-		if (ratio < docRatio) {
-			size = "100% auto";
-		}
-		size = "auto 120%";
-		// $("#ew-intro").css("background-size", size);
-		//  $("#ew-continent-intro").css("background-size", size);
-		// $(".research-section").css("background-size", size);
-		  // $("#activities-anchor").css("background-size", size);
-
-	}
+//     this.drawMap = function(mapJSON) {
+// 		var mapRatio = 0.5;
 
 
-    this.drawMap = function(mapJSON) {
-		var mapRatio = 0.5;
+// 		var width = 1000,
+// 		    height = 900;
 
+// 		var container = document.getElementById("map-container");
+// 		if (container) {
+// 			height = container.clientWidth / 1.8;
+// 			width = container.clientWidth;
+// 		}
 
-		var width = 1000,
-		    height = 900;
-
-		var container = document.getElementById("map-container");
-		if (container) {
-			height = container.clientWidth / 1.8;
-			width = container.clientWidth;
-		}
-
-		var sideCol = document.getElementById("map-side-col");
-		if (sideCol) {
-			sideCol.style.height = height+"px";
-		}
+// 		var sideCol = document.getElementById("map-side-col");
+// 		if (sideCol) {
+// 			sideCol.style.height = height+"px";
+// 		}
 
 
 
-		var projection = d3.geo.cylindricalStereographic()
-		    .parallel(45)
-		    .scale((width/550)*100)
-		    .translate([width / 2, height / 2])
-		    .precision(.1);
+// 		var projection = d3.geo.cylindricalStereographic()
+// 		    .parallel(45)
+// 		    .scale((width/550)*100)
+// 		    .translate([width / 2, height / 2])
+// 		    .precision(.1);
 
 
-		var path = d3.geo.path()
-		    .projection(projection);
+// 		var path = d3.geo.path()
+// 		    .projection(projection);
 
-		var graticule = d3.geo.graticule();
+// 		var graticule = d3.geo.graticule();
 
-		var svg = d3.select("#map")
-		    .attr("width", width)
-		    .attr("height", height);
+// 		var svg = d3.select("#map")
+// 		    .attr("width", width)
+// 		    .attr("height", height);
 
-		svg.append("path")
-		    .datum(graticule)
-		    .attr("class", "graticule")
-		    .attr("d", path);
+// 		svg.append("path")
+// 		    .datum(graticule)
+// 		    .attr("class", "graticule")
+// 		    .attr("d", path);
 
-		d3.json(CURRENT_MAP, function(error, world) {
+// 		d3.json(CURRENT_MAP, function(error, world) {
 
-		  	if (error) throw error;
+// 		  	if (error) throw error;
 
-			var countries = topojson.feature(world, world.objects.countries).features,
-			  neighbors = topojson.neighbors(world.objects.countries.geometries);
-
-
-
-// WORLD MAP
-			svg.selectAll(".country")
-			  .data(countries)
-			.enter().insert("path", ".graticule")
-			  .attr("class", "country-no-fill")
-
-			  .attr("d", path)
-			  .attr("id", function(d) { if(d) {return "country" + d.id;} })
-			  .attr("class", function(d) {
-
-			  					var className = "country-no-fill ";
-			  					if (d) {
-				  					if (northAmerica.indexOf(d.id) != -1) {
-				  						className += "continent-northamerica";
-				  					} else if (southAmerica.indexOf(d.id) != -1) {
-				  						className += "continent-southamerica";
-				  					} else if (europe.indexOf(d.id) != -1) {
-				  						className += "continent-europe";
-				  					} else if (africa.indexOf(d.id) != -1) {
-				  						className += "continent-africa";
-				  					} else if (asia.indexOf(d.id) != -1) {
-				  						className += "continent-asia";
-				  					}
-				  				}
-				  				return className;
-
-							})
+// 			var countries = topojson.feature(world, world.objects.countries).features,
+// 			  neighbors = topojson.neighbors(world.objects.countries.geometries);
 
 
-			svg.insert("path", ".graticule")
-			  .datum(topojson.feature(world, world.objects.land))
-			  .attr("class", "land")
 
-			  .attr("d", path)
-			  .attr("class", "country-land continent");
+// // WORLD MAP
+// 			svg.selectAll(".country")
+// 			  .data(countries)
+// 			.enter().insert("path", ".graticule")
+// 			  .attr("class", "country-no-fill")
+
+// 			  .attr("d", path)
+// 			  .attr("id", function(d) { if(d) {return "country" + d.id;} })
+// 			  .attr("class", function(d) {
+
+// 			  					var className = "country-no-fill ";
+// 			  					if (d) {
+// 				  					if (northAmerica.indexOf(d.id) != -1) {
+// 				  						className += "continent-northamerica";
+// 				  					} else if (southAmerica.indexOf(d.id) != -1) {
+// 				  						className += "continent-southamerica";
+// 				  					} else if (europe.indexOf(d.id) != -1) {
+// 				  						className += "continent-europe";
+// 				  					} else if (africa.indexOf(d.id) != -1) {
+// 				  						className += "continent-africa";
+// 				  					} else if (asia.indexOf(d.id) != -1) {
+// 				  						className += "continent-asia";
+// 				  					}
+// 				  				}
+// 				  				return className;
+
+// 							})
 
 
-			svg.insert("path", ".graticule")
-			  .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
-			  .attr("class", "boundary")
-			  .attr("d", path)
-			  .attr("class", "country-outline");
+// 			svg.insert("path", ".graticule")
+// 			  .datum(topojson.feature(world, world.objects.land))
+// 			  .attr("class", "land")
+
+// 			  .attr("d", path)
+// 			  .attr("class", "country-land continent");
+
+
+// 			svg.insert("path", ".graticule")
+// 			  .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
+// 			  .attr("class", "boundary")
+// 			  .attr("d", path)
+// 			  .attr("class", "country-outline");
 
 
 
 
 
-		});
-		this.mapListeners();
+// 		});
+// 		this.mapListeners();
 
-	}
+// 	}
 
 
 

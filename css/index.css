@@ -1246,6 +1246,9 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 @media (max-width : 767px){
 
 
+	.no-padding-mobile {
+		padding: 0 !important;
+	}
 
 
 	.intro-title {
