@@ -114,6 +114,15 @@ function earthwatchObject() {
     }
 
     this.loadContinent = function(continent) {
+      var valid_numbers = ["1","2","3","4","5"];
+      var enum_map = {1:"North America", 2:"Central, South America & The Caribbean", 3:"Europe", 4:"Africa", 5:"Asia & Australia"};
+      if (isNaN(continent)) {
+        window.location.href = 'index.html';
+      }
+      if (valid_numbers.indexOf(continent) == -1) {
+        window.location.href = 'index.html';
+      }
+      continent = enum_map[continent];
       $("#activities-anchor").hide();
       var data = Continents;
         // var cards = $("#expedition-cards");
@@ -125,9 +134,9 @@ function earthwatchObject() {
 
 
         exp_continent = data[continent];
-        console.log(exp_continent);
+        //console.log(exp_continent);
         $.map(exp_continent,function(v,i) {
-          console.log(i);
+          //console.log(i);
           var type;
           switch (i) {
             case "Wildlife & Ecosystems":
