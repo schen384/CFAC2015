@@ -4,11 +4,12 @@ var earthwatch = new earthwatchObject;
 
 $(document).ready(function() {
     var continent = earthwatch.getUrlParameter('continent');
-    earthwatch.setup();
-    //if on continent page
     if (continent != null) {
       earthwatch.loadContinent(continent,earthwatch);
     }
+    earthwatch.setup();
+    //if on continent page
+
 });
 
 $(window).resize(function() {
@@ -191,15 +192,11 @@ console.log(data);
                 default:
                   break;
               }
-              $("."+type+"-"+disableLevel).fadeTo(0,0.1);
-
+              $("."+type+"-"+disableLevel).fadeTo(0,0.5);
               $("."+type+"-"+disableLevel).removeClass("activity-tab");
-              earthwatch.attachListeners();
-              // $("."+type+"-"+disableLevel).removeAttr('activity-level');
-              // $("."+type+"-"+disableLevel).hide();
+              $("."+type+"-"+disableLevel).css('cursor','default');
             } else if (level != '') {
               levelCount++;
-              // $("."+type+"-"+disableLevel).addClass("activity-tab");
             }
           })
           if(levelCount == 1) {
@@ -209,7 +206,9 @@ console.log(data);
                 if (v[index]["Ativity Level"] == 'Very Easy') onlyLev = 'very-easy';
                 if (v[index]["Ativity Level"] == 'Very Active') onlyLev = 'very-active';
                   $("."+type+"-"+onlyLev).addClass("active-level");
-                  $("."+type+"-all").hide();
+                  $("."+type+"-all").removeClass("activity-tab active-level");
+                  $("."+type+"-all").fadeTo(0,0.5);
+                  $("."+type+"-all").css('cursor','default');
               }
               break;
             }
@@ -390,7 +389,6 @@ console.log(data);
     }
 
     this.attachListeners = function() {
-		//console.log("in attachListeners");
 		var that = this;
 		$( window ).resize(function() {
 			that.parallax();
