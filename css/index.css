@@ -77,7 +77,7 @@ body {
 	    ),
 		url("../images/gator.jpg");
 	background-position: center bottom;
-	background-size: auto 110%;
+	background-size: 100%;
 	color:#fff;
 	height: 100vh;
 	margin-top: -50px;
