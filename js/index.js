@@ -80,6 +80,7 @@ function earthwatchObject() {
 		this.crossBrowser();
 		this.parallax();
 		this.mobileScroll();
+		this.diagonalSizing();
 		this.attachListeners();
 
 		 if ($(".expedition-card").length > 1) {
@@ -108,6 +109,7 @@ function earthwatchObject() {
 
 		this.parallax();
 		this.mobileScroll();
+		this.diagonalSizing();
     	console.log("in resize");
 
 
@@ -398,6 +400,27 @@ function earthwatchObject() {
 
 
     }
+
+    this.diagonalSizing = function() {
+    	var w = $(window).width();
+
+    	$(".slope-down-1").css("border-left", w+"px solid #fff");
+    	$(".slope-down-1").css("border-left", w+"px solid transparent");
+
+    	// $(".slope-down-2").css("border-right", w+"px solid #fff");
+    	$(".slope-down-2").css("border-right", w+"px solid transparent");
+
+    	$(".slope-up-1").css("border-left", w+"px solid ");
+    	$(".slope-up-2").css("border-right", w+"px solid");
+
+
+
+
+    }
+
+
+
+
 
     this.crossBrowser = function() {
 

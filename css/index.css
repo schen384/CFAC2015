@@ -2080,3 +2080,104 @@ filter: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22
 	margin-right: auto !important;
 }
 
+
+
+/**, *::before, *::after{ 
+    box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+} */
+
+.slope-down-1 {
+	content: '';
+    line-height: 0;
+    font-size: 0;
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid #fff;
+/*    border-left: 100px solid #fff;
+    border-right: 100px solid transparent;*/
+/*    position: absolute;*/
+    top: 0;
+   /* right: -99px;*/
+ /*   margin-top: -100px;*/
+    margin-bottom: -50px;
+/*  -webkit-transform:    skewY(10deg);
+  transform:    skewY(10deg);*/
+}
+
+.slope-down-2 {
+	content: '';
+    line-height: 0;
+    font-size: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 50px solid transparent;
+    border-top: 50px solid #fff;
+/*    border-left: 100px solid #fff;
+    border-right: 100px solid transparent;*/
+/*    position: absolute;*/
+    top: 0;
+   /* right: -99px;*/
+ /*   margin-top: -100px;*/
+    margin-top: -50px;
+/*  -webkit-transform:    skewY(10deg);
+  transform:    skewY(10deg);*/
+}
+
+.slope-up-1 {
+	content: '';
+    line-height: 0;
+    font-size: 0;
+    width: 0;
+    height: 0;
+
+    border-top: 50px solid transparent;
+
+    top: 0;
+
+    margin-bottom: -50px;
+/*box-shadow: 0 0 0 6px #fff, 0 0 0 12px #888;*/
+}
+
+.slope-up-2 {
+	content: '';
+    line-height: 0;
+    font-size: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 50px solid transparent;
+
+    top: 0;
+
+    margin-top: -50px;
+
+}
+
+
+.slope-downX { 
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: auto;
+  height: 0px;
+  /*border: 2px solid rgba(0,150,255,0.91);*/
+  border-top:  5px solid rgb(0, 149, 109);
+  background: #fff;
+
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+/*  background: url("http://placekitten.com/g/200/300");*/
+/*  background-repeat: repeat-y;
+  background-position: 2% 50%;
+  -webkit-background-origin: padding-box;
+  background-origin: padding-box;
+  -webkit-background-clip: border-box;
+  background-clip: border-box;
+  -webkit-background-size: auto auto;
+  background-size: auto auto;*/
+  -webkit-transform:    skewY(10deg);
+  transform:    skewY(10deg);
+}
