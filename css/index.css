@@ -3,7 +3,7 @@ body {
 	font-family: dinRegular;
 
 }
-
+/*
 @font-face {
     font-family: dinRegular;
     src: url("../fonts/DINRegular.ttf");
@@ -28,7 +28,7 @@ body {
     font-family: missionScript;
     src: url("../fonts/mission-script-webfont.ttf");
 }
-
+*/
 .navbar-toggle .icon-bar {
 	background: #fff !important;
 
@@ -521,6 +521,7 @@ transform: translate3d(0, 0, 0);*/
 
 .research-type-continue > p {
 	font-size: 13px;
+	line-height: 15px;
 	opacity: 0.5;
 
 }
@@ -528,6 +529,7 @@ transform: translate3d(0, 0, 0);*/
 .research-type-continue:hover > p {
 	font-size: 15px;
 	opacity: 1;
+	line-height: 15px;
 
 }
 
@@ -685,7 +687,7 @@ transform: translate3d(0, 0, 0);*/
 }
 
 
-#archeology-section {
+#archaeology-section {
 	background: url("../images/africa-arch-bg.jpg");
 }
 
