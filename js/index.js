@@ -81,7 +81,7 @@ function earthwatchObject() {
 		this.parallax();
 		this.mobileScroll();
 		this.attachListeners();
-	
+
 		 if ($(".expedition-card").length > 1) {
 			$(".expedition-cards").mCustomScrollbar({
 				axis:"y",
@@ -142,6 +142,7 @@ function earthwatchObject() {
 			console.log("removing mCS-"+pastTheme);
 			$(this).removeClass("mCS-"+pastTheme);
 			$(this).addClass("mCS-"+scrollTheme);
+
 
 		})
 
@@ -227,6 +228,7 @@ function earthwatchObject() {
             }
           });
           var levelCount = 0;
+          var NoLevExp = false;
           $.map(levelArr,function(item,level) {
             if (levelArr[level] == 0) {
               var disableLevel = level.toLowerCase();
@@ -242,12 +244,16 @@ function earthwatchObject() {
               }
               $("."+type+"-"+disableLevel).fadeTo(0,0.5);
               $("."+type+"-"+disableLevel).removeClass("activity-tab");
-              $("."+type+"-"+disableLevel).css('cursor','default');
+              $("."+type+"-"+disableLevel).css({'cursor':'default','color':'lightgrey'});
+              $(".opt-"+type+"-"+disableLevel).remove();
             } else if (level != '') {
               levelCount++;
+            } else {
+              NoLevExp = true;
             }
           })
-          if(levelCount == 1) {
+          if(levelCount == 1 && !NoLevExp) {
+            $(".opt-"+type+"-all").remove();
             for (var index in v) {
               if(v[index]["Activeity Level"] != "") {
                 var onlyLev = v[index]["Activity Level"].toLowerCase();
@@ -256,13 +262,12 @@ function earthwatchObject() {
                   $("."+type+"-"+onlyLev).addClass("active-level");
                   $("."+type+"-all").removeClass("activity-tab active-level");
                   $("."+type+"-all").fadeTo(0,0.5);
-                  $("."+type+"-all").css('cursor','default');
+                  $("."+type+"-all").css({'cursor':'default','color':'lightgrey'});
               }
               break;
             }
           }
           if (cards.children().length > 0) {
-            console.log()
             cards.addClass("mCustomScrollbar")
             $("#expedition-cards").mCustomScrollbar({
               axis:"y",
@@ -329,7 +334,7 @@ function earthwatchObject() {
     			'IRL': {fillKey: 'EU'},
     		},
     		geographyConfig:{
-    			borderColor: 'rgba(255,255,255,1)',
+    			borderColor: 'rgba(0,0,0,1)',
     			popupOnHover:false,
     			highlightFillColor: function(data){
     				if(data.fillKey){
@@ -343,7 +348,7 @@ function earthwatchObject() {
     				if(data.fillKey){
     					return "yellow";
     				}else{
-    					return 'rgba(255,255,255,1)';
+    					return 'rgba(0,0,0,1)';
     				}
     			},
     			highlightBorderWidth: function(data){
@@ -485,10 +490,39 @@ function earthwatchObject() {
 		$(".research-select").mouseout(function() {
 			if (!$(this).hasClass("select-clicked")) {
 				$(this).addClass("no-background");
+
 			}
 
 
 		});
+
+    $(".level-selection").change(function() {
+        var levId = $(this).attr('id');
+        var level = $("#"+levId+" option:selected").text();
+        var type = levId.split('-')[0];
+        var cardArr = $(".exp-"+type);
+        var cards;
+        if ($("#mCSB_1_container").children().length > 0) {cards = $("#mCSB_1_container");}
+        else {cards = $("#expeditions-" + type);}
+        var count = 0;
+        if (level == 'All') {
+            for(var i = 0;i < cardArr.length;i++) {
+              if (cardArr[i] != null) {cardArr[i].style.display = ''; count++;}
+            }
+        } else {
+          for(var i = 0;i < cardArr.length;i++) {
+            var obj = cardArr[i];
+            var classArr = obj.className.split(' ');
+            var cardLev = classArr[classArr.length - 1];
+            if (classArr[classArr.length - 2] == 'Very') {
+              cardLev = 'Very ' + cardLev;
+            }
+            if (cardLev == level) {obj.style.display = ''; count++;}
+            else {obj.style.display = 'none';}
+          }
+        }
+        $("#expedition-cards").mCustomScrollbar("scrollTo","top");
+    })
 
 		$(".activity-tab").click(function() {
       		console.log("clicked");
@@ -559,16 +593,18 @@ function earthwatchObject() {
 		})
 
 		$('a').click(function(){
-	      if($(this).attr('href') == '#') {
+	      if($(this).attr('href') == null || $(this).attr('href') == '#') {
 	        return;
 	      }
-      		console.log($(this));
+
+      		
       		if($(this).hasClass("has-scroll")) {
 				var scroll = $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top - 50;
 				//console.log(scroll);
 			    $('html, body').animate({
 			        scrollTop: scroll
 			    }, 500);
+
 
 
 
