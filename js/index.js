@@ -168,7 +168,8 @@ function earthwatchObject() {
       continent = enum_map[continent];
       $("#activities-anchor").hide();
       var data = Continents;
-        // var cards = $("#expedition-cards");
+        //pupulate the continent name/images
+
         $("#continent-wel").html('Welcome to ' + continent + '!');
         $("#continent-nav").html(continent+" <span class='caret'></span>");
         $("#continent-nav").width($("#continent-dropdown-menu").width());
@@ -244,7 +245,7 @@ function earthwatchObject() {
               }
               // $("."+type+"-"+disableLevel).fadeTo(0,0.5);
               $("."+type+"-"+disableLevel).removeClass("activity-tab");
-              $("."+type+"-"+disableLevel).css({'cursor':'default','background-color':'rgba(84,84,84,0.7)'});
+              $("."+type+"-"+disableLevel).css({'cursor':'default','background-color':'rgba(84,84,84,0.7)','color':'#808080'});
               $(".opt-"+type+"-"+disableLevel).remove();
             } else if (level != '') {
               levelCount++;
@@ -262,7 +263,8 @@ function earthwatchObject() {
                   $("."+type+"-"+onlyLev).addClass("active-level");
                   $("."+type+"-all").removeClass("activity-tab active-level");
                   // $("."+type+"-all").fadeTo(0,0.5);
-                  $("."+type+"-all").css({'cursor':'default','background-color':'rgba(84,84,84,0.7)'});
+                  $("."+type+"-all").css({'cursor':'default','background-color':'rgba(84,84,84,0.7)','color':
+                '#808080'});
               }
               break;
             }
@@ -468,17 +470,14 @@ function earthwatchObject() {
       }
       		$("#activities-anchor").show();
 
-			var outlineColor = $(this).attr('class').split(new RegExp("\\s+")).pop();
-
+      $(".research-select").each(function() {
+        $(this).children('div').removeClass("select-inverse");
+        $(this).addClass("no-background");
+        $(this).removeClass("select-clicked");
+      });
 			$(this).children("div").addClass("select-inverse");
 			$(this).removeClass("no-background");
 			$(this).addClass("select-clicked");
-
-			$('.research-select:not(.' + outlineColor + ')').each(function() {
-				$(this).children("div").removeClass("select-inverse");
-				$(this).addClass("no-background");
-				$(this).removeClass("select-clicked");
-			})
 		});
 
 		$(".research-select").mouseover(function() {
