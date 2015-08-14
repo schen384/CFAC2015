@@ -158,24 +158,30 @@ function earthwatchObject() {
 
 
 
-    this.loadContinent = function(continent) {
+    this.loadContinent = function(continentNum) {
       var valid_numbers = ["1","2","3","4","5"];
-      var enum_map = {1:"North America", 2:"Central, South America & The Caribbean", 3:"Europe", 4:"Africa", 5:"Asia & Australia"};
-      if (isNaN(continent)) {
+      var enum_map = {1:["North America","NA"], 2:["Central, South America & The Caribbean","CA"], 3:["Europe",'europe'], 4:["Africa",'africa'], 5:["Asia & Australia","asia_australia"]};
+      if (isNaN(continentNum)) {
         window.location.href = 'index.html';
       }
-      if (valid_numbers.indexOf(continent) == -1) {
+      if (valid_numbers.indexOf(continentNum) == -1) {
         window.location.href = 'index.html';
       }
-      continent = enum_map[continent];
+      continent = enum_map[continentNum][0];
       $("#activities-anchor").hide();
-      var data = Continents;
-        //pupulate the continent name/images
 
+        //pupulate the continent name/images
+        var continentshort = enum_map[continentNum][1];
+        $(".ew-continent-intro").css('background','url("../images/'+continentshort+'_intro-bg.jpg")')
+        $("#wildlife-section").css('background','url("../images/'+continentshort+'-wildlife-bg.jpg");')
+        $("#climate-section").css('background','url("../images/'+continentshort+'-CC-bg.jpg");')
+        $("#ocean-section").css('background','url("../images/'+continentshort+'-ocean-bg.jpg");')
+        $("#archaeology-section").css('background','url("../images/'+continentshort+'-arch-bg.jpg");')
         $("#continent-wel").html('Welcome to ' + continent + '!');
         $("#continent-nav").html(continent+" <span class='caret'></span>");
         $("#continent-nav").width($("#continent-dropdown-menu").width());
 
+        var data = Continents;
         exp_continent = data[continent];
 
         $.map(exp_continent,function(v,i) {
