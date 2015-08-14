@@ -3,6 +3,9 @@
 var earthwatch = new earthwatchObject;
 
 $(document).ready(function() {
+    if (isIE(8, 'lte')) {
+      window.location.href = "IE8.html";
+    }
     var continent = earthwatch.getUrlParameter('continent');
     if (continent != null) {
       earthwatch.loadContinent(continent,earthwatch);
@@ -853,3 +856,21 @@ function earthwatchObject() {
 
 
 };
+
+function isIE(version, comparison) {
+  var cc      = 'IE',
+      b       = document.createElement('B'),
+      docElem = document.documentElement,
+      isIE;
+      
+  if(version){
+    cc += ' ' + version;
+    if(comparison){ cc = comparison + ' ' + cc; }
+  }
+  
+  b.innerHTML = '<!--[if '+ cc +']><b id="iecctest"></b><![endif]-->';
+  docElem.appendChild(b);
+  isIE = !!document.getElementById('iecctest');
+  docElem.removeChild(b);
+  return isIE;
+}
