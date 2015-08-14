@@ -524,14 +524,14 @@ transform: translate3d(0, 0, 0);*/
 }
 
 .research-type-continue > p {
-	font-size: 13px;
+	font-size: 20px;
 	line-height: 15px;
 	opacity: 0.5;
 
 }
 
 .research-type-continue:hover > p {
-	font-size: 15px;
+	font-size: 25px;
 	opacity: 1;
 	line-height: 15px;
 
@@ -571,7 +571,7 @@ transform: translate3d(0, 0, 0);*/
 	@media (min-width:692px) {
 		.ew-intro, .ew-continent-intro, #research-anchor {
 			height: auto;
-			padding-top: 20px !important;
+			padding-top: 0 !important;
 			padding-bottom: 20px !important;
 			margin-top: 0px !important;;
 			margin-bottom: 0px !important;;

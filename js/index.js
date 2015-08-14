@@ -589,25 +589,42 @@ function earthwatchObject() {
 		$(".activity-tab").mouseover(function() {
 			var level = $(this).attr("activity-level");
 			$(this).removeClass("inactive-level");
+      var text = $(this).text();
 			$(this).parent().siblings('.activity-tabs-arrows').children().each(function() {
 				if ($(this).attr("activity-level") == level) {
 					$(this).addClass("active-level");
+          var newText = "";
+          switch(text){
+            case "All":
+                  newText = "Display all difficulties of expeditions.";
+                  break;
+            case "Very Easy":
+                  newText = "Mostly lab work; must be able to walk up to 1 mile/day (1.6 km) over flat terrain. Dexterity often required.";
+                  break;
+            case "Easy":
+                  newText = "Some walking over uneven ground, small hills; must be able to walk up to 3 miles/day (5km) with personal supplies up to 5lbs (2.3 kg). Dexterity, mobility and good balance required. For water-based projects: Must be able to swim or tread water for 5 minutes unaided by a buoyancy device.";
+                  break;
+            case "Moderate":
+                  newText = "Must be able to walk, possibly in sand or uphill with a light pack, up to 5 miles/day (8 km); ability to stoop, bend or kneel often required; must be able to carry equipment weighing up to 10lbs (4.5 kg). Dexterity, agility and good balance required. For water-based projects: Must be able to swim at least 110 yards (100m) unaided by a buoyancy device.";
+                  break;
+            case "Very Active":
+                  newText = "Must be able to walk up to 10 miles/day (16 km), possibly in sand or uphill, climbing over rocks or fences, and or at high altitude; must be able to carry equipment weighing up to 20lbs (9 kg) for several days in a row. Dexterity, agility and good balance required. Must be able to move quickly if needed.  For water-based projects: Must be able to swim at least 220 yards feet (200m) unaided by a buoyancy device. For snorkel/scuba projects:  Must be able to surface dive to at least 15 feet (4.6m) multiple times a day or perform 2-3 dives per day at less than 65 feet (20m).";
+                  break;
+            case "Strenuous":
+                  newText = "Must be able to hike up to 15 miles/day (25 km) for several days in a row, possibly in backcountry and/or uphill; must be able to carry equipment weighing up to 40 lbs (18 kg). Dexterity, agility and good balance required. For water-based projects: Must be able to swim at least 550 yards (500m) unaided by a buoyancy device. For snorkel/scuba projects: Must be able to surface dive to at least 20 feet (6m) consistently throughout the day or perform 4-5 dives per day at up to 65 feet (20m).";
+                  break;
+            case "Varies":
+                  newText = "The difficulties of these expeditions vary.";
+                  break;
+            default:
+          }
+          console.log(text);
           var textDiv = $(this).parent().siblings(".activity-tab-info-text-div");
 					textDiv.children().first().addClass("active")
-					                     .html("Text about activity level goes here");
+					                     .html(newText);
 				}
 			});
-      // $(".activity-tab-info").each(function() {
-      //   if ($(this).attr("activity-level") == level) {
-      //
-      //     $(this).addClass("active-level");
-      //     $(".activity-tab-info-text").addClass("active");
-      //     $(".activity-tab-info-text").html("Text about activity level goes here");
-      //
-      //
-      //   }
-      // });
-		})
+		});
 
 
 		$(".activity-tab").mouseout(function() {
