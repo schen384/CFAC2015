@@ -204,16 +204,52 @@ function earthwatchObject() {
       continent = enum_map[continentNum][0];
       $("#activities-anchor").hide();
 
+
+
+		var windowHeight = $(window).height();
+		var windowWidth = $(window).width();
+		var ratio = 1.5;
+
+		var size = '';
+
+		if (ratio < (windowWidth/windowHeight)) {
+			console.log("1");
+			size = "bg-size-auto-height";
+
+		} else {
+			console.log("2");
+			size = "bg-size-auto-width";
+
+		}
+
+
+
         //pupulate the continent name/images
         var continentshort = enum_map[continentNum][1];
-        $(".ew-continent-intro").css('background','url("../images/'+continentshort+'_intro-bg.jpg")')
-        $("#wildlife-section").css('background','url("../images/'+continentshort+'-wildlife-bg.jpg");')
-        $("#climate-section").css('background','url("../images/'+continentshort+'-CC-bg.jpg");')
-        $("#ocean-section").css('background','url("../images/'+continentshort+'-ocean-bg.jpg");')
-        $("#archaeology-section").css('background','url("../images/'+continentshort+'-arch-bg.jpg");')
+    
+       $(".ew-continent-intro").css('background','url("../images/'+continentshort+'_intro-bg.jpg")');
+   		$(".ew-continent-intro").addClass(size);
+
+
+
+
+
+        //pupulate the continent name/images
+        //var continentshort = enum_map[continentNum][1];
+        //$(".ew-continent-intro").css({ "background-size": "auto 150%", 'background':'url("../images/'+continentshort+'_intro-bg.jpg")'});
+        $("#wildlife-section").css('background','url("../images/'+continentshort+'-wildlife-bg.jpg")')
+        $("#climate-section").css('background','url("../images/'+continentshort+'-CC-bg.jpg")')
+        $("#ocean-section").css('background','url("../images/'+continentshort+'-ocean-bg.jpg")')
+        $("#archaeology-section").css('background','url("../images/'+continentshort+'-arch-bg.jpg")')
         $("#continent-wel").html('Welcome to ' + continent + '!');
         $("#continent-nav").html(continent+" <span class='caret'></span>");
         $("#continent-nav").width($("#continent-dropdown-menu").width());
+
+
+
+
+
+
 
         var data = Continents;
         exp_continent = data[continent];
@@ -506,11 +542,11 @@ function earthwatchObject() {
     	$("#archaeology-section").attr("data-stellar-vertical-offset", 1*windowHeight);
 
 			if (ratio < (windowWidth/windowHeight)) {
-				$("#ew-continent-intro").css("background-size", "120% auto");
+				
 				$("#ew-intro").css("background-size", "120% auto");
 				$(".research-section-background").css("background-size", "100% auto");
 			} else {
-				$("#ew-continent-intro").css("background-size", "auto 150%");
+			
 				$("#ew-intro").css("background-size", "auto 150%");
 				$(".research-section-background").css("background-size", "auto 100%");
 			}
