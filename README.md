@@ -53,3 +53,12 @@ Make sure there is a semi-colon (;) immediately following the final closing brac
 * Example: an expedition has a duration of 7+. This will be formatted to the digit 7 and the operator +, which is an incomplete expression in javascript!
 * This will break the page and cause a failure in loading the data. 
 * You can check the javascript console (_located by pressing control+shift+j in chrome_) to see which line(s) are causing problems. 
+
+
+
+#ADDING COLOR TO SPECIFIC REGIONS	
+
+- The map plugin we're using is datamaps.js (http://datamaps.github.io/) which relies on D3.  In the future, when adding new expeditions, you must edit "js/datamaps.all.js".
+- There is a json array starting on line 653 of this file of each country and it's properties.  You'll need to add the correlating 'continent' attribute to the desired country (1,2,3,4,5) in order to enable the onclick event.
+- Each country has a 3 letter code associated with it, which is necessary for the map creation function in "js/index.js"
+- In "js/index.js", navigate to the function 'loadMap'.  In the 'data' array, add an entry to the desired country with it's 3 letter code, with the specific color you want listed above in the 'fills' array.
