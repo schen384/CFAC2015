@@ -161,23 +161,30 @@ function earthwatchObject() {
 
 
 
-    this.loadContinent = function(continent) {
+    this.loadContinent = function(continentNum) {
       var valid_numbers = ["1","2","3","4","5"];
-      var enum_map = {1:"North America", 2:"Central, South America & The Caribbean", 3:"Europe", 4:"Africa", 5:"Asia & Australia"};
-      if (isNaN(continent)) {
+      var enum_map = {1:["North America","NA"], 2:["Central, South America & The Caribbean","CA"], 3:["Europe",'europe'], 4:["Africa",'africa'], 5:["Asia & Australia","asia_australia"]};
+      if (isNaN(continentNum)) {
         window.location.href = 'index.html';
       }
-      if (valid_numbers.indexOf(continent) == -1) {
+      if (valid_numbers.indexOf(continentNum) == -1) {
         window.location.href = 'index.html';
       }
-      continent = enum_map[continent];
+      continent = enum_map[continentNum][0];
       $("#activities-anchor").hide();
-      var data = Continents;
-        // var cards = $("#expedition-cards");
+
+        //pupulate the continent name/images
+        var continentshort = enum_map[continentNum][1];
+        $(".ew-continent-intro").css('background','url("../images/'+continentshort+'_intro-bg.jpg")')
+        $("#wildlife-section").css('background','url("../images/'+continentshort+'-wildlife-bg.jpg");')
+        $("#climate-section").css('background','url("../images/'+continentshort+'-CC-bg.jpg");')
+        $("#ocean-section").css('background','url("../images/'+continentshort+'-ocean-bg.jpg");')
+        $("#archaeology-section").css('background','url("../images/'+continentshort+'-arch-bg.jpg");')
         $("#continent-wel").html('Welcome to ' + continent + '!');
         $("#continent-nav").html(continent+" <span class='caret'></span>");
         $("#continent-nav").width($("#continent-dropdown-menu").width());
 
+        var data = Continents;
         exp_continent = data[continent];
 
         $.map(exp_continent,function(v,i) {
@@ -249,7 +256,7 @@ function earthwatchObject() {
               }
               // $("."+type+"-"+disableLevel).fadeTo(0,0.5);
               $("."+type+"-"+disableLevel).removeClass("activity-tab");
-              $("."+type+"-"+disableLevel).css({'cursor':'default','background-color':'rgba(84,84,84,0.7)'});
+              $("."+type+"-"+disableLevel).css({'cursor':'default','background-color':'rgba(84,84,84,0.7)','color':'#808080'});
               $(".opt-"+type+"-"+disableLevel).remove();
             } else if (level != '') {
               levelCount++;
@@ -267,7 +274,8 @@ function earthwatchObject() {
                   $("."+type+"-"+onlyLev).addClass("active-level");
                   $("."+type+"-all").removeClass("activity-tab active-level");
                   // $("."+type+"-all").fadeTo(0,0.5);
-                  $("."+type+"-all").css({'cursor':'default','background-color':'rgba(84,84,84,0.7)'});
+                  $("."+type+"-all").css({'cursor':'default','background-color':'rgba(84,84,84,0.7)','color':
+                '#808080'});
               }
               break;
             }
@@ -494,17 +502,14 @@ function earthwatchObject() {
       }
       		$("#activities-anchor").show();
 
-			var outlineColor = $(this).attr('class').split(new RegExp("\\s+")).pop();
-
+      $(".research-select").each(function() {
+        $(this).children('div').removeClass("select-inverse");
+        $(this).addClass("no-background");
+        $(this).removeClass("select-clicked");
+      });
 			$(this).children("div").addClass("select-inverse");
 			$(this).removeClass("no-background");
 			$(this).addClass("select-clicked");
-
-			$('.research-select:not(.' + outlineColor + ')').each(function() {
-				$(this).children("div").removeClass("select-inverse");
-				$(this).addClass("no-background");
-				$(this).removeClass("select-clicked");
-			})
 		});
 
 		$(".research-select").mouseover(function() {
