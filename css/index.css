@@ -954,6 +954,15 @@ transform: translate3d(0, 0, 0);*/
 }
 
 
+.bg-size-auto-width {
+	background-size: auto 150% !important;
+}
+
+.bg-size-auto-height {
+	background-size: 120% auto !important;
+}
+
+
 .activity-tabs-arrows {
 	height: 10px;
 	margin-top: -6px;
