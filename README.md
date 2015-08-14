@@ -53,5 +53,3 @@ Make sure there is a semi-colon (;) immediately following the final closing brac
 * Example: an expedition has a duration of 7+. This will be formatted to the digit 7 and the operator +, which is an incomplete expression in javascript!
 * This will break the page and cause a failure in loading the data. 
 * You can check the javascript console (_located by pressing control+shift+j in chrome_) to see which line(s) are causing problems. 
-
-######If you need assistance please email jbronen [at] gmail [dot] com.
