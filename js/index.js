@@ -356,14 +356,6 @@ function earthwatchObject() {
     					return 'rgba(245,245,245,0)';
     				}
     			},
-    			highlightBorderColor: function(data){
-    				//console.log(data);
-    				if(data.fillKey){
-    					return "yellow";
-    				}else{
-    					return 'rgba(0,0,0,1)';
-    				}
-    			},
     			highlightBorderWidth: function(data){
     				if(data.fillKey){
     					return 3;
@@ -379,15 +371,27 @@ function earthwatchObject() {
     				}
     			});
     			datamap.svg.selectAll('.datamaps-subunit').on('mouseover', function(geography){
+
             if(geography.properties.continent != undefined){
               $(this).css("cursor", "pointer");
-              $(datamap.svg.selectAll('.datamaps-subunit').attr("geography")).css("borderColor", "yellow");
+              var color = $(this).css("fill");
+
+              $('path').each(function(){
+                  if($(this).css("fill") === color){
+                    console.log(this.style);
+                    this.style.stroke = "yellow";
+                    this.style.strokeWidth = "2px";
+                  }
+              });
+             
             }
     			});
           datamap.svg.selectAll('.datamaps-subunit').on('mouseout', function(geography){
-            //console.log("hovering");
-            //$(this).css("fill",this.fillKey);
-            //$(this).css("cursor", "pointer");
+              $('path').each(function(){
+                    this.style.stroke = "black";
+                    this.style.strokeWidth = "1px";
+              });
+
           });
     		}
     	});
