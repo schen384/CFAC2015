@@ -70,6 +70,15 @@ function earthwatchObject() {
     this.continent,
     this.activityLevel,
     this.researchType;
+    this.levelDescriptions = {
+    	"all": "Hover over each activity level tab for a more detailed description",
+    	"very-easy": "Very Easy: Mostly lab work; must be able to walk up to 1 mile/day (1.6 km) over flat terrain. Dexterity often required.",
+    	"easy": "Some walking over uneven ground, small hills; must be able to walk up to 3 miles/day (5km) with personal supplies up to 5lbs (2.3 kg). Dexterity, mobility and good balance required. For water-based projects: Must be able to swim or tread water for 5 minutes unaided by buoyancy devices.",
+    	"moderate": "Must be able to walk, possibly in sand or uphill, with a light pack up to 5 miles/day (8 km); ability to stoop, bend or kneel often required; must be able to carry equipment weighing up to 10lbs (4.5 kg). Dexterity, agility and good balance required. For water-based projects: Must be able to swim at least 110 yards (100m) unaided by buoyancy devices.",
+    	"very-active": "Very Active: Must be able to walk up to 10 miles/day (16 km), possibly in sand or uphill, climbing over rocks or fences, and/or at high altitude; must be able to carry equipment weighing up to 20lbs (9 kg) for several days in a row. Dexterity, agility and good balance required. Must be able to move quickly if needed. For water-based projects: Must be able to swim at least 220 yards feet (200m) unaided by buoyancy devices. For snorkel/scuba projects: Must be able to surface dive to at least 15 feet (4.6m) multiple times per day or perform 2-3 dives per day at less than 65 feet (20m).",
+    	"strenuous": "Must be able to hike up to 15 miles/day (25 km) for several days in a row, possibly in backcountry and/or uphill; must be able to carry equipment weighing up to 40lbs (18 kg). Dexterity, agility, stamina and good balance required. For water-based projects: Must be able to swim at least 550 yards (500m) unaided by buoyancy devices. For snorkel/scuba projects: Must be able to surface dive to at least 20 feet (6m) consistently throughout the day or perform 4-5 dives per day at up to 65 feet (20m).",
+    	"varies": "Some projects may be able to accommodate varying levels of fitness due to some activities being more or less strenuous than others on the same project. Please refer to the project description or contact Earthwatch for additional information specific to the research activities and fitness required."
+    }
     var exp_continent,exp_type,all_exp;
 
 
@@ -111,9 +120,31 @@ function earthwatchObject() {
 		this.mobileScroll();
 		this.diagonalSizing();
     	console.log("in resize");
+    	this.resizeResearch();
 
 
+	
 
+
+    }
+
+
+    this.resizeResearch = function() {
+		$(".research-section-background").each(function() {
+			console.log("research-section-background resize");
+			var h = $(this).height();
+			var w = $(this).width();
+			var ratio = 1.5;
+			
+			if (ratio < (w/h)) {
+				console.log($(this).attr("id")+" = 100% auto")
+				$(this).css("background-size", "100% auto");
+			} else {
+				console.log($(this).attr("id")+" =  auto 100%")
+				$(this).css("background-size", "auto 100%");
+			}
+
+		})
 
     }
 
@@ -336,7 +367,8 @@ function earthwatchObject() {
     			'IRL': {fillKey: 'EU'},
     		},
     		geographyConfig:{
-    			borderColor: 'rgba(0,0,0,1)',
+    			borderColor: 'rgba(52,62,72,1)',
+    			borderWidth:1.5,
     			popupOnHover:false,
     			highlightFillColor: function(data){
     				if(data.fillKey){
@@ -357,7 +389,7 @@ function earthwatchObject() {
     				if(data.fillKey){
     					return 3;
     				}else{
-    					return 1;
+    					return 1.5;
     				}
     			}
     		},
@@ -454,9 +486,11 @@ function earthwatchObject() {
 
 			if (ratio < (windowWidth/windowHeight)) {
 				$("#ew-continent-intro").css("background-size", "120% auto");
+				$("#ew-intro").css("background-size", "120% auto");
 				$(".research-section-background").css("background-size", "100% auto");
 			} else {
 				$("#ew-continent-intro").css("background-size", "auto 150%");
+				$("#ew-intro").css("background-size", "auto 150%");
 				$(".research-section-background").css("background-size", "auto 100%");
 			}
 
@@ -551,63 +585,74 @@ function earthwatchObject() {
   			$(this).siblings().each(function() {
   				$(this).removeClass("active-level");
   				$(this).addClass("inactive-level");
-  		});
-  		$(this).removeClass("inactive-level");
-  		$(this).addClass("active-level");
+  			});
+	  		$(this).removeClass("inactive-level");
+	  		$(this).addClass("active-level");
 
-      var level = $(this)[0].innerHTML;
-      var classArr = $(this).parent().attr('class').split(' ');
-      var type = classArr[classArr.length - 1];
-      var cardArr = $(".exp-"+type);
+			var level = $(this)[0].innerHTML;
+			var classArr = $(this).parent().attr('class').split(' ');
+			var type = classArr[classArr.length - 1];
+			var cardArr = $(".exp-"+type);
 
-      var cards;
-      if ($("#mCSB_1_container").children().length > 0) {cards = $("#mCSB_1_container");}
-      else {cards = $("#expeditions-" + type);}
-      // cards.empty();
-      var count = 0;
-      if (level == 'All') {
-          for(var i = 0;i < cardArr.length;i++) {
-            if (cardArr[i] != null) {cardArr[i].style.display = ''; count++;}
-          }
-      } else {
-        for(var i = 0;i < cardArr.length;i++) {
-          var obj = cardArr[i];
-          var classArr = obj.className.split(' ');
-          var cardLev = classArr[classArr.length - 1];
-          if (classArr[classArr.length - 2] == 'Very') {
-            cardLev = 'Very ' + cardLev;
-          }
-          if (cardLev == level) {obj.style.display = ''; count++;}
-          else {obj.style.display = 'none';}
-        }
-      }
-  		$("#expedition-cards").mCustomScrollbar("scrollTo","top");
+			var cards;
+			if ($("#mCSB_1_container").children().length > 0) {cards = $("#mCSB_1_container");}
+			else {cards = $("#expeditions-" + type);}
+			// cards.empty();
+			var count = 0;
+			if (level == 'All') {
+				for(var i = 0;i < cardArr.length;i++) {
+			    	if (cardArr[i] != null) {cardArr[i].style.display = ''; count++;}
+				}
+			} else {
+		        for(var i = 0;i < cardArr.length;i++) {
+					var obj = cardArr[i];
+					var classArr = obj.className.split(' ');
+					var cardLev = classArr[classArr.length - 1];
+					if (classArr[classArr.length - 2] == 'Very') {
+						cardLev = 'Very ' + cardLev;
+					}
+					if (cardLev == level) {
+						obj.style.display = ''; count++;
+					} else {
+						obj.style.display = 'none';
+					}
+		        }
+    		}
+	  		$("#expedition-cards").mCustomScrollbar("scrollTo","top");
 
 		});
 
 
+		$(".activity-tab-info-text").css("display", "none");
+		$(".activity-tab-info-text-div").css("display", "none");
+		var that = this; 
 		$(".activity-tab").mouseover(function() {
 			var level = $(this).attr("activity-level");
 			$(this).removeClass("inactive-level");
 			$(this).parent().siblings('.activity-tabs-arrows').children().each(function() {
+				
 				if ($(this).attr("activity-level") == level) {
+
+					var newHtml = "<strong class='text-uppercase '>"+level.replace('-', "&#160;")+": </strong><span class='text-dark-grey'>"+that.levelDescriptions[level]+"</span>";
+
+
 					$(this).addClass("active-level");
-          var textDiv = $(this).parent().siblings(".activity-tab-info-text-div");
+          			var textDiv = $(this).parent().siblings(".activity-tab-info-text-div");
+          			textDiv.css("display", "block");
 					textDiv.children().first().addClass("active")
-					                     .html("Text about activity level goes here");
+										.show()
+					                    .html(newHtml)
+					                    .css("display", "block")
+					                    .css("max-height", "1000px")
+					                    .css("padding", "15px");
+					that.resizeResearch();
 				}
 			});
-      // $(".activity-tab-info").each(function() {
-      //   if ($(this).attr("activity-level") == level) {
-      //
-      //     $(this).addClass("active-level");
-      //     $(".activity-tab-info-text").addClass("active");
-      //     $(".activity-tab-info-text").html("Text about activity level goes here");
-      //
-      //
-      //   }
-      // });
+
 		})
+
+
+
 
 
 		$(".activity-tab").mouseout(function() {
@@ -616,11 +661,20 @@ function earthwatchObject() {
 				if ($(this).attr("activity-level") == level) {
 					$(this).removeClass("active-level");
 					$(".activity-tab-info-text").removeClass("active");
-					// $(".activity-tab-info-text").html("");
+					$(".activity-tab-info-text").css("display", "none");
+					$(".activity-tab-info-text-div").css("display", "none");
+					$(".activity-tab-info-text").css("max-height", "0px");
+					$(".activity-tab-info-text").css("padding", "0px 15px 0px 15px");
+					that.resizeResearch();
 				}
 			});
 			if(!$(this).hasClass("active-level")){$(this).addClass("inactive-level");}
 		})
+
+
+
+
+
 
 		$('a').click(function(){
 	      if($(this).attr('href') == null || $(this).attr('href') == '#') {
@@ -646,6 +700,8 @@ function earthwatchObject() {
 
 
     }
+
+
 
 
 
