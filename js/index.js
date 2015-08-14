@@ -378,11 +378,17 @@ function earthwatchObject() {
     					window.location.href = "/continent.html?continent=" + geography.properties.continent;
     				}
     			});
-    			/*datamap.svg.selectAll('.datamaps-subunit').on('mouseover', function(geography){
-    				console.log("hovering");
-    				//$('.datamaps-subunit').css("fill",'rgba(245,245,245,1.0)');
-    				//$('.datamaps-subunit').css("cursor", "pointer");
-    			});*/
+    			datamap.svg.selectAll('.datamaps-subunit').on('mouseover', function(geography){
+            if(geography.properties.continent != undefined){
+              $(this).css("cursor", "pointer");
+              $(datamap.svg.selectAll('.datamaps-subunit').attr("geography")).css("borderColor", "yellow");
+            }
+    			});
+          datamap.svg.selectAll('.datamaps-subunit').on('mouseout', function(geography){
+            //console.log("hovering");
+            //$(this).css("fill",this.fillKey);
+            //$(this).css("cursor", "pointer");
+          });
     		}
     	});
     }
