@@ -56,7 +56,7 @@ Make sure there is a semi-colon (;) immediately following the final closing brac
 
 
 
-#ADDING COLOR TO SPECIFIC REGIONS	
+#ADDING COLOR TO SPECIFIC REGIONS TO REFLECT NEW EXPEDITION LOCATIONS	
 
 - The map plugin we're using is datamaps.js (http://datamaps.github.io/) which relies on D3.  In the future, when adding new expeditions, you must edit "js/datamaps.all.js".
 - There is a json array starting on line 653 of this file of each country and it's properties.  You'll need to add the correlating 'continent' attribute to the desired country (1,2,3,4,5) in order to enable the onclick event.
